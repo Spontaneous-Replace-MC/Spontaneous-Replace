@@ -1,0 +1,55 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:coal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_water_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:water_bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spontaneous_replace:steel/clean_coal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_the_more_recipe": {
+      "conditions": {
+        "recipe": "spontaneous_replace:steel/clean_coal_more"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coal",
+      "has_water_bucket",
+      "has_the_recipe",
+      "has_the_more_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spontaneous_replace:steel/clean_coal",
+      "spontaneous_replace:steel/clean_coal_more"
+    ]
+  }
+}

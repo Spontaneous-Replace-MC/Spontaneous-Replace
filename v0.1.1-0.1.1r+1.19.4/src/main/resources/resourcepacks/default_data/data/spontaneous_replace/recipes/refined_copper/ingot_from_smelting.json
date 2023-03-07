@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "spontaneous_replace:refined_copper_ingot",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "ingredient": [
+    {
+      "item": "spontaneous_replace:copper_for_smelting_ingot"
+    }
+  ],
+  "result": "spontaneous_replace:refined_copper_ingot"
+}

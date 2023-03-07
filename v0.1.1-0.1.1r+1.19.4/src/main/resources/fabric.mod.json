@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "spontaneous_replace",
+  "version": "0.1.1-0.1.1r+1.19.4",
+
+  "name": "§6自然更替/Spontaneous-Replace",
+
+  "authors": [
+    "§6Saikel Orado"
+  ],
+  "contributors": [
+    " ",
+    "§b感谢所有 Fabric 工作者和维护者!",
+    "§bThanks to ALL Fabric workers and maintainers!",
+    " ",
+    "§c游玩,推广及支持了模组的广大优秀MC玩家!",
+    "§cGREAT MC PLAYERS who Played, Promoted and Support THIS Mod!"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/spontaneous-replace",
+    "sources": "https://github.com/Saikel-Orado/Spontaneous-Replace",
+    "issues": "https://discord.com/channels/1062293282480209921/1062341430024085514"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "": "https://github.com/Saikel-Orado/Spontaneous-Replace",
+        "支持作者: 爱发电": "https://afdian.net/a/GameGeek_Saikel",
+        "Support: Patreon": "https://www.patreon.com/GameGeek_Saikel"
+      }
+    }
+  },
+  "license": "MIT",
+  "icon": "assets/spontaneous_replace/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "SpontaneousReplace.SRMain"
+    ],
+    "client": [
+      "SpontaneousReplace.SRClient"
+    ],
+    "modmenu": [
+      "SpontaneousReplace.ConfigScreen.AddModMenuButton"
+    ]
+  },
+  "mixins": [
+    "spontaneous_replace.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric-api": ">=0.75.2",
+    "minecraft": "1.19.4-beta.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
