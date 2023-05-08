@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:spider_leather_cap",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:spider_leather"
+    },
+    "#": {
+      "item": "spontaneous_replace:depoison_spider_leg"
+    }
+  },
+  "pattern": [
+    "#X#",
+    "X X",
+    "   "
+  ],
+  "result": {
+    "item": "spontaneous_replace:spider_leather_cap"
+  }
+}

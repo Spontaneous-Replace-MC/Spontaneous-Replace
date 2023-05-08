@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:copper_for_smelting_ingot",
+  "key": {
+    "X": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "XX ",
+    "XX "
+  ],
+  "result": {
+    "item": "spontaneous_replace:copper_for_smelting_ingot",
+    "count":1
+  }
+}

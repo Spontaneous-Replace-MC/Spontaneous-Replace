@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing",
+  "category": "misc",
+  "group": "spontaneous_replace:aucu_alloy",
+  "base": {
+    "item": "spontaneous_replace:refined_copper_ingot"
+  },
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "result": {
+    "item": "spontaneous_replace:aucu_alloy"
+  }
+}
