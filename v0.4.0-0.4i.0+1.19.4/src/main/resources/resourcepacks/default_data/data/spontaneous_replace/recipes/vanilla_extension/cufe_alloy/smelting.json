@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "spontaneous_replace:cufe_alloy_nugget",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "spontaneous_replace:cufe_alloy_pickaxe"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_shovel"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_axe"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_hoe"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_sword"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_helmet"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_chestplate"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_leggings"
+    },
+    {
+      "item": "spontaneous_replace:cufe_alloy_boots"
+    }
+  ],
+  "result": "spontaneous_replace:cufe_alloy_nugget"
+}

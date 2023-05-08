@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:marks_crossbow",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:compound_bow"
+    },
+    "Y": {
+      "item": "minecraft:stripped_warped_hyphae"
+    },
+    "Z": {
+      "item": "minecraft:lever"
+    },
+    "#": {
+      "item": "spontaneous_replace:composite_string"
+    },
+    "*": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "ZY*",
+    "YX#",
+    "*#Y"
+  ],
+  "result": {
+    "item": "spontaneous_replace:marks_crossbow"
+  }
+}

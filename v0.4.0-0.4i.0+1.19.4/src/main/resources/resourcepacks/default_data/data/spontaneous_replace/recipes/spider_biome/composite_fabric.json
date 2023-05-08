@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:composite_fabric",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:composite_string"
+    },
+    "#": {
+      "item": "minecraft:white_carpet"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "item": "spontaneous_replace:composite_fabric"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:slingshot",
+  "key": {
+    "X": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "spontaneous_replace:sticky_compact_gossamer"
+    }
+  },
+  "pattern": [
+    "X#X",
+    " X ",
+    " X "
+  ],
+  "result": {
+    "item": "spontaneous_replace:slingshot"
+  }
+}
