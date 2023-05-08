@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "spontaneous_replace:refined_copper_nugget",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "spontaneous_replace:refined_copper_pickaxe"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_shovel"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_axe"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_hoe"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_sword"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_helmet"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_chestplate"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_leggings"
+    },
+    {
+      "item": "spontaneous_replace:refined_copper_boots"
+    }
+  ],
+  "result": "spontaneous_replace:refined_copper_nugget"
+}

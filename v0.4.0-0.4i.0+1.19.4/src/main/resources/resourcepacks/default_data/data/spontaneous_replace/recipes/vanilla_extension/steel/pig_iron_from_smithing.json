@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing",
+  "category": "misc",
+  "group": "spontaneous_replace:pig_iron",
+  "base": {
+    "item": "minecraft:iron_ingot"
+  },
+  "addition": {
+    "item": "spontaneous_replace:clean_coal"
+  },
+  "result": {
+    "item": "spontaneous_replace:pig_iron"
+  }
+}

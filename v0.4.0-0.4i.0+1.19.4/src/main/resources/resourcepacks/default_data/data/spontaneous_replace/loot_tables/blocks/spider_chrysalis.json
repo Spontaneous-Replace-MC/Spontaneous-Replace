@@ -1,0 +1,181 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "// 普通": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/default"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "default"
+          }
+        }
+      ]
+    },
+    {
+      "// 大型": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/large"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "large"
+          }
+        }
+      ]
+    },
+    {
+      "// 小型": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/small"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "small"
+          }
+        }
+      ]
+    },
+    {
+      "// 类人": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/humanoid"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "humanoid"
+          }
+        }
+      ]
+    },
+    {
+      "// 村民": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/villager"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "villager"
+          }
+        }
+      ]
+    },
+    {
+      "// 小鸡": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/chicken"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "chicken"
+          }
+        }
+      ]
+    },
+    {
+      "// 苦力怕": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/creeper"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "creeper"
+          }
+        }
+      ]
+    },
+    {
+      "// 铁傀儡": "",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "spontaneous_replace:blocks/spider_chrysalis/iron_golem"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "spontaneous_replace:spider_chrysalis",
+          "properties": {
+            "style": "iron_golem"
+          }
+        }
+      ]
+    }
+  ]
+}

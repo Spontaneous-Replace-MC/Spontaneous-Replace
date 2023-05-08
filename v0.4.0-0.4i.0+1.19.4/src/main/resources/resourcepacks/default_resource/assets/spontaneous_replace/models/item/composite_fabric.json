@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "spontaneous_replace:item/spider_biome/ingredients/composite_fabric"
+  }
+}
