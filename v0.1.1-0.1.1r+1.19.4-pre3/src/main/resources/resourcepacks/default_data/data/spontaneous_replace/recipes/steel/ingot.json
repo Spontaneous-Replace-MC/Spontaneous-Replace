@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "spontaneous_replace:steel_ingot",
+  "ingredient": [
+    {
+      "item": "spontaneous_replace:pig_iron"
+    }
+  ],
+  "result": "spontaneous_replace:steel_ingot",
+  "experience": 1,
+  "cookingtime": 400
+}

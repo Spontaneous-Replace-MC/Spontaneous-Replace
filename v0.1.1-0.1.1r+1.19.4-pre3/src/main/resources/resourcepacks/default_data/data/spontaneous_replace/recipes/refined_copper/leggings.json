@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:refined_copper_leggings",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:refined_copper_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "result": {
+    "item": "spontaneous_replace:refined_copper_leggings"
+  }
+}
