@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:cufe_alloy_chestplate",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:cufe_alloy_ingot"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "result": {
+    "item": "spontaneous_replace:cufe_alloy_chestplate"
+  }
+}

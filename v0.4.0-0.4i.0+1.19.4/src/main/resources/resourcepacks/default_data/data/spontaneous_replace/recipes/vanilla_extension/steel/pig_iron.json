@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:pig_iron",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "spontaneous_replace:clean_coal"
+    }
+  },
+  "pattern": [
+    "  ",
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "item": "spontaneous_replace:pig_iron"
+  }
+}

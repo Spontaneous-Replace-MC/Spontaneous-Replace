@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:juger_repeating_crossbow",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:arbalest"
+    },
+    "Y": {
+      "item": "minecraft:stripped_crimson_hyphae"
+    },
+    "Z": {
+      "item": "minecraft:chest"
+    },
+    "#": {
+      "item": "spontaneous_replace:composite_string"
+    }
+  },
+  "pattern": [
+    "ZY#",
+    "YX ",
+    "# Y"
+  ],
+  "result": {
+    "item": "spontaneous_replace:juger_repeating_crossbow"
+  }
+}
