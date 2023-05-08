@@ -1,0 +1,63 @@
+{
+  "parent": "spontaneous_replace:vanilla/alloy/have_a_new_metal",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:cufe_alloy_ingot"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_a_alloy.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_a_alloy.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cufe_alloy_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:cufe_alloy_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "aucu_alloy_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:aucu_alloy_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "cufe_alloy_ingot",
+      "aucu_alloy_ingot",
+      "steel_ingot"
+    ]
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "parent": "spontaneous_replace:spider_biome/kill_a_sr_spider",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:spray_poison_spider_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.spider_biome.kill_all_sr_spiders.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.spider_biome.kill_all_sr_spiders.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "minecraft:spider": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:spider"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "minecraft:cave_spider": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:cave_spider"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "spontaneous_replace:guard_spider": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spontaneous_replace:guard_spider"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "spontaneous_replace:spray_poison_spider": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spontaneous_replace:spray_poison_spider"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "spontaneous_replace:weaving_web_spider": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spontaneous_replace:weaving_web_spider"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  }
+}

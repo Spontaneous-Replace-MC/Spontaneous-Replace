@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:composite_string",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:sticky_compact_gossamer"
+    },
+    "#": {
+      "item": "spontaneous_replace:compact_string"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#X#",
+    "X#X"
+  ],
+  "result": {
+    "item": "spontaneous_replace:composite_string"
+  }
+}

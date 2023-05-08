@@ -1,0 +1,141 @@
+{
+  "parent": "spontaneous_replace:vanilla/alloy/have_a_alloy",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:steel_sword"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_a_steel_product.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_a_steel_product.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "steel_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_shovel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_hoe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_helmet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "steel_shovel",
+      "steel_pickaxe",
+      "steel_axe",
+      "steel_hoe",
+      "steel_sword",
+      "steel_helmet",
+      "steel_chestplate",
+      "steel_leggings",
+      "steel_boots"
+    ]
+  ]
+}

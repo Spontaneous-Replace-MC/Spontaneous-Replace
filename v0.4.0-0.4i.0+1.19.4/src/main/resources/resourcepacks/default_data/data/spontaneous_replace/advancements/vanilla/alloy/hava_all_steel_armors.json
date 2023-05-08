@@ -1,0 +1,68 @@
+{
+  "parent": "spontaneous_replace:vanilla/alloy/have_a_steel_product",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:steel_chestplate"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_all_steel_armors.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.alloy.have_all_steel_armors.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "steel_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_helmet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steel_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:steel_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

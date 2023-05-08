@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "spontaneous_replace:block/spider_biome/sticky_compact_cobweb"
+  }
+}
