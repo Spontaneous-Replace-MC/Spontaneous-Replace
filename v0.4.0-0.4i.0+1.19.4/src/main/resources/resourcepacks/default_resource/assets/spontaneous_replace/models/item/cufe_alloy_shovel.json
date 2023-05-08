@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "spontaneous_replace:item/vanilla_extension/cufe_alloy/shovel"
-  }
-}

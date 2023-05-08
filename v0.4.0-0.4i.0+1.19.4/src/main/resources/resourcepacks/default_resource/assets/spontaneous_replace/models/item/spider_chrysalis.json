@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "spontaneous_replace:block/spider_biome/spider_chrysalis_item"
-  }
-}
