@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "spontaneous_replace:eerie_regolith",
+    "spontaneous_replace:treacherous_sludge",
+    "spontaneous_replace:cobwebby_soil",
+    "spontaneous_replace:gossamer_carpet"
+  ]
+}

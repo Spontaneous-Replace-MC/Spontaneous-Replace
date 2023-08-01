@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "spontaneous_replace:block/vanilla_extension/cufe_alloy/block"
+    }
+  }
+}

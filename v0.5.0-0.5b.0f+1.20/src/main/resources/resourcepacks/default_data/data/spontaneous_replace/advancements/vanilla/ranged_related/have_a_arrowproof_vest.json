@@ -1,0 +1,32 @@
+{
+  "parent": "spontaneous_replace:vanilla/ranged_related/have_a_new_ranged_related",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:arrowproof_vest"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.have_a_arrowproof_vest.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.have_a_arrowproof_vest.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "arrowproof_vest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:arrowproof_vest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  }
+}

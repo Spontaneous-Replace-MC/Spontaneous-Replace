@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:compound_bow",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:steel_ingot"
+    },
+    "Y": {
+      "item": "minecraft:diamond"
+    },
+    "Z": {
+      "item": "minecraft:spyglass"
+    },
+    "#": {
+      "item": "spontaneous_replace:composite_string"
+    }
+  },
+  "pattern": [
+    "ZXY",
+    "XX#",
+    "Y##"
+  ],
+  "result": {
+    "item": "spontaneous_replace:compound_bow"
+  }
+}

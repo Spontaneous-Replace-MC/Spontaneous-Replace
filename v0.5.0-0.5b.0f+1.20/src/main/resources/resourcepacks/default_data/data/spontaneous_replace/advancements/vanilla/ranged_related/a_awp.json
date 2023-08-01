@@ -1,0 +1,46 @@
+{
+  "parent": "spontaneous_replace:vanilla/ranged_related/use_marks_crossbow",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:marks_crossbow",
+      "nbt": "{Charged:true}"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.a_awp.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.a_awp.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "juger_repeating_crossbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:marks_crossbow"
+            ],
+            "enchantments": [
+              {
+                "enchantment": "minecraft:piercing",
+                "levels": 4
+              },
+              {
+                "enchantment": "minecraft:quick_charge",
+                "levels": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

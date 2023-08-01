@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "spontaneous_replace:cufe_alloy_block",
+    "spontaneous_replace:aucu_alloy_block",
+    "spontaneous_replace:steel_block"
+  ]
+}

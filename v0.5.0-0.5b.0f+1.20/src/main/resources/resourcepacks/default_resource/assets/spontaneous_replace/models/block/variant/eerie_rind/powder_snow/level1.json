@@ -1,0 +1,6 @@
+{
+  "parent": "spontaneous_replace:block/variant/eerie_rind/level1",
+  "textures": {
+    "inside": "minecraft:block/powder_snow"
+  }
+}

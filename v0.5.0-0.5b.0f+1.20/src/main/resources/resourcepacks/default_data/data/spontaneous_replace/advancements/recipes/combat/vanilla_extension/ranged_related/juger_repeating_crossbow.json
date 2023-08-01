@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_arbalest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:arbalest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_crimson_stem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crimson_stem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_composite_string": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:composite_string"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spontaneous_replace:vanilla_extension/ranged_related/juger_repeating_crossbow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_arbalest",
+      "has_crimson_stem",
+      "has_composite_string",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spontaneous_replace:vanilla_extension/ranged_related/juger_repeating_crossbow"
+    ]
+  }
+}

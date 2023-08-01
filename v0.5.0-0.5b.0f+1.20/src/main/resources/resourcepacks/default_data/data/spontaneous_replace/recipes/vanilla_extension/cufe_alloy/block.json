@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "spontaneous_replace:cufe_alloy_block",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:cufe_alloy_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "result": {
+    "item": "spontaneous_replace:cufe_alloy_block",
+    "count": 1
+  }
+}

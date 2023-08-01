@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:clean_coal",
+  "key": {
+    "#": {
+      "item": "minecraft:coal_block"
+    },
+    "X": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "  ",
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "item": "spontaneous_replace:clean_coal",
+    "count": 3
+  }
+}

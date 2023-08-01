@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "spontaneous_replace:arbalest",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:recurve_bow"
+    },
+    "Y": {
+      "item": "minecraft:stripped_acacia_wood"
+    },
+    "Z": {
+      "item": "minecraft:lever"
+    },
+    "#": {
+      "item": "spontaneous_replace:compact_string"
+    }
+  },
+  "pattern": [
+    "YXY",
+    "#Z#",
+    " Y "
+  ],
+  "result": {
+    "item": "spontaneous_replace:arbalest"
+  }
+}

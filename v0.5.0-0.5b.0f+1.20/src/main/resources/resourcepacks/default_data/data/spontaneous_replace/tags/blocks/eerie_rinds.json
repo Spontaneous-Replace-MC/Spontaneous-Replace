@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "spontaneous_replace:water_eerie_rind",
+    "spontaneous_replace:powder_snow_eerie_rind",
+    "spontaneous_replace:ice_eerie_rind",
+    "spontaneous_replace:lava_eerie_rind",
+    "spontaneous_replace:eerie_rind"
+  ]
+}

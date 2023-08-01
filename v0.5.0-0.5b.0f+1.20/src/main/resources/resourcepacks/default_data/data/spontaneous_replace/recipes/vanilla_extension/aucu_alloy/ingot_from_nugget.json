@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:aucu_alloy_ingot",
+  "key": {
+    "X": {
+      "item": "spontaneous_replace:aucu_alloy_nugget"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "result": {
+    "item": "spontaneous_replace:aucu_alloy_ingot",
+    "count": 1
+  }
+}

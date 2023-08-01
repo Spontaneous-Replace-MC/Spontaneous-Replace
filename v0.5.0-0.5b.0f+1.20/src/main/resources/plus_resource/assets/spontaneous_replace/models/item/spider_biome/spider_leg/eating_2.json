@@ -1,0 +1,7 @@
+{
+	"credit": "作者：刘 Saikel Orado 又称 “游戏极客-Saikel” | Author: Saikel Orado Liu aka ”GameGeek-Saikel“",
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "spontaneous_replace:item/spider_biome/ingredients/spider_leg/eating_2"
+  }
+}

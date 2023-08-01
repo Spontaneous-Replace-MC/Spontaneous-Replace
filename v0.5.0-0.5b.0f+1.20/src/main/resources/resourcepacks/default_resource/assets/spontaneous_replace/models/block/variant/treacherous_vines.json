@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "spontaneous_replace:block/variant/treacherous_vines"
+  }
+}

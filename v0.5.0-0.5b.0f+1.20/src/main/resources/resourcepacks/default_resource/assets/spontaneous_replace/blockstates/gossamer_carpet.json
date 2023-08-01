@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "spontaneous_replace:block/spider_biome/gossamer_carpet"
+      },
+      {
+        "model": "spontaneous_replace:block/spider_biome/gossamer_carpet",
+        "y": 90
+      },
+      {
+        "model": "spontaneous_replace:block/spider_biome/gossamer_carpet",
+        "y": 180
+      },
+      {
+        "model": "spontaneous_replace:block/spider_biome/gossamer_carpet",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "spontaneous_replace:vanilla/ranged_related/have_a_new_ranged_related",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:marks_crossbow"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.use_marks_crossbow.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.use_marks_crossbow.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shot_slingshot": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "spontaneous_replace:marks_crossbow"
+          ],
+          "nbt": "{Charged:true}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spontaneous_replace:block/spider_biome/gossamer_carpet"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "parent": "spontaneous_replace:vanilla/vanilla_extension",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:recurve_bow"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.have_a_new_ranged_related.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.have_a_new_ranged_related.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "slingshot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:slingshot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "recurve_bow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:recurve_bow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "arbalest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:arbalest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "compound_bow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:compound_bow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "juger_repeating_crossbow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:juger_repeating_crossbow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "marks_crossbow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:marks_crossbow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "arrowproof_vest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:arrowproof_vest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "slingshot",
+      "recurve_bow",
+      "arbalest",
+      "compound_bow",
+      "juger_repeating_crossbow",
+      "marks_crossbow",
+      "arrowproof_vest"
+    ]
+  ]
+}

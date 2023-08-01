@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spontaneous_replace:alloy_forging_die",
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "pattern": [
+    "XX",
+    "XX",
+    "XX"
+  ],
+  "result": {
+    "item": "spontaneous_replace:alloy_forging_die",
+    "count": 2
+  }
+}

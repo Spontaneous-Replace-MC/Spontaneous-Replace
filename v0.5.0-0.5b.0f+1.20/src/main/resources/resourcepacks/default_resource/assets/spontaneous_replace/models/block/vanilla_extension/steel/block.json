@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "spontaneous_replace:block/vanilla_extension/steel/block"
+  }
+}

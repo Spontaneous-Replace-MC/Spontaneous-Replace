@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing_transform",
+  "category": "misc",
+  "group": "spontaneous_replace:cufe_alloy",
+  "template": {
+    "item": "spontaneous_replace:alloy_forging_die"
+  },
+  "base": {
+    "item": "spontaneous_replace:refined_copper_ingot"
+  },
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": {
+    "item": "spontaneous_replace:cufe_alloy"
+  }
+}

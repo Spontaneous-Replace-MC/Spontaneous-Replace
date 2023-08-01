@@ -1,0 +1,46 @@
+{
+  "parent": "spontaneous_replace:vanilla/ranged_related/use_juger_repeating_crossbow",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:juger_repeating_crossbow",
+      "nbt": "{IsShoot:1f,Bullet:0f,Charged:true}"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.p90.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.p90.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "juger_repeating_crossbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spontaneous_replace:juger_repeating_crossbow"
+            ],
+            "enchantments": [
+              {
+                "enchantment": "minecraft:multishot",
+                "levels": 1
+              },
+              {
+                "enchantment": "minecraft:quick_charge",
+                "levels": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

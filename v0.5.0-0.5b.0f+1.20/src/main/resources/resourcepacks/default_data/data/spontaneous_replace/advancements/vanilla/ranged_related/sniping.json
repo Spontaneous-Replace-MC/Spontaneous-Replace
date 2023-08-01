@@ -1,0 +1,50 @@
+{
+  "parent": "spontaneous_replace:vanilla/ranged_related/use_marks_crossbow",
+  "display": {
+    "icon": {
+      "item": "spontaneous_replace:full_power_steel_arrow"
+    },
+    "title": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.sniping.title"
+    },
+    "description": {
+      "translate": "advancements.spontaneous_replace.vanilla.ranged_related.sniping.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "killed_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:skeleton",
+              "distance": {
+                "horizontal": {
+                  "min": 100
+                }
+              }
+            }
+          }
+        ],
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}
