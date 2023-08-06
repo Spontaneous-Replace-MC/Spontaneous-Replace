@@ -1,6 +1,6 @@
 Thanks to the Fabric staff and contributors, your code has greatly improved the authoring process for our mod developers.
 
-Use the open source code section: Used all the code in the package 'net.fabricmc', all classes or interfaces with the Fabric word.
+Use the open source code section: Used all the code in the package 'net.fabricmc.fabric', all classes or interfaces with the Fabric word.
 Use open source project: Fabric API
 Use open source project author: FabricMC
 Use open source project URL: https://github.com/FabricMC/fabric
