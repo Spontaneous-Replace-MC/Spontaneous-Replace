@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "spontaneous_replace:block/variant/treacherous_sac"
-  }
-}

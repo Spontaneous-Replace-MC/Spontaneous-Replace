@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "spontaneous_replace:block/variant/treacherous_vines_plant"
-  }
-}
