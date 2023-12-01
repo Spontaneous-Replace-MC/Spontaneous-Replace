@@ -1,0 +1,6 @@
+{
+  "parent": "spontaneous-replace:block/template_eerie_rind_level1",
+  "textures": {
+    "inside": "minecraft:block/water_still"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "spontaneous-replace:block/eerie_rind",
+    "end": "spontaneous-replace:block/ice_eerie_rind"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side"
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "spontaneous-replace:block/eerie_bough_side",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "weight": 2
+        }
+      ],
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 90
+        }
+      ],
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 180
+        }
+      ],
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 270
+        }
+      ],
+      "when": {
+        "west": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "uvlock": true,
+          "weight": 2,
+          "x": 270
+        }
+      ],
+      "when": {
+        "up": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "spontaneous-replace:block/eerie_bough_noside",
+          "uvlock": true,
+          "weight": 2,
+          "x": 90
+        }
+      ],
+      "when": {
+        "down": "false"
+      }
+    }
+  ]
+}

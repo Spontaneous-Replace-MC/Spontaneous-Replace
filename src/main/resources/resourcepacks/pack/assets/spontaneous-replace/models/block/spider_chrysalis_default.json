@@ -1,0 +1,118 @@
+{
+	"credit": "作者：刘 Saikel Orado 又称 “游戏极客-Saikel” | Author: Saikel Orado Liu aka ”GameGeek-Saikel“",
+	"texture_size": [256, 128],
+	"textures": {
+		"all": "spontaneous-replace:block/spider_chrysalis",
+		"particle": "spontaneous-replace:block/spider_chrysalis"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 2, 12],
+			"faces": {
+				"north": {"uv": [0.625, 4.75, 1.125, 5], "texture": "#all"},
+				"east": {"uv": [0.625, 7.75, 1.125, 8], "texture": "#all"},
+				"south": {"uv": [1.625, 4.75, 2.125, 5], "texture": "#all"},
+				"west": {"uv": [1.625, 7.75, 2.125, 8], "texture": "#all"},
+				"up": {"uv": [1.125, 1.5, 0.625, 0.5], "texture": "#all"},
+				"down": {"uv": [2.125, 0.5, 1.625, 1.5], "texture": "#all"}
+			}
+		},
+		{
+			"from": [1, 2, 1],
+			"to": [15, 19, 15],
+			"faces": {
+				"north": {"uv": [0.4375, 2.625, 1.3125, 4.75], "texture": "#all"},
+				"east": {"uv": [0.4375, 5.625, 1.3125, 7.75], "texture": "#all"},
+				"south": {"uv": [1.4375, 2.625, 2.3125, 4.75], "texture": "#all"},
+				"west": {"uv": [1.4375, 5.625, 2.3125, 7.75], "texture": "#all"},
+				"up": {"uv": [1.3125, 1.875, 0.4375, 0.125], "texture": "#all"},
+				"down": {"uv": [2.3125, 0.125, 1.4375, 1.875], "texture": "#all"}
+			}
+		},
+		{
+			"from": [0, 4, 0],
+			"to": [16, 15, 16],
+			"faces": {
+				"north": {"uv": [0.375, 3.125, 1.375, 4.5], "texture": "#all"},
+				"east": {"uv": [0.375, 6.125, 1.375, 7.5], "texture": "#all"},
+				"south": {"uv": [1.375, 3.125, 2.375, 4.5], "texture": "#all"},
+				"west": {"uv": [1.375, 6.125, 2.375, 7.5], "texture": "#all"},
+				"up": {"uv": [1.375, 2, 0.375, 0], "texture": "#all"},
+				"down": {"uv": [2.375, 0, 1.375, 2], "texture": "#all"}
+			}
+		},
+		{
+			"from": [3, 19, 3],
+			"to": [13, 22, 13],
+			"faces": {
+				"north": {"uv": [0.5625, 2.25, 1.1875, 2.625], "texture": "#all"},
+				"east": {"uv": [0.5625, 5.25, 1.1875, 5.625], "texture": "#all"},
+				"south": {"uv": [1.5625, 2.25, 2.1875, 2.625], "texture": "#all"},
+				"west": {"uv": [1.5625, 5.25, 2.1875, 5.625], "texture": "#all"},
+				"up": {"uv": [1.1875, 1.625, 0.5625, 0.375], "texture": "#all"},
+				"down": {"uv": [2.1875, 0.375, 1.5625, 1.625], "texture": "#all"}
+			}
+		},
+		{
+			"from": [5, 22, 5],
+			"to": [11, 24, 11],
+			"faces": {
+				"north": {"uv": [0.6875, 2, 1.0625, 2.25], "texture": "#all"},
+				"east": {"uv": [0.6875, 5, 1.0625, 5.25], "texture": "#all"},
+				"south": {"uv": [1.6875, 2, 2.0625, 2.25], "texture": "#all"},
+				"west": {"uv": [1.6875, 5, 2.0625, 5.25], "texture": "#all"},
+				"up": {"uv": [1.0625, 1.375, 0.6875, 0.625], "texture": "#all"},
+				"down": {"uv": [2.0625, 0.625, 1.6875, 1.375], "texture": "#all"}
+			}
+		},
+		{
+			"from": [1, 0, 1],
+			"to": [2, 2, 2],
+			"faces": {
+				"north": {"uv": [1.0625, 4.75, 1.125, 5], "texture": "#all"},
+				"east": {"uv": [1.0625, 7.75, 1.125, 8], "texture": "#all"},
+				"south": {"uv": [2.0625, 4.75, 2.125, 5], "texture": "#all"},
+				"west": {"uv": [2.0625, 7.75, 2.125, 8], "texture": "#all"},
+				"up": {"uv": [1.25, 1.75, 1.3125, 1.875], "texture": "#all"},
+				"down": {"uv": [2.25, 1.75, 2.3125, 1.875], "texture": "#all"}
+			}
+		},
+		{
+			"from": [13, 0, 13],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [0.5, 4.25, 0.6875, 4.75], "texture": "#all"},
+				"east": {"uv": [0.5, 7.25, 0.6875, 7.75], "texture": "#all"},
+				"south": {"uv": [1.5, 4.25, 1.6875, 4.75], "texture": "#all"},
+				"west": {"uv": [1.5, 7.25, 1.6875, 7.75], "texture": "#all"},
+				"up": {"uv": [0.375, 1.375, 0.5625, 1.875], "texture": "#all"},
+				"down": {"uv": [1.375, 1.5, 1.5625, 2], "texture": "#all"}
+			}
+		},
+		{
+			"from": [13, 0, 1],
+			"to": [15, 2, 3],
+			"faces": {
+				"north": {"uv": [0.625, 4.75, 0.75, 5], "texture": "#all"},
+				"east": {"uv": [0.625, 7.75, 0.75, 8], "texture": "#all"},
+				"south": {"uv": [1.625, 4.75, 1.75, 5], "texture": "#all"},
+				"west": {"uv": [1.625, 7.75, 1.75, 8], "texture": "#all"},
+				"up": {"uv": [0.4375, 1.625, 0.5625, 1.875], "texture": "#all"},
+				"down": {"uv": [1.4375, 1.625, 1.5625, 1.875], "texture": "#all"}
+			}
+		},
+		{
+			"from": [1, 0, 13],
+			"to": [3, 2, 15],
+			"faces": {
+				"north": {"uv": [1.1875, 4.5, 1.3125, 4.75], "texture": "#all"},
+				"east": {"uv": [1.1875, 7.5, 1.3125, 7.75], "texture": "#all"},
+				"south": {"uv": [2.1875, 4.5, 2.3125, 4.75], "texture": "#all"},
+				"west": {"uv": [2.1875, 7.5, 2.3125, 7.75], "texture": "#all"},
+				"up": {"uv": [1, 1.375, 1.125, 1.625], "texture": "#all"},
+				"down": {"uv": [2, 1.375, 2.125, 1.625], "texture": "#all"}
+			}
+		}
+	]
+}

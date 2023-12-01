@@ -1,0 +1,6 @@
+{
+  "parent": "spontaneous-replace:block/template_eerie_rind_full",
+  "textures": {
+    "inside": "minecraft:block/powder_snow"
+  }
+}

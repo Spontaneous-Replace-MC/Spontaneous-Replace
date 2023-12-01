@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "vertical_direction=up": {
+      "model": "spontaneous-replace:block/spider_egg_cocoon"
+    },
+    "vertical_direction=down": {
+      "model": "spontaneous-replace:block/spider_egg_cocoon",
+      "x": 180
+    }
+  }
+}

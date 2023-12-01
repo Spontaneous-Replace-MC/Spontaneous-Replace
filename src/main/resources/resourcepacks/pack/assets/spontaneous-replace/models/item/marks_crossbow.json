@@ -1,0 +1,37 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "spontaneous-replace:item/marks_crossbow/marks_crossbow"
+	},
+	"overrides": [
+		{"predicate": {"pulling": 1}, "model": "spontaneous-replace:item/marks_crossbow/pulling_0"},
+		{"predicate": {"pulling": 1, "pull": 0.3}, "model": "spontaneous-replace:item/marks_crossbow/pulling_1"},
+		{"predicate": {"pulling": 1, "pull": 0.58}, "model": "spontaneous-replace:item/marks_crossbow/pulling_2"},
+		{"predicate": {"pulling": 1, "pull": 0.8}, "model": "spontaneous-replace:item/marks_crossbow/pulling_3"},
+		{"predicate": {"pulling": 1, "pull": 1}, "model": "spontaneous-replace:item/marks_crossbow/pulling_4"},
+		{"predicate": {"shoot_end": 1}, "model": "spontaneous-replace:item/marks_crossbow/shoot_end"},
+		{"predicate": {"charged": 1}, "model": "spontaneous-replace:item/marks_crossbow/charged"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-80, 260, -40],
+			"translation": [-1, 0.5, 1.5],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-80, -280, 40],
+			"translation": [-1, 0.5, 1.5],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 2.65, 0],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -25],
+			"translation": [1.13, 2.65, 0],
+			"scale": [0.68, 0.68, 0.68]
+		}
+	}
+}

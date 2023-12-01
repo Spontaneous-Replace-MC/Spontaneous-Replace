@@ -1,0 +1,65 @@
+{
+	"schemaVersion": 1,
+	"id": "spontaneous-replace",
+	"version": "${version}",
+	"name": "自然更替",
+	"authors": [
+		"§6Saikel Orado"
+	],
+	"contributors": [
+		"Fabric Team | Fabric 团队",
+		"§cAnd YOU! | 还有你！"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/spontaneous-replace",
+		"sources": "https://github.com/Saikel-Orado-Liu/Spontaneous-Replace",
+		"issues": "https://discord.gg/yWNBXSut5k"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/yWNBXSut5k",
+				"modmenu.support.patreon": "https://www.patreon.com/GameGeek_Saikel",
+				"modmenu.support.afdian": "https://afdian.net/a/GameGeek_Saikel"
+			},
+			"update_checker": true
+		}
+	},
+	"license": "MIT",
+	"icon": "resourcepacks/pack/assets/spontaneous-replace/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-datagen": [
+			"pers.saikel0rado1iu.sr.gen.DataGeneration"
+		],
+		"modmenu": [
+			"pers.saikel0rado1iu.sr.ModMenu"
+		],
+		"main": [
+			"pers.saikel0rado1iu.sr.Main"
+		],
+		"client": [
+			"pers.saikel0rado1iu.sr.Client"
+		],
+		"preLaunch": [
+			"pers.saikel0rado1iu.sr.PreLaunch"
+		]
+	},
+	"mixins": [
+		"spontaneous-replace.mixins.json",
+		{
+			"config": "spontaneous-replace.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"java": ">=17",
+		"minecraft": "1.20.2",
+		"fabricloader": ">=0.14.25",
+		"fabric-api": ">=0.91.1",
+		"silk-api": ">=1.20.2-0.1.0"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
