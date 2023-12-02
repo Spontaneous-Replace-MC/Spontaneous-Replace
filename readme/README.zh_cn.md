@@ -1,4 +1,4 @@
-## <center>基于 Minecraft 的全新冒险旅程</center>
+# <center>基于 Minecraft 的全新冒险旅程</center>
 
 [media=x,640,406]https://www.bilibili.com/video/av267880117[/media]
 
