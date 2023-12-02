@@ -1,16 +1,16 @@
-## <center>A Brand New Adventure Expanded On Minecraft</center>
+# <div style="text-align: center;">A Brand New Adventure Expanded On Minecraft</div>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SpDuqRVBmPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Spontaneous-Replace adds a full set of alloy equipments,special bow and crossbow, new mob variants and unique features to the Minecraft vanilla. Designed to bring players a better Minecraft playing experience.
 
-### <center>💥If you would like to support the Spontaneous-Replace💥</center>
+### <div style="text-align: center;">💥If you would like to support the Spontaneous-Replace💥</div>
 
-### <center>💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</center>
+ <div style="text-align: center;">💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</div>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
 
-## <center>✦Brand New Alloy System And Bow& Crossbow Expansion✦</center>
+## <div style="text-align: center;">✦Brand New Alloy System And Bow& Crossbow Expansion✦</div>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/62cb587030b3212ae98f503996f59734ce23c88d.gif)
 
@@ -20,7 +20,7 @@
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
 
-## <center>✦Brand New Spider Biome Expansion✦</center>
+## <div style="text-align: center;">✦Brand New Spider Biome Expansion✦</div>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ea90c3f854c77ed77607d8e268859d2b249d9c40.gif)
 
@@ -29,7 +29,7 @@
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
 
-## <center>✦Brand New Advancement System✦</center>
+## <div style="text-align: center;">✦Brand New Advancement System✦</div>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/84cb170a73408a4271859c8827584e733e01b2da.gif)
 
@@ -37,11 +37,11 @@
 > Mod on the wrong path, our advancement is like a guide guiding you to play this Mod step by step. Moreover, some challenging achievements and various
 > interesting game memes will be provided during the game to make the journey more interesting.
 
-### <center>💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</center>
+### <div style="text-align: center;">💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</div>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
 
-## <center>✦Note To Other Authors✦</center>
+## <div style="text-align: center;">✦Note To Other Authors✦</div>
 
 ### Modpack Author：
 
