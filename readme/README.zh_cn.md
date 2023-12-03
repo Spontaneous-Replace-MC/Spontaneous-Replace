@@ -1,14 +1,16 @@
- <center>基于 Minecraft 的全新冒险旅程</center>
+<!--suppress HtmlDeprecatedAttribute -->
+<h1 align = "center">基于 Minecraft 的全新冒险旅程</h1>
 
 [media=x,640,406]https://www.bilibili.com/video/av267880117[/media]
 
 #### 自然更替在 Minecraft 原版的基础上添加了一整套合金装备与弓弩变种，全新的生物变种和独特的机制。旨在为玩家带来更好的 Minecraft 游玩体验。
 
-### <center>💥如果你想支持「自然更替」, 请前往 [Patreon](https://www.patreon.com/GameGeek_Saikel) 或 [爱发电](https://afdian.net/a/GameGeek_Saikel) 进行贡献!💥</center>
+<h3 align = "center">💥如果你想支持「自然更替」, 请前往 [Patreon](https://www.patreon.com/GameGeek_Saikel) 或 [爱发电](https://afdian.net/a/GameGeek_Saikel)
+进行贡献!💥</h3>
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦全新的合金系统与弓弩拓展✦</center>
+<h2 align = "center">✦全新的合金系统与弓弩拓展✦</h2>
 
 ![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20bow.gif?raw=true)
 
@@ -16,7 +18,7 @@
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦全新的蜘蛛生物群系拓展✦</center>
+<h2 align = "center">✦全新的蜘蛛生物群系拓展✦</h2>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/ea90c3f854c77ed77607d8e268859d2b249d9c40.gif)
 
@@ -24,17 +26,18 @@
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦全新的进度系统✦</center>
+<h2 align = "center">✦全新的进度系统✦</h2>
 
 ![](https://cdn.modrinth.com/data/i7bdRH9R/images/84cb170a73408a4271859c8827584e733e01b2da.gif)
 
 > 全新的进度系统完成了她最好的任务：指引玩家逐步游玩模组内容。是的，你不用担心您在错误的道路上游玩此模组，我们的进度就如同向导一般指引着您循序渐进的游玩此模组。并且，在游玩过程中会提供一些富有挑战的成就与各种有趣的游戏梗让旅途更加有趣。
 
-### <center>💥前往 [Modrinth](https://modrinth.com/mod/spontaneous-replace) 以获取模组或加入[官方 Discord 社区](https://discord.com/invite/ChRbMFgVw3)💥</center>
+<h3 align = "center">💥前往 [Modrinth](https://modrinth.com/mod/spontaneous-replace) 以获取模组或加入[官方 Discord 社区](https://discord.com/invite/ChRbMFgVw3)
+💥</h3>
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦其他作者须知✦</center>
+<h2 align = "center">✦其他作者须知✦</h2>
 
 ### 整合包作者：
 
