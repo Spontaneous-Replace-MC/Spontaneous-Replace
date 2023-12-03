@@ -1,6 +1,6 @@
 # 自然更替 | Spontaneous-Replace
 
-**If you would like to support the Spontaneous-Replace, please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel)
+**If you would like to support the SR, please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel)
 or [爱发电](https://afdian.net/a/GameGeek_Saikel)!**
 ![SR](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/sr.png?raw=true)
 A repository of all open source versions of Spontaneous-Replace. For learning and use  
