@@ -10,7 +10,7 @@
 
 ## <center>✦全新的合金系统与弓弩拓展✦</center>
 
-![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20Bow.gif?raw=true)
+![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20bow.gif?raw=true)
 
 > 全新的合金系统由铜与锻造台拓展而来，为原版装备填补了更多选择，也添加了更多金属材料。由这些材料与特殊的丝线可以合成为更加与众不同的弓弩，如来自中国的诸葛连弩与神臂弩就能为你带来独特的游戏体验！
 

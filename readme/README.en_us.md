@@ -12,7 +12,7 @@
 
 ## <center>✦Brand New Alloy System And Bow& Crossbow Expansion✦</center>
 
-![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20Bow.gif?raw=true)
+![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20bow.gif?raw=true)
 
 > The new alloy system is expanded from copper and smithing table, filling in more options for vanilla equipment and adding more metal materials. These
 > materials and special strings can be craft into more distinctive bows and crossbows. For example, the Ju-ger repeating crossbow and marks-crossbow from China
