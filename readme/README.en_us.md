@@ -8,7 +8,7 @@
 
 ### <center>💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦Brand New Alloy System And Bow& Crossbow Expansion✦</center>
 
@@ -18,7 +18,7 @@
 > materials and special strings can be craft into more distinctive bows and crossbows. For example, the Ju-ger repeating crossbow and marks-crossbow from China
 > can bring you a unique gaming experience!
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦Brand New Spider Biome Expansion✦</center>
 
@@ -27,7 +27,7 @@
 > The new spider biome aims to create a spider kingdom made entirely of spiders. Players can explore this wonderful world filled with cobwebs, cocoons, and
 > arthropods. Obtain the materials needed to craft advanced equipment, or find treasures left by others...
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦Brand New Advancement System✦</center>
 
@@ -39,7 +39,7 @@
 
 ### <center>💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦Note To Other Authors✦</center>
 

@@ -6,7 +6,7 @@
 
 ### <center>💥如果你想支持「自然更替」, 请前往 [Patreon](https://www.patreon.com/GameGeek_Saikel) 或 [爱发电](https://afdian.net/a/GameGeek_Saikel) 进行贡献!💥</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦全新的合金系统与弓弩拓展✦</center>
 
@@ -14,7 +14,7 @@
 
 > 全新的合金系统由铜与锻造台拓展而来，为原版装备填补了更多选择，也添加了更多金属材料。由这些材料与特殊的丝线可以合成为更加与众不同的弓弩，如来自中国的诸葛连弩与神臂弩就能为你带来独特的游戏体验！
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦全新的蜘蛛生物群系拓展✦</center>
 
@@ -22,7 +22,7 @@
 
 > 全新的蜘蛛生物群系旨在创建一个完全由蜘蛛构成的蜘蛛国度。玩家可以尽情探索这个充满了蜘蛛网、卵茧和节肢动物的美妙世界。在其中获得制作高级装备所需的材料，又或者找到其他人留下的宝藏……
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦全新的进度系统✦</center>
 
@@ -32,7 +32,7 @@
 
 ### <center>💥前往 [Modrinth](https://modrinth.com/mod/spontaneous-replace) 以获取模组或加入[官方 Discord 社区](https://discord.com/invite/ChRbMFgVw3)💥</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ef0693f505f68a08dbc546d5373fc8fd827ba1c9.png)
+![](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/%E5%88%86%E5%89%B2%E7%BA%BF.png)
 
 ## <center>✦其他作者须知✦</center>
 
