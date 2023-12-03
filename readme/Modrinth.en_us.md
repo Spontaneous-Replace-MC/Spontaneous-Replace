@@ -4,9 +4,9 @@
 
 #### Spontaneous-Replace adds a full set of alloy equipments,special bow and crossbow, new mob variants and unique features to the Minecraft vanilla. Designed to bring players a better Minecraft playing experience.
 
-### <center>💥If you would like to support the Spontaneous-Replace💥</center>
+**<center>💥If you would like to support the Spontaneous-Replace💥</center>**
 
-### <center>💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</center>
+**<center>💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</center>**
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
@@ -37,7 +37,8 @@
 > Mod on the wrong path, our advancement is like a guide guiding you to play this Mod step by step. Moreover, some challenging achievements and various
 > interesting game memes will be provided during the game to make the journey more interesting.
 
-### <center>💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</center>
+**<center>💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or
+join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</center>**
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
