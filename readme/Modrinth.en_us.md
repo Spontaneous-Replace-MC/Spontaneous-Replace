@@ -22,7 +22,7 @@
 
 ## <center>✦Brand New Spider Biome Expansion✦</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ea90c3f854c77ed77607d8e268859d2b249d9c40.gif)
+![Spider biome](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Spider%20biome.gif?raw=true)
 
 > The new spider biome aims to create a spider kingdom made entirely of spiders. Players can explore this wonderful world filled with cobwebs, cocoons, and
 > arthropods. Obtain the materials needed to craft advanced equipment, or find treasures left by others...

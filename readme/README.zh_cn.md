@@ -20,7 +20,7 @@
 
 <h2 align = "center">✦全新的蜘蛛生物群系拓展✦</h2>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/ea90c3f854c77ed77607d8e268859d2b249d9c40.gif)
+![Spider biome](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Spider%20biome.gif?raw=true)
 
 > 全新的蜘蛛生物群系旨在创建一个完全由蜘蛛构成的蜘蛛国度。玩家可以尽情探索这个充满了蜘蛛网、卵茧和节肢动物的美妙世界。在其中获得制作高级装备所需的材料，又或者找到其他人留下的宝藏……
 
