@@ -31,7 +31,7 @@
 
 ## <center>✦Brand New Advancement System✦</center>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/84cb170a73408a4271859c8827584e733e01b2da.gif)
+![Advancement](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Advancement.gif?raw=true)
 
 > The new achievement system completes her best missions: guide players step by step through the mod content. Yes, you don’t have to worry about playing this
 > Mod on the wrong path, our advancement is like a guide guiding you to play this Mod step by step. Moreover, some challenging achievements and various

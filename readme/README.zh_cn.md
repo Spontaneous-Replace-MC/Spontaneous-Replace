@@ -28,7 +28,7 @@
 
 <h2 align = "center">✦全新的进度系统✦</h2>
 
-![](https://cdn.modrinth.com/data/i7bdRH9R/images/84cb170a73408a4271859c8827584e733e01b2da.gif)
+![Advancement](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Advancement.gif?raw=true)
 
 > 全新的进度系统完成了她最好的任务：指引玩家逐步游玩模组内容。是的，你不用担心您在错误的道路上游玩此模组，我们的进度就如同向导一般指引着您循序渐进的游玩此模组。并且，在游玩过程中会提供一些富有挑战的成就与各种有趣的游戏梗让旅途更加有趣。
 
