@@ -1,4 +1,4 @@
-<h1 align = "center">基于 Minecraft 的全新冒险旅程</h1>
+<h1 style="text-align: center;">基于 Minecraft 的全新冒险旅程</h1>
 
 [media=x,640,406]https://www.bilibili.com/video/av267880117[/media]
 
