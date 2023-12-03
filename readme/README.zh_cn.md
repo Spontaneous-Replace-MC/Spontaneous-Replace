@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <h1 align = "center">基于 Minecraft 的全新冒险旅程</h1>
 
-[media=x,640,406]https://www.bilibili.com/video/av267880117[/media]
+**<p align = "center">[点击跳转宣传视频](https://www.bilibili.com/video/av267880117)</p>**
 
 #### 自然更替在 Minecraft 原版的基础上添加了一整套合金装备与弓弩变种，全新的生物变种和独特的机制。旨在为玩家带来更好的 Minecraft 游玩体验。
 

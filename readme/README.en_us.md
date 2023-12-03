@@ -1,16 +1,18 @@
-# <center>A Brand New Adventure Expanded On Minecraft</center>
+<!--suppress HtmlDeprecatedAttribute -->
+<h1 align = "center">A Brand New Adventure Expanded On Minecraft</h1>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SpDuqRVBmPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="634" height="354" src="https://www.youtube.com/embed/SpDuqRVBmPI" title="Spontaneous Replace | A new adventure based on the vanilla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Spontaneous-Replace adds a full set of alloy equipments,special bow and crossbow, new mob variants and unique features to the Minecraft vanilla. Designed to bring players a better Minecraft playing experience.
 
-### <center>💥If you would like to support the Spontaneous-Replace💥</center>
+**<p align = "center">💥If you would like to support the Spontaneous-Replace💥</p>**
 
-### <center>💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!💥</center>
+**<p align = "center">💥Please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel) or [爱发电](https://afdian.net/a/GameGeek_Saikel)!
+💥</p>**
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦Brand New Alloy System And Bow& Crossbow Expansion✦</center>
+<h2 align = "center">✦Brand New Alloy System And Bow& Crossbow Expansion✦</h2>
 
 ![Alloy and bow](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Alloy%20and%20bow.gif?raw=true)
 
@@ -20,7 +22,7 @@
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦Brand New Spider Biome Expansion✦</center>
+<h2 align = "center">✦Brand New Spider Biome Expansion✦</h2>
 
 ![Spider biome](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Spider%20biome.gif?raw=true)
 
@@ -29,7 +31,7 @@
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦Brand New Advancement System✦</center>
+<h2 align = "center">✦Brand New Advancement System✦</h2>
 
 ![Advancement](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace/blob/1.20.2/img/Advancement.gif?raw=true)
 
@@ -37,11 +39,12 @@
 > Mod on the wrong path, our advancement is like a guide guiding you to play this Mod step by step. Moreover, some challenging achievements and various
 > interesting game memes will be provided during the game to make the journey more interesting.
 
-### <center>💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</center>
+**<p align = "center">💥Head over to [modrinth](https://modrinth.com/mod/spontaneous-replace) to download the mod or
+join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</p>**
 
 ![Line](https://raw.githubusercontent.com/Saikel-Orado-Liu/Spontaneous-Replace/1.20.2/img/Line.png)
 
-## <center>✦Note To Other Authors✦</center>
+<h2 align = "center">✦Note To Other Authors✦</h2>
 
 ### Modpack Author：
 
