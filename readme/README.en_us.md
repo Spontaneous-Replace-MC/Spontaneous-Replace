@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <h1 align = "center">A Brand New Adventure Expanded On Minecraft</h1>
 
-<iframe width="634" height="354" src="https://www.youtube.com/embed/SpDuqRVBmPI" title="Spontaneous Replace | A new adventure based on the vanilla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+**<p align = "center">[![YouTube Video](https://img.youtube.com/vi/SpDuqRVBmPI/0.jpg)](https://www.youtube.com/watch?v=SpDuqRVBmPI)</p>**
 
 #### Spontaneous-Replace adds a full set of alloy equipments,special bow and crossbow, new mob variants and unique features to the Minecraft vanilla. Designed to bring players a better Minecraft playing experience.
 
