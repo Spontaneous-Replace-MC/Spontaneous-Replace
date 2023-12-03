@@ -52,5 +52,5 @@ join [our discord community](https://discord.com/invite/ChRbMFgVw3)💥</p>**
 
 ### Mod Author：
 
-- This mod is not allowed in your mod at all, but this mod is open source on GitHub, and you can use the code according to the license without asking me. But
+- This mod is not allowed in your mod at all, but this mod is open source on [GitHub](https://github.com/Saikel-Orado-Liu/Spontaneous-Replace), and you can use the code according to the license without asking me. But
   you can make your own extension based on this mod, I fully support it.
