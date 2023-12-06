@@ -26,14 +26,11 @@ package pers.saikel0rado1iu.sr.gen.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.silk.gen.data.family.EquipFamily;
@@ -201,9 +198,12 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 				.criterion(hasItem(COMPOSITE_FABRIC), conditionsFromItem(COMPOSITE_FABRIC))
 				.criterion(hasItem(STEEL_INGOT), conditionsFromItem(STEEL_INGOT))
 				.offerTo(exporter, getItemPath(ARROWPROOF_VEST));
-		offerFoodCookingRecipe(exporter, getItemPath(Items.FURNACE), RecipeSerializer.SMELTING, TickUtil.getTick(10), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
-		offerFoodCookingRecipe(exporter, getItemPath(Items.SMOKER), RecipeSerializer.SMOKING, TickUtil.getTick(5), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
-		offerFoodCookingRecipe(exporter, getItemPath(Items.CAMPFIRE), RecipeSerializer.CAMPFIRE_COOKING, TickUtil.getTick(30), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
+		CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(10))
+				.offerTo(exporter, RecipeProvider.getSmeltingItemPath(DEPOISON_SPIDER_LEG));
+		CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(5))
+				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.SMOKER));
+		CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(30))
+				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.CAMPFIRE));
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(Items.STRING), Ingredient.ofItems(COMPACT_GOSSAMER), COMPACT_STRING);
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(COMPACT_STRING), Ingredient.ofItems(STICKY_COMPACT_GOSSAMER), COMPOSITE_STRING);
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, COMPOSITE_STRING, RecipeCategory.MISC, COMPOSITE_FABRIC,
