@@ -24,7 +24,9 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SpreadableBlock;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
@@ -41,8 +43,15 @@ import pers.saikel0rado1iu.sr.data.Blocks;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public class CobwebbySoil extends SpreadableSoilBlock {
+	public static final MapCodec<CobwebbySoil> CODEC = createCodec(CobwebbySoil::new);
+	
 	public CobwebbySoil(Settings settings) {
 		super(settings);
+	}
+	
+	@Override
+	protected MapCodec<? extends SpreadableBlock> getCodec() {
+		return CODEC;
 	}
 	
 	@Override
