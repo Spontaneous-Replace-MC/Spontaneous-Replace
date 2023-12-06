@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -53,6 +54,7 @@ import java.util.Random;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public class SpiderChrysalis extends HorizontalFacingBlock {
+	public static final MapCodec<SpiderChrysalis> CODEC = createCodec(SpiderChrysalis::new);
 	/**
 	 * 蜘蛛茧蛹方块样式
 	 */
@@ -129,6 +131,11 @@ public class SpiderChrysalis extends HorizontalFacingBlock {
 		BlockPos blockPos = pos.offset(direction.getOpposite());
 		BlockState blockState = world.getBlockState(blockPos);
 		return blockState.isSideSolidFullSquare(world, blockPos, direction) || blockState.isIn(BlockTags.LEAVES);
+	}
+	
+	@Override
+	protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+		return CODEC;
 	}
 	
 	/**
@@ -267,7 +274,7 @@ public class SpiderChrysalis extends HorizontalFacingBlock {
 	 * 在方块被破坏后双高块取消一个方块掉落
 	 */
 	@Override
-	public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+	public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
 		BlockPos blockPos = pos.down();
 		BlockState blockState;
 		if (!world.isClient && player.isCreative()) {
@@ -279,6 +286,6 @@ public class SpiderChrysalis extends HorizontalFacingBlock {
 				world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, blockPos, net.minecraft.block.Block.getRawIdFromState(blockState));
 			}
 		}
-		super.onBreak(world, pos, state, player);
+		return super.onBreak(world, pos, state, player);
 	}
 }
