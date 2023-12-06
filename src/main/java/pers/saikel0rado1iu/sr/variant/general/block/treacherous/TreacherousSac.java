@@ -76,7 +76,7 @@ public class TreacherousSac extends Block {
 	 * 诡谲囊爆炸操作
 	 */
 	protected static void sacUnstable(World world, BlockPos pos, @Nullable LivingEntity detonator) {
-		world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.field_31022);
+		world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL_AND_REDRAW);
 		TreacherousSacEntity treacherousSacEntity = new TreacherousSacEntity(world, detonator);
 		treacherousSacEntity.refreshPositionAndAngles(pos, 0, 0);
 		((ServerWorld) world).spawnEntityAndPassengers(treacherousSacEntity);
@@ -122,6 +122,7 @@ public class TreacherousSac extends Block {
 	/**
 	 * 如果被斧右键使用则会爆炸
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		ItemStack stack = player.getStackInHand(hand);
@@ -141,6 +142,7 @@ public class TreacherousSac extends Block {
 	/**
 	 * 如果被弹射物击中
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
 		BlockPos blockPos = hit.getBlockPos();
