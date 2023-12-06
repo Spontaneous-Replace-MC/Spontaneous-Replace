@@ -54,10 +54,10 @@
 	],
 	"depends": {
 		"java": ">=17",
-		"minecraft": "1.20.2",
-		"fabricloader": ">=0.14.25",
+		"minecraft": ">=1.20.3",
+		"fabricloader": ">=0.15.0",
 		"fabric-api": ">=0.91.1",
-		"silk-api": ">=1.20.2-0.1.0"
+		"silk-api": ">=1.20.3-0.1.0"
 	},
 	"suggests": {
 		"another-mod": "*"
