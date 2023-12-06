@@ -303,7 +303,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					false)
 			.parent(HAVE_A_NEW_RANGED)
-			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).create())
+			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).build().create())
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/use_slingshot"));
 	public static final AdvancementEntry USE_SLINGSHOT_WITH_ENDER_PEARL = Advancement.Builder.create()
 			.display(Items.ENDER_PEARL,
@@ -315,7 +315,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					false)
 			.parent(USE_SLINGSHOT)
-			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).projectile(Optional.of(EntityPredicate.Builder.create().type(EntityType.ENDER_PEARL).build())).create())
+			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).projectile(Optional.of(EntityPredicate.Builder.create().type(EntityType.ENDER_PEARL).build())).build().create())
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/use_slingshot_with_ender_pearl"));
 	public static final AdvancementEntry USE_SLINGSHOT_WITH_POTION = Advancement.Builder.create()
 			.display(new AdvancementDisplay(
@@ -328,7 +328,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					false))
 			.parent(USE_SLINGSHOT)
-			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).projectile(Optional.of(EntityPredicate.Builder.create().type(EntityType.POTION).build())).create())
+			.criterion("use_slingshot", ShotProjectileCriterion.Conditions.ranged(SLINGSHOT).projectile(Optional.of(EntityPredicate.Builder.create().type(EntityType.POTION).build())).build().create())
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/use_slingshot_with_potion"));
 	public static final AdvancementEntry HAVE_A_JUGER_REPEATING_CROSSBOW = Advancement.Builder.create()
 			.display(JUGER_REPEATING_CROSSBOW,
@@ -368,7 +368,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					true)
 			.parent(HAVE_A_JUGER_REPEATING_CROSSBOW)
-			.criterion("use_juger_repeating_crossbow_shot_1000_arrows", ShotProjectileCriterion.Conditions.ranged(JUGER_REPEATING_CROSSBOW).count(NumberRange.IntRange.atLeast(1000)).create())
+			.criterion("use_juger_repeating_crossbow_shot_1000_arrows", ShotProjectileCriterion.Conditions.ranged(JUGER_REPEATING_CROSSBOW).count(NumberRange.IntRange.atLeast(1000)).build().create())
 			.rewards(AdvancementRewards.Builder.experience(100))
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/use_juger_repeating_crossbow_shot_1000_arrows"));
 	public static final AdvancementEntry USE_JUGER_REPEATING_CROSSBOW_KILL_100_MONSTERS = Advancement.Builder.create()
@@ -382,7 +382,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true)
 			.parent(HAVE_A_JUGER_REPEATING_CROSSBOW)
 			.criterion("use_juger_repeating_crossbow_kill_100_monsters", RangedKilledEntityCriterion.Conditions.ranged(JUGER_REPEATING_CROSSBOW)
-					.target(EntityPredicate.Builder.create().type(SilkEntityTypeTags.MONSTERS).build()).killed(NumberRange.IntRange.atLeast(100)).create())
+					.target(EntityPredicate.Builder.create().type(SilkEntityTypeTags.MONSTERS).build()).killed(NumberRange.IntRange.atLeast(100)).build().create())
 			.rewards(AdvancementRewards.Builder.experience(100))
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/use_juger_repeating_crossbow_kill_100_monsters"));
 	public static final AdvancementEntry HAVE_A_MARKS_CROSSBOW = Advancement.Builder.create()
