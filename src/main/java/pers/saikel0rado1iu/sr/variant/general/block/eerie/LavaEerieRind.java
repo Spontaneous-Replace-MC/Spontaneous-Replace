@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.general.block.eerie;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.sound.SoundCategory;
@@ -44,6 +45,8 @@ import static pers.saikel0rado1iu.sr.data.Blocks.*;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/885Block.NOTIFY_ALL11Block.NOTIFY_ALL8?s=64&v=4"><p>
  */
 public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindShapeFix {
+	public static final MapCodec<LavaEerieRind> CODEC = createCodec(LavaEerieRind::new);
+	
 	public LavaEerieRind(Settings settings) {
 		super(settings, EerieRindBehavior.LAVA_BEHAVIOR);
 	}
@@ -51,6 +54,7 @@ public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindSha
 	/**
 	 * 阴森木极寒，如在阴森木壳中含有岩浆，实体则不会冻伤也不会烧伤
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 		super.onEntityCollision(state, world, pos, entity);
@@ -61,6 +65,7 @@ public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindSha
 	 * <p>如果下方方块变为空气则传递岩浆到下方</p>
 	 * <p>如果下方方块变为空壳则传递岩浆到下方</p>
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (direction == Direction.UP && (neighborState.isOf(WATER_EERIE_RIND) || neighborState.isOf(POWDER_SNOW_EERIE_RIND))) {
@@ -84,6 +89,11 @@ public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindSha
 	}
 	
 	@Override
+	protected MapCodec<? extends AbstractCauldronBlock> getCodec() {
+		return null;
+	}
+	
+	@Override
 	protected double getFluidHeight(BlockState state) {
 		return 0.9375;
 	}
@@ -93,6 +103,7 @@ public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindSha
 		return true;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
 		return Block.NOTIFY_ALL;
