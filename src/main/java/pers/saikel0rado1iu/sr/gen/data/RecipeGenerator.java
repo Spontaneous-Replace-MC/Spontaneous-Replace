@@ -199,10 +199,13 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 				.criterion(hasItem(STEEL_INGOT), conditionsFromItem(STEEL_INGOT))
 				.offerTo(exporter, getItemPath(ARROWPROOF_VEST));
 		CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(10))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
 				.offerTo(exporter, RecipeProvider.getSmeltingItemPath(DEPOISON_SPIDER_LEG));
 		CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(5))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
 				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.SMOKER));
 		CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(30))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
 				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.CAMPFIRE));
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(Items.STRING), Ingredient.ofItems(COMPACT_GOSSAMER), COMPACT_STRING);
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(COMPACT_STRING), Ingredient.ofItems(STICKY_COMPACT_GOSSAMER), COMPOSITE_STRING);
