@@ -43,6 +43,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.biome.Biome;
 
 import static pers.saikel0rado1iu.sr.data.Blocks.*;
 
@@ -54,7 +55,7 @@ import static pers.saikel0rado1iu.sr.data.Blocks.*;
  */
 public class WaterEerieRind extends LeveledEerieRind implements EerieRindShapeFix {
 	public WaterEerieRind(Settings settings) {
-		super(settings, WaterEerieRind.RAIN_PREDICATE, EerieRindBehavior.WATER_BEHAVIOR);
+		super(Biome.Precipitation.RAIN, EerieRindBehavior.WATER_BEHAVIOR, settings);
 	}
 	
 	/**
@@ -81,6 +82,7 @@ public class WaterEerieRind extends LeveledEerieRind implements EerieRindShapeFi
 	/**
 	 * 会随机变成冻成冰
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 		super.randomTick(state, world, pos, random);
@@ -105,6 +107,7 @@ public class WaterEerieRind extends LeveledEerieRind implements EerieRindShapeFi
 	 * <p>如果下方方块变为空气则传递水到下方</p>
 	 * <p>如果下方方块变为空壳则传递含水块到下方</p>
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (direction == Direction.UP) {
