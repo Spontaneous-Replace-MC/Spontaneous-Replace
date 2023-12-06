@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -65,6 +66,8 @@ import static pers.saikel0rado1iu.sr.variant.spider.block.SpiderEggCocoon.Entity
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public class SpiderEggCocoon extends BlockWithEntity {
+	public static final MapCodec<SpiderEggCocoon> CODEC = createCodec(SpiderEggCocoon::new);
+	
 	/**
 	 * <p>构建蜘蛛卵茧</p>
 	 * <p>垂直方向：上</p>
@@ -94,6 +97,11 @@ public class SpiderEggCocoon extends BlockWithEntity {
 		BlockPos blockPos = pos.offset(direction.getOpposite());
 		BlockState blockState = world.getBlockState(blockPos);
 		return blockState.isSideSolidFullSquare(world, blockPos, direction) || blockState.isIn(BlockTags.LEAVES);
+	}
+	
+	@Override
+	protected MapCodec<? extends BlockWithEntity> getCodec() {
+		return CODEC;
 	}
 	
 	/**
