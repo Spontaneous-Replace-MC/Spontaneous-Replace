@@ -31,13 +31,13 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potions;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 import pers.saikel0rado1iu.silk.util.TickUtil;
 import pers.saikel0rado1iu.sr.data.StatusEffects;
@@ -137,7 +137,7 @@ public class TreacherousSacEntity extends LivingEntity {
 	 * 模仿方块：对爆炸免疫
 	 */
 	@Override
-	public boolean isImmuneToExplosion() {
+	public boolean isImmuneToExplosion(Explosion explosion) {
 		return true;
 	}
 	
