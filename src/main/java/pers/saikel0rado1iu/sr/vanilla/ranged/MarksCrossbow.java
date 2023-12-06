@@ -87,7 +87,7 @@ public class MarksCrossbow extends Crossbow implements BreakingShield, CustomEnc
 	@Override
 	protected PersistentProjectileEntity createArrow(World world, LivingEntity entity, ItemStack crossbow, ItemStack arrow) {
 		// 创建箭实体
-		PersistentProjectileEntity persistentProjectileEntity = STEEL_ARROW.createArrow(world, entity);
+		PersistentProjectileEntity persistentProjectileEntity = STEEL_ARROW.createArrow(world, arrow, entity);
 		// 如果是玩家则设置暴击
 		if (entity instanceof PlayerEntity) persistentProjectileEntity.setCritical(true);
 		// 设置声音

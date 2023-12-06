@@ -73,7 +73,7 @@ public class EntityTypes extends SilkEntityType {
 			.otherRegister(entityType -> DispenserBlock.registerBehavior(Items.STEEL_ARROW, new ProjectileDispenserBehavior() {
 				@Override
 				protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
-					SteelArrowEntity arrowEntity = new SteelArrowEntity(world, position.getX(), position.getY(), position.getZ());
+					SteelArrowEntity arrowEntity = new SteelArrowEntity(world, position.getX(), position.getY(), position.getZ(), stack);
 					arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
 					return arrowEntity;
 				}

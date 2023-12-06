@@ -27,6 +27,7 @@ package pers.saikel0rado1iu.sr.vanilla.ranged.projectile.steelarrow;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
@@ -41,7 +42,7 @@ public class SteelArrowItem extends Item {
 		super(settings);
 	}
 	
-	public PersistentProjectileEntity createArrow(World world, LivingEntity shooter) {
-		return new SteelArrowEntity(world, shooter);
+	public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
+		return new SteelArrowEntity(world, shooter, stack.copyWithCount(1));
 	}
 }
