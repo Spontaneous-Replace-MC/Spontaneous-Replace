@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.general.block.eerie;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ConnectingBlock;
@@ -56,6 +57,8 @@ import static pers.saikel0rado1iu.sr.data.Tags.Block.EERIE_RINDS;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public class EerieBough extends ConnectingBlock {
+	public static final MapCodec<EerieBough> CODEC = createCodec(EerieBough::new);
+	
 	public EerieBough(Settings settings) {
 		super(0.25F, settings);
 		this.setDefaultState(stateManager.getDefaultState()
@@ -307,5 +310,10 @@ public class EerieBough extends ConnectingBlock {
 	@Override
 	public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
 		return false;
+	}
+	
+	@Override
+	protected MapCodec<? extends ConnectingBlock> getCodec() {
+		return CODEC;
 	}
 }
