@@ -90,7 +90,7 @@ public class LavaEerieRind extends AbstractCauldronBlock implements EerieRindSha
 	
 	@Override
 	protected MapCodec<? extends AbstractCauldronBlock> getCodec() {
-		return null;
+		return CODEC;
 	}
 	
 	@Override
