@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.general.block.eerie;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -59,6 +60,7 @@ import static pers.saikel0rado1iu.sr.data.Tags.Block.EERIE_RINDS;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/885Block.NOTIFY_ALL11Block.NOTIFY_ALL8?s=64&v=4"><p>
  */
 public class EerieRind extends AbstractCauldronBlock implements EerieRindShapeFix {
+	public static final MapCodec<EerieRind> CODEC = createCodec(EerieRind::new);
 	public static final int MAX_LEVEL = Block.NOTIFY_ALL;
 	private static final float FILL_WITH_RAIN_CHANCE = 0.05F;
 	private static final float FILL_WITH_SNOW_CHANCE = 0.1F;
@@ -266,6 +268,11 @@ public class EerieRind extends AbstractCauldronBlock implements EerieRindShapeFi
 	@Override
 	public VoxelShape getRaycastShape(BlockState state, BlockView world, BlockPos pos) {
 		return getEerieRindRaycastShape();
+	}
+	
+	@Override
+	protected MapCodec<? extends AbstractCauldronBlock> getCodec() {
+		return CODEC;
 	}
 	
 	@Override

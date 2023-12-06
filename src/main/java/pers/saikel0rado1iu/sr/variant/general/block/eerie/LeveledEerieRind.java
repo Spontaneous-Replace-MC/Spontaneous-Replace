@@ -24,19 +24,17 @@
 
 package pers.saikel0rado1iu.sr.variant.general.block.eerie;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
-import net.minecraft.item.Item;
+import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.event.GameEvent;
-
-import java.util.Map;
-import java.util.function.Predicate;
 
 import static pers.saikel0rado1iu.silk.api.registry.SilkEntityType.POS_SHIFTING;
 import static pers.saikel0rado1iu.sr.data.Blocks.EERIE_RIND;
@@ -48,8 +46,8 @@ import static pers.saikel0rado1iu.sr.data.Blocks.EERIE_RIND;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public abstract class LeveledEerieRind extends LeveledCauldronBlock {
-	public LeveledEerieRind(Settings settings, Predicate<Biome.Precipitation> precipitationPredicate, Map<Item, CauldronBehavior> behaviorMap) {
-		super(settings, precipitationPredicate, behaviorMap);
+	public LeveledEerieRind(Biome.Precipitation precipitation, CauldronBehavior.CauldronBehaviorMap behaviorMap, AbstractBlock.Settings settings) {
+		super(precipitation, behaviorMap, settings);
 	}
 	
 	public static void decrementFluidLevel(BlockState state, World world, BlockPos pos) {
@@ -78,6 +76,15 @@ public abstract class LeveledEerieRind extends LeveledCauldronBlock {
 	}
 	
 	@Override
+	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+		if (!world.isClient && entity.isOnFire() && this.isEntityTouchingFluid(state, pos, entity)) {
+			entity.extinguish();
+			if (entity.canModifyAt(world, pos)) {
+				this.onFireCollision(state, world, pos);
+			}
+		}
+	}
+	
 	protected void onFireCollision(BlockState state, World world, BlockPos pos) {
 		world.setBlockState(pos, state);
 	}

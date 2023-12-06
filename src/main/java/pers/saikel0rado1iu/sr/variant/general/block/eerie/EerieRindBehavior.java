@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.variant.general.block.eerie;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -42,7 +43,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -62,10 +62,11 @@ import static pers.saikel0rado1iu.sr.data.Tags.Block.EERIE_RINDS;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
  */
 public interface EerieRindBehavior {
-	Map<Item, CauldronBehavior> EMPTY_BEHAVIOR = createMap();
-	Map<Item, CauldronBehavior> WATER_BEHAVIOR = createMap();
-	Map<Item, CauldronBehavior> LAVA_BEHAVIOR = createMap();
-	Map<Item, CauldronBehavior> POWDER_SNOW_BEHAVIOR = createMap();
+	Map<String, CauldronBehavior.CauldronBehaviorMap> BEHAVIOR_MAPS = new Object2ObjectArrayMap<>();
+	CauldronBehavior.CauldronBehaviorMap EMPTY_BEHAVIOR = createMap("empty");
+	CauldronBehavior.CauldronBehaviorMap WATER_BEHAVIOR = createMap("water");
+	CauldronBehavior.CauldronBehaviorMap LAVA_BEHAVIOR = createMap("lava");
+	CauldronBehavior.CauldronBehaviorMap POWDER_SNOW_BEHAVIOR = createMap("powder_snow");
 	CauldronBehavior FILL_WITH_WATER = (state, world, pos, player, hand, stack) -> fillCauldron(world, pos, player, hand, stack, WATER_EERIE_RIND.getDefaultState().with(LeveledEerieRind.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
 	CauldronBehavior FILL_WITH_LAVA = (state, world, pos, player, hand, stack) -> fillCauldron(world, pos, player, hand, stack, LAVA_EERIE_RIND.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY_LAVA);
 	CauldronBehavior FILL_WITH_POWDER_SNOW = (state, world, pos, player, hand, stack) -> fillCauldron(world, pos, player, hand, stack, POWDER_SNOW_EERIE_RIND.getDefaultState().with(LeveledEerieRind.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY_POWDER_SNOW);
@@ -134,14 +135,17 @@ public interface EerieRindBehavior {
 		}
 	};
 	
-	static Object2ObjectOpenHashMap<Item, CauldronBehavior> createMap() {
-		return Util.make(new Object2ObjectOpenHashMap<>(), (map) -> map.defaultReturnValue(
-				((state, world, pos, player, hand, stack) -> ActionResult.PASS)));
+	static CauldronBehavior.CauldronBehaviorMap createMap(String name) {
+		Object2ObjectOpenHashMap<Item, CauldronBehavior> object2ObjectOpenHashMap = new Object2ObjectOpenHashMap<>();
+		object2ObjectOpenHashMap.defaultReturnValue((state, world, pos, player, hand, stack) -> ActionResult.PASS);
+		CauldronBehavior.CauldronBehaviorMap cauldronBehaviorMap = new CauldronBehavior.CauldronBehaviorMap(name, object2ObjectOpenHashMap);
+		BEHAVIOR_MAPS.put(name, cauldronBehaviorMap);
+		return cauldronBehaviorMap;
 	}
 	
 	static void registerBehavior() {
-		registerBucketBehavior(EMPTY_BEHAVIOR);
-		EMPTY_BEHAVIOR.put(Items.POTION, (state, world, pos, player, hand, stack) -> {
+		registerBucketBehavior(EMPTY_BEHAVIOR.map());
+		EMPTY_BEHAVIOR.map().put(Items.POTION, (state, world, pos, player, hand, stack) -> {
 			if (PotionUtil.getPotion(stack) != Potions.WATER) {
 				return ActionResult.PASS;
 			} else {
@@ -159,9 +163,9 @@ public interface EerieRindBehavior {
 				return ActionResult.success(world.isClient);
 			}
 		});
-		registerBucketBehavior(WATER_BEHAVIOR);
-		WATER_BEHAVIOR.put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.WATER_BUCKET), (blockState) -> blockState.get(LeveledEerieRind.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL));
-		WATER_BEHAVIOR.put(Items.GLASS_BOTTLE, (state, world, pos, player, hand, stack) -> {
+		registerBucketBehavior(WATER_BEHAVIOR.map());
+		WATER_BEHAVIOR.map().put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.WATER_BUCKET), (blockState) -> blockState.get(LeveledEerieRind.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL));
+		WATER_BEHAVIOR.map().put(Items.GLASS_BOTTLE, (state, world, pos, player, hand, stack) -> {
 			if (!world.isClient) {
 				if (cantUse(world, pos)) return ActionResult.PASS;
 				Item item = stack.getItem();
@@ -175,7 +179,7 @@ public interface EerieRindBehavior {
 			
 			return ActionResult.success(world.isClient);
 		});
-		WATER_BEHAVIOR.put(Items.POTION, (state, world, pos, player, hand, stack) -> {
+		WATER_BEHAVIOR.map().put(Items.POTION, (state, world, pos, player, hand, stack) -> {
 			if (state.get(LeveledEerieRind.LEVEL) != 3 && PotionUtil.getPotion(stack) == Potions.WATER) {
 				if (!world.isClient) {
 					if (cantUse(world, pos)) return ActionResult.PASS;
@@ -192,47 +196,47 @@ public interface EerieRindBehavior {
 				return ActionResult.PASS;
 			}
 		});
-		WATER_BEHAVIOR.put(Items.LEATHER_BOOTS, CLEAN_DYEABLE_ITEM);
-		WATER_BEHAVIOR.put(Items.LEATHER_LEGGINGS, CLEAN_DYEABLE_ITEM);
-		WATER_BEHAVIOR.put(Items.LEATHER_CHESTPLATE, CLEAN_DYEABLE_ITEM);
-		WATER_BEHAVIOR.put(Items.LEATHER_HELMET, CLEAN_DYEABLE_ITEM);
-		WATER_BEHAVIOR.put(Items.LEATHER_HORSE_ARMOR, CLEAN_DYEABLE_ITEM);
-		WATER_BEHAVIOR.put(Items.WHITE_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.GRAY_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.BLACK_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.BLUE_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.BROWN_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.CYAN_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.GREEN_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.LIGHT_BLUE_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.LIGHT_GRAY_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.LIME_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.MAGENTA_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.ORANGE_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.PINK_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.PURPLE_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.RED_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.YELLOW_BANNER, CLEAN_BANNER);
-		WATER_BEHAVIOR.put(Items.WHITE_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.GRAY_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.BLACK_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.BLUE_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.BROWN_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.CYAN_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.GREEN_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.LIGHT_BLUE_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.LIGHT_GRAY_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.LIME_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.MAGENTA_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.ORANGE_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.PINK_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.PURPLE_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.RED_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		WATER_BEHAVIOR.put(Items.YELLOW_SHULKER_BOX, CLEAN_SHULKER_BOX);
-		LAVA_BEHAVIOR.put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.LAVA_BUCKET), (blockState) -> true, SoundEvents.ITEM_BUCKET_FILL_LAVA));
-		registerBucketBehavior(LAVA_BEHAVIOR);
-		POWDER_SNOW_BEHAVIOR.put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.POWDER_SNOW_BUCKET), (blockState) -> blockState.get(LeveledEerieRind.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL_POWDER_SNOW));
-		registerBucketBehavior(POWDER_SNOW_BEHAVIOR);
+		WATER_BEHAVIOR.map().put(Items.LEATHER_BOOTS, CLEAN_DYEABLE_ITEM);
+		WATER_BEHAVIOR.map().put(Items.LEATHER_LEGGINGS, CLEAN_DYEABLE_ITEM);
+		WATER_BEHAVIOR.map().put(Items.LEATHER_CHESTPLATE, CLEAN_DYEABLE_ITEM);
+		WATER_BEHAVIOR.map().put(Items.LEATHER_HELMET, CLEAN_DYEABLE_ITEM);
+		WATER_BEHAVIOR.map().put(Items.LEATHER_HORSE_ARMOR, CLEAN_DYEABLE_ITEM);
+		WATER_BEHAVIOR.map().put(Items.WHITE_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.GRAY_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.BLACK_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.BLUE_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.BROWN_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.CYAN_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.GREEN_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.LIGHT_BLUE_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.LIGHT_GRAY_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.LIME_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.MAGENTA_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.ORANGE_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.PINK_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.PURPLE_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.RED_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.YELLOW_BANNER, CLEAN_BANNER);
+		WATER_BEHAVIOR.map().put(Items.WHITE_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.GRAY_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.BLACK_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.BLUE_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.BROWN_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.CYAN_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.GREEN_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.LIGHT_BLUE_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.LIGHT_GRAY_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.LIME_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.MAGENTA_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.ORANGE_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.PINK_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.PURPLE_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.RED_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		WATER_BEHAVIOR.map().put(Items.YELLOW_SHULKER_BOX, CLEAN_SHULKER_BOX);
+		LAVA_BEHAVIOR.map().put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.LAVA_BUCKET), (blockState) -> true, SoundEvents.ITEM_BUCKET_FILL_LAVA));
+		registerBucketBehavior(LAVA_BEHAVIOR.map());
+		POWDER_SNOW_BEHAVIOR.map().put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.POWDER_SNOW_BUCKET), (blockState) -> blockState.get(LeveledEerieRind.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL_POWDER_SNOW));
+		registerBucketBehavior(POWDER_SNOW_BEHAVIOR.map());
 	}
 	
 	static void registerBucketBehavior(Map<Item, CauldronBehavior> behavior) {

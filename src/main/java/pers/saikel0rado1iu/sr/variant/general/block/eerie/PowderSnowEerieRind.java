@@ -43,6 +43,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.biome.Biome;
 
 import static pers.saikel0rado1iu.sr.data.Blocks.*;
 
@@ -54,7 +55,7 @@ import static pers.saikel0rado1iu.sr.data.Blocks.*;
  */
 public class PowderSnowEerieRind extends LeveledEerieRind implements EerieRindShapeFix {
 	public PowderSnowEerieRind(Settings settings) {
-		super(settings, PowderSnowEerieRind.SNOW_PREDICATE, EerieRindBehavior.POWDER_SNOW_BEHAVIOR);
+		super(Biome.Precipitation.SNOW, EerieRindBehavior.POWDER_SNOW_BEHAVIOR, settings);
 	}
 	
 	/**
@@ -81,6 +82,7 @@ public class PowderSnowEerieRind extends LeveledEerieRind implements EerieRindSh
 	/**
 	 * 会随机变成冻成冰
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 		super.randomTick(state, world, pos, random);
@@ -105,6 +107,7 @@ public class PowderSnowEerieRind extends LeveledEerieRind implements EerieRindSh
 	 * <p>如果下方方块变为空气则传递细雪到下方</p>
 	 * <p>如果下方方块变为空壳则传递含细雪块到下方</p>
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (direction == Direction.UP) {
