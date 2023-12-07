@@ -1,18 +1,18 @@
-v1.20.2-0.5.2+bp	2023/12/01
-	1. 'Spontaneous-Replace' has been updated to 1.20.2, and the mod icon has been remake.
-	2. 'Spontaneous-Replace' uses the latest fabric mod architecture to reconstruct the entire mod. For example, the logical layer is separated from the physical layer, and a data generator is used to generate all json, etc., which greatly improves the code quality and solves the source of most bugs.
-	3. 'Spontaneous-Replace' has sorted out most of the generalizable interfaces and hooks, and rewritten it into a new mod 'Silk API'. 'Silk API' is a new generation fabric library that is open source and can be used by other fabric mods, and 'Spontaneous-Replace' itself also requires 'Silk API' as a dependency.
-	4. The version number naming mechanism has been modified, now changed to [mc version]-(mod version)+<update explanation field>.
-	5. Mod id changed from spontaneous_replace to spontaneous-replace.
-	6. Fixed the bug that requires Mod Menu as the dependency.
-	7. Optimized the movement modification of the mod crossbow to make it smoother.
-	8. The alloy forging die has been deleted, alloys can now be craft directly at the smithing table, and decorations can be added to alloy equipments.
-	9. Modified the triggering conditions and content of some advancements, and deleted some unnecessary advancements.
-	10. Modified the data of some equipment and tools so that they can be changed according to the data of the original equipment and tools, making it more balanced.
-	11. Simplified the characteristics of some mod items or blocks to make them simpler, more direct, and easier to understand.
-	12. Modified some textures to make them more suitable for Minecraft.
-	13. Added a new status effect 'Acidize', its effect is similar to 'Poison', but it can cause death.
-	14. Modified the world preset id, now changed to spontaneous-replace:classic and spontaneous-replace:snapshot.
+v1.20.3-0.5.2+bp	2023/12/07
+- 'Spontaneous-Replace' has been updated to 1.20.2, and the mod icon has been remake.
+- 'Spontaneous-Replace' uses the latest fabric mod architecture to reconstruct the entire mod. For example, the logical layer is separated from the physical layer, and a data generator is used to generate all json, etc., which greatly improves the code quality and solves the source of most bugs.
+- 'Spontaneous-Replace' has sorted out most of the generalizable interfaces and hooks, and rewritten it into a new mod 'Silk API'. 'Silk API' is a new generation fabric library that is open source and can be used by other fabric mods, and 'Spontaneous-Replace' itself also requires 'Silk API' as a dependency.
+- The version number naming mechanism has been modified, now changed to [mc version]-(mod version)+<update explanation field>.
+- Mod id changed from spontaneous_replace to spontaneous-replace.
+- Fixed the bug that requires Mod Menu as the dependency.
+- Optimized the movement modification of the mod crossbow to make it smoother.
+- The alloy forging die has been deleted, alloys can now be craft directly at the smithing table, and decorations can be added to alloy equipments.
+- Modified the triggering conditions and content of some advancements, and deleted some unnecessary advancements.
+- Modified the data of some equipment and tools so that they can be changed according to the data of the original equipment and tools, making it more balanced.
+- Simplified the characteristics of some mod items or blocks to make them simpler, more direct, and easier to understand.
+- Modified some textures to make them more suitable for Minecraft.
+- Added a new status effect 'Acidize', its effect is similar to 'Poison', but it can cause death.
+- Modified the world preset id, now changed to spontaneous-replace:classic and spontaneous-replace:snapshot.
 
 
 v0.5.1-0.5b.1f+1.20.1	2023/08/08
