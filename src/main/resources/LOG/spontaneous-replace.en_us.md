@@ -1,3 +1,9 @@
+v1.20.4-0.5.3+bf	2023/12/09
+## 1.20.4-0.5.3+bf Bug Fixes
+- Client
+    - Fixed an issue where mod log reading was overwritten by silk api logs.
+
+
 v1.20.4-0.5.2+bp	2023/12/08
 - 'Spontaneous-Replace' has been updated to 1.20.4, and the mod icon has been remake.
 - 'Spontaneous-Replace' uses the latest fabric mod architecture to reconstruct the entire mod. For example, the logical layer is separated from the physical layer, and a data generator is used to generate all json, etc., which greatly improves the code quality and solves the source of most bugs.
