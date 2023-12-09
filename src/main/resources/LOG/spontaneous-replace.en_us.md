@@ -1,7 +1,7 @@
 v1.20.4-0.5.3+bf	2023/12/09
-## 1.20.4-0.5.3+bf Bug Fixes
+## 1.20.4-0.5.3+bf	Bug Fixes
 - Client
-    - Fixed an issue where mod log reading was overwritten by silk api logs.
+	- Fixed an issue where mod log reading was overwritten by silk api logs.
 
 
 v1.20.4-0.5.2+bp	2023/12/08
