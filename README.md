@@ -1,4 +1,5 @@
-# <center>自然更替 | Spontaneous-Replace</center>
+<!--suppress HtmlDeprecatedAttribute -->
+<h1 align = "center">自然更替 | Spontaneous-Replace</h1>
 
 **If you would like to support the SR, please consider contributing to our [Patreon](https://www.patreon.com/GameGeek_Saikel)
 or [爱发电](https://afdian.net/a/GameGeek_Saikel)!**
