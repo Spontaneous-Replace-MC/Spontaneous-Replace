@@ -8,5 +8,5 @@ A repository of all open source versions of Spontaneous-Replace. For learning an
 
 # Localized homepage
 
-- en_us : [English (US)](readme/README.zh_cn.md)
+- en_us : [English (US)](readme/README.en_us.md)
 - zh_cn : [简体中文（中国大陆）](readme/README.zh_cn.md)
