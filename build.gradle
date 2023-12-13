@@ -20,7 +20,13 @@ repositories {
 	// 有关存储库的更多信息.
 	
 	maven { url "https://maven.terraformersmc.com/releases/" }
-	maven { url "https://toml.moandjiezana.com" }
+	maven {
+		url = "https://maven.pkg.github.com/silk-mc/silk-api"
+		credentials {
+			username = System.getenv("GITHUB_ACTOR")
+			password = System.getenv("GITHUB_TOKEN")
+		}
+	}
 }
 
 loom {
@@ -74,7 +80,7 @@ dependencies {
 	modCompileOnly modRuntimeOnly("com.terraformersmc:modmenu:${project.mod_menu_version}"), {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	modImplementation "com.moandjiezana.toml:toml4j:0.7.2"
+	modImplementation "pers.saikel0rado1iu:silk-api:${project.silk_version}"
 	
 	// 本模组所需要添加使用的本地模组库
 	modImplementation fileTree(dir: 'libs', includes: ['*.jar'])
