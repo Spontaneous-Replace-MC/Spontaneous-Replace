@@ -34,10 +34,9 @@ import net.minecraft.world.World;
 import pers.saikel0rado1iu.sr.variant.spider.mob.general.SpiderData;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">覆地蛛丝</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">覆地蛛丝</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class GossamerCarpet extends CarpetBlock {
 	public GossamerCarpet(Settings settings) {

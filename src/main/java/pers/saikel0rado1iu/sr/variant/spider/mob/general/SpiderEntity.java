@@ -44,11 +44,11 @@ import java.lang.invoke.MethodType;
 import java.util.List;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的蜘蛛实体类</font></b></p>
+ * <h2 style="color:FFC800">自然更替的蜘蛛实体类</font></b></p>
  * <p style="color:FFC800">自然更替的蜘蛛的基础实体属性，逻辑控制</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public abstract class SpiderEntity extends net.minecraft.entity.mob.SpiderEntity {
 	public final AnimationState walkingAnimationState = new AnimationState();

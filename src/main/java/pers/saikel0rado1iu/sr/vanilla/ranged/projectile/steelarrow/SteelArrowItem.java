@@ -30,11 +30,11 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">钢箭物品</font></b></p>
+ * <h2 style="color:FFC800">钢箭物品</font></b></p>
  * <p style="color:FFC800">添加一种超大威力以及超高精度的箭矢</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class SteelArrowItem extends Item {
 	public SteelArrowItem(Settings settings) {

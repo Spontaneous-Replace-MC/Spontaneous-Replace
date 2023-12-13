@@ -39,11 +39,11 @@ import org.joml.Matrix4f;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">钢箭渲染类</font></b></p>
+ * <h2 style="color:FFC800">钢箭渲染类</font></b></p>
  * <p style="color:FFC800">渲染钢箭实体</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class SteelArrowRender extends EntityRenderer<SteelArrowEntity> {
 	public static final Identifier TEXTURE = new Identifier(SpontaneousReplace.DATA.getId(), "textures/entity/steel_arrow.png");

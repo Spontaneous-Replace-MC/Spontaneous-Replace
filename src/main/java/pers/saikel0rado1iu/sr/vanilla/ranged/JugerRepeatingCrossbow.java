@@ -60,11 +60,11 @@ import java.util.Map;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">诸葛连弩</font></b></p>
+ * <h2 style="color:FFC800">诸葛连弩</font></b></p>
  * <p style="color:FFC800">添加一种强力的近战连发远程物品</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantment {
 	public static final int MAX_CHARGED_BULLET_NUM = 10;

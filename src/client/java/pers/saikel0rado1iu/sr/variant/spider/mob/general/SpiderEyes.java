@@ -31,11 +31,11 @@ import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的蜘蛛眼部发光类</font></b></p>
+ * <h2 style="color:FFC800">自然更替的蜘蛛眼部发光类</font></b></p>
  * <p style="color:FFC800">自然更替的蜘蛛的基础眼部发光纹理设置</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class SpiderEyes<S extends SpiderEntity, M extends SpiderModel<S>> extends EyesFeatureRenderer<S, M> {
 	public SpiderEyes(FeatureRendererContext<S, M> featureRendererContext) {

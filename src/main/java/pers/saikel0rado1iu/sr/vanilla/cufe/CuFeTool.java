@@ -32,11 +32,11 @@ import pers.saikel0rado1iu.sr.vanilla.copper.RefinedCopperTool;
 import static pers.saikel0rado1iu.sr.data.Items.CUFE_ALLOY_INGOT;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">铜铁工具</font></b></p>
+ * <h2 style="color:FFC800">铜铁工具</font></b></p>
  * <p style="color:FFC800">基础属性只比铁制工具略高，但是拥有精铜工具的附魔等级</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface CuFeTool extends Tool {
 	CuFeTool MATERIAL = new CuFeTool() {

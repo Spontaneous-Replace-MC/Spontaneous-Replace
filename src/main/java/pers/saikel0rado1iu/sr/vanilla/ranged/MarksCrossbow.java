@@ -57,11 +57,11 @@ import static pers.saikel0rado1iu.sr.data.Items.STEEL_ARROW;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">神臂弩</font></b></p>
+ * <h2 style="color:FFC800">神臂弩</font></b></p>
  * <p style="color:FFC800">添加一种极大威力的超远程攻击武器</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class MarksCrossbow extends Crossbow implements BreakingShield, CustomEnchantment, UsingMovementMultiplier {
 	public MarksCrossbow(Settings settings) {

@@ -33,10 +33,9 @@ import java.util.Locale;
 import java.util.Optional;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的模组数据</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">自然更替的模组数据</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class SpontaneousReplace implements ModExtendedData {
 	public static final SpontaneousReplace DATA = new SpontaneousReplace();

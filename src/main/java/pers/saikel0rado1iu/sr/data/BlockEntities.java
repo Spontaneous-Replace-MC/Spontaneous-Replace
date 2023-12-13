@@ -32,10 +32,9 @@ import pers.saikel0rado1iu.sr.variant.spider.block.SpiderEggCocoon;
 import static pers.saikel0rado1iu.sr.data.Blocks.SPIDER_EGG_COCOON;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的所有方块实体类型</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">自然更替的所有方块实体类型</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class BlockEntities extends SilkBlockEntity {
 	public static final BlockEntityType<SpiderEggCocoon.Entity> SPIDER_EGG_COCOON_ENTITY = builder(FabricBlockEntityTypeBuilder.create(SpiderEggCocoon.Entity::new, SPIDER_EGG_COCOON).build())

@@ -31,11 +31,11 @@ import pers.saikel0rado1iu.silk.api.item.tool.Tool;
 import static pers.saikel0rado1iu.sr.data.Items.REFINED_COPPER_INGOT;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">精铜工具</font></b></p>
+ * <h2 style="color:FFC800">精铜工具</font></b></p>
  * <p style="color:FFC800">基础属性在石制工具与铁制工具之间，但是拥有只比金低地附魔等级</p>
  * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface RefinedCopperTool extends Tool {
 	RefinedCopperTool MATERIAL = new RefinedCopperTool() {

@@ -35,10 +35,9 @@ import pers.saikel0rado1iu.sr.data.word.TreeDecoratorTypes;
 import static pers.saikel0rado1iu.sr.data.Blocks.EERIE_BOUGH;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">阴森木根树木装饰器</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">阴森木根树木装饰器</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class EerieTreeDecorator extends TreeDecorator {
 	public static final EerieTreeDecorator INSTANCE = new EerieTreeDecorator();

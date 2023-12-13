@@ -29,10 +29,9 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import pers.saikel0rado1iu.sr.screen.ConfigScreen;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">添加 ModMenu 菜单按钮支持</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">添加 ModMenu 菜单按钮支持</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class ModMenu implements ModMenuApi {
 	@Override
