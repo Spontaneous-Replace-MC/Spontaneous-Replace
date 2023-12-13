@@ -56,9 +56,8 @@ import static pers.saikel0rado1iu.sr.data.Items.STONEBALL;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.SLINGSHOT_THROW;
 
 /**
- * <h2 style="color:FFC800">丫弹弓</font></b></p>
+ * <h2 style="color:FFC800">丫弹弓</h2>
  * <p style="color:FFC800">添加一种娱乐性质的远程武器</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

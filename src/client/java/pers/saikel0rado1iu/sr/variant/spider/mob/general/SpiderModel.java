@@ -31,9 +31,8 @@ import static pers.saikel0rado1iu.silk.util.MathUtil.toFloat;
 import static pers.saikel0rado1iu.silk.util.MathUtil.toRadians;
 
 /**
- * <h2 style="color:FFC800">自然更替的蜘蛛模型类</font></b></p>
+ * <h2 style="color:FFC800">自然更替的蜘蛛模型类</h2>
  * <p style="color:FFC800">自然更替的蜘蛛的基础实体模型和基础动作分配</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

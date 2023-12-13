@@ -31,9 +31,8 @@ import pers.saikel0rado1iu.silk.api.item.tool.Tool;
 import static pers.saikel0rado1iu.sr.data.Items.AUCU_ALLOY_INGOT;
 
 /**
- * <h2 style="color:FFC800">金铜工具</font></b></p>
+ * <h2 style="color:FFC800">金铜工具</h2>
  * <p style="color:FFC800">基础属性在石制工具左右，但是拥有极致的附魔等级，附魔等级甚至比金高</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

@@ -39,9 +39,8 @@ import org.joml.Matrix4f;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 
 /**
- * <h2 style="color:FFC800">钢箭渲染类</font></b></p>
+ * <h2 style="color:FFC800">钢箭渲染类</h2>
  * <p style="color:FFC800">渲染钢箭实体</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

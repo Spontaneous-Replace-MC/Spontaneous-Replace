@@ -60,9 +60,8 @@ import java.util.Map;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
- * <h2 style="color:FFC800">诸葛连弩</font></b></p>
+ * <h2 style="color:FFC800">诸葛连弩</h2>
  * <p style="color:FFC800">添加一种强力的近战连发远程物品</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

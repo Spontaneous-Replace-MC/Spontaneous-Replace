@@ -31,9 +31,8 @@ import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 
 /**
- * <h2 style="color:FFC800">自然更替的蜘蛛眼部发光类</font></b></p>
+ * <h2 style="color:FFC800">自然更替的蜘蛛眼部发光类</h2>
  * <p style="color:FFC800">自然更替的蜘蛛的基础眼部发光纹理设置</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

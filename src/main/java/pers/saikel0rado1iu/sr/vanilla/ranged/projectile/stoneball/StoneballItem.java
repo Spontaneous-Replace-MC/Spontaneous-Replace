@@ -36,9 +36,8 @@ import net.minecraft.world.World;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.STONEBALL_THROW;
 
 /**
- * <h2 style="color:FFC800">石弹物品</font></b></p>
+ * <h2 style="color:FFC800">石弹物品</h2>
  * <p style="color:FFC800">添加一种新型的特殊抛掷物品</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

@@ -39,9 +39,8 @@ import static pers.saikel0rado1iu.sr.data.Items.COMPOSITE_FABRIC;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.EQUIP_ARROWPROOF_VEST;
 
 /**
- * <h2 style="color:FFC800">防箭衣</font></b></p>
+ * <h2 style="color:FFC800">防箭衣</h2>
  * <p style="color:FFC800">添加一种特殊的投掷物防御装备</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

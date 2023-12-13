@@ -30,9 +30,8 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 /**
- * <h2 style="color:FFC800">钢箭物品</font></b></p>
+ * <h2 style="color:FFC800">钢箭物品</h2>
  * <p style="color:FFC800">添加一种超大威力以及超高精度的箭矢</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

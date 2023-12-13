@@ -57,9 +57,8 @@ import static pers.saikel0rado1iu.sr.data.Items.STEEL_ARROW;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
- * <h2 style="color:FFC800">神臂弩</font></b></p>
+ * <h2 style="color:FFC800">神臂弩</h2>
  * <p style="color:FFC800">添加一种极大威力的超远程攻击武器</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

@@ -34,9 +34,8 @@ import static pers.saikel0rado1iu.sr.data.Items.REFINED_COPPER_INGOT;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.EQUIP_REFINED_COPPER;
 
 /**
- * <h2 style="color:FFC800">精铜盔甲</font></b></p>
+ * <h2 style="color:FFC800">精铜盔甲</h2>
  * <p style="color:FFC800">基础属性在锁链盔甲与铁制盔甲之间，但耐久小于二者，但是拥有少量的盔甲韧性和只比金属性低地附魔等级</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */

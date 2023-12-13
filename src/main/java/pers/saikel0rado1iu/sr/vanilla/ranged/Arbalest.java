@@ -36,9 +36,8 @@ import java.util.Map;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
- * <h2 style="color:FFC800">劲弩</font></b></p>
+ * <h2 style="color:FFC800">劲弩</h2>
  * <p style="color:FFC800">一种比普通弩更强的基础远程武器</p>
- * <style="color:FFC800">
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
