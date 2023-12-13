@@ -48,8 +48,7 @@ import net.minecraft.world.biome.Biome;
 import static pers.saikel0rado1iu.sr.data.Blocks.*;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">含水阴森木壳</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">含水阴森木壳</h2>
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/885Block.NOTIFY_ALL11Block.NOTIFY_ALL8?s=64&v=4"><p>
  */

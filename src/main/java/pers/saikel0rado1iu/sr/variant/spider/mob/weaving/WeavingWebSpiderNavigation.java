@@ -39,10 +39,9 @@ import static pers.saikel0rado1iu.sr.variant.spider.mob.weaving.WeavingWebSpider
 import static pers.saikel0rado1iu.sr.variant.spider.mob.weaving.WeavingWebSpiderData.WEAVE_TIME;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">织网蜘蛛寻路类</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">织网蜘蛛寻路类</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class WeavingWebSpiderNavigation extends MobNavigation {
 	/**

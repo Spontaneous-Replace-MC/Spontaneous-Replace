@@ -60,10 +60,9 @@ import static pers.saikel0rado1iu.sr.data.StatusEffects.SPIDER_CAMOUFLAGE;
 import static pers.saikel0rado1iu.sr.variant.spider.block.SpiderEggCocoon.Entity.triggered;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">蜘蛛卵茧</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">蜘蛛卵茧</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class SpiderEggCocoon extends BlockWithEntity {
 	public static final MapCodec<SpiderEggCocoon> CODEC = createCodec(SpiderEggCocoon::new);

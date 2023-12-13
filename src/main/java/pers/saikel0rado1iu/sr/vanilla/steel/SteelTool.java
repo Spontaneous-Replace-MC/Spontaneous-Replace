@@ -32,11 +32,10 @@ import pers.saikel0rado1iu.sr.vanilla.cufe.CuFeTool;
 import static pers.saikel0rado1iu.sr.data.Items.STEEL_INGOT;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">钢制工具</font></b></p>
+ * <h2 style="color:FFC800">钢制工具</h2>
  * <p style="color:FFC800">基础属性只比钻石工具略低，但挖掘等级还是铁，但是拥有铁质工具的附魔等级</p>
- * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface SteelTool extends Tool {
 	SteelTool MATERIAL = new SteelTool() {

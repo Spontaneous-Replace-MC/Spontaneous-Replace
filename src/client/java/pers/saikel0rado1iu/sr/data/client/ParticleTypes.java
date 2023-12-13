@@ -31,10 +31,9 @@ import pers.saikel0rado1iu.silk.api.registry.SilkParticleType;
 import static pers.saikel0rado1iu.sr.data.ParticleTypes.TOXIN_PARTICLE;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的所有粒子的客户端注册</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">自然更替的所有粒子的客户端注册</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class ParticleTypes extends SilkParticleType {
 	static {

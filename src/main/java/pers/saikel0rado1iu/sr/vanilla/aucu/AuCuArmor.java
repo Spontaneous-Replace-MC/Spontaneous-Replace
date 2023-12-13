@@ -39,11 +39,10 @@ import static pers.saikel0rado1iu.sr.data.Items.AUCU_ALLOY_INGOT;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.EQUIP_AUCU_ALLOY;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">金铜盔甲</font></b></p>
+ * <h2 style="color:FFC800">金铜盔甲</h2>
  * <p style="color:FFC800">基础属性只比金制盔甲略高，但是拥有极致的附魔等级，附魔等级甚至比金高 5 点</p>
- * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface AuCuArmor extends Armor, PiglinIgnore {
 	AuCuArmor MATERIAL = new AuCuArmor() {

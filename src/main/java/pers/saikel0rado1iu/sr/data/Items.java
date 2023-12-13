@@ -55,10 +55,9 @@ import pers.saikel0rado1iu.sr.variant.spider.mob.weaving.WeavingWebSpiderData;
 import static pers.saikel0rado1iu.sr.data.EntityTypes.*;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的所有的物品</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">自然更替的所有的物品</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class Items extends SilkItem {
 	public static final Item ICON = builder(new Item(new FabricItemSettings())).build(SpontaneousReplace.DATA, "icon");

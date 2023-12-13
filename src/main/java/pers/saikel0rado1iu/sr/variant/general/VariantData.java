@@ -25,10 +25,9 @@
 package pers.saikel0rado1iu.sr.variant.general;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">变种通用数据</font></b></p>
- * <style="color:FFC800">
+ * <h2 style="color:FFC800">变种通用数据</h2>
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface VariantData {
 	/**

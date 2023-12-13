@@ -43,11 +43,10 @@ import static pers.saikel0rado1iu.sr.data.Blocks.*;
 import static pers.saikel0rado1iu.sr.data.Tags.Block.EERIE_RINDS;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">阴森木壳混入</font></b></p>
+ * <h2 style="color:FFC800">阴森木壳混入</h2>
  * <p style="color:FFC800">使下方放置炼药锅的功能正常可用</p>
- * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 interface EerieRindMixin {
 	@Mixin(AbstractBlock.class)

@@ -31,11 +31,10 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.StringIdentifiable;
 
 /**
- * <p><b style="color:FFC800"><font size="+1">自然更替的蜘蛛通用数据</font></b></p>
+ * <h2 style="color:FFC800">自然更替的蜘蛛通用数据</h2>
  * <p style="color:FFC800">专门用于自然更替的蜘蛛群系内容专用数据</p>
- * <style="color:FFC800">
  *
- * @author <a href="https://github.com/Saikel-Orado-Liu"><img src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"><p>
+ * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface SpiderData {
 	/**
