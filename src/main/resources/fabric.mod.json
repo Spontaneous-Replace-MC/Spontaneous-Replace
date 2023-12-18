@@ -7,6 +7,7 @@
 		"§6Saikel Orado"
 	],
 	"contributors": [
+		"§3Editor | 编辑: zlx",
 		"Fabric Team | Fabric 团队",
 		"§cAnd YOU! | 还有你！"
 	],
@@ -57,7 +58,7 @@
 		"minecraft": ">=1.20.3",
 		"fabricloader": ">=0.15.1",
 		"fabric-api": ">=0.91.2",
-		"silk-api": ">=1.20.4-0.1.2"
+		"silk-api": ">=1.20.4-0.1.3"
 	},
 	"suggests": {
 		"another-mod": "*"
