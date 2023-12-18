@@ -24,12 +24,16 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.SpiderEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import pers.saikel0rado1iu.sr.variant.spider.mob.general.SpiderData;
 
@@ -38,18 +42,27 @@ import pers.saikel0rado1iu.sr.variant.spider.mob.general.SpiderData;
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
+@SuppressWarnings("deprecation")
 public class GossameryLeaves extends LeavesBlock {
+	public static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+	
 	public GossameryLeaves(Settings settings) {
 		super(settings);
 	}
 	
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+		return SHAPE;
+	}
+	
 	/**
-	 * 在方块上减速 25%
+	 * 与方块接触减速 25%
 	 */
 	@Override
-	public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 		if (!(entity instanceof SpiderEntity))
 			entity.slowMovement(state, new Vec3d(1 - SpiderData.COBWEB_DECELERATION, 1 - SpiderData.COBWEB_DECELERATION, 1 - SpiderData.COBWEB_DECELERATION));
-		super.onSteppedOn(world, pos, state, entity);
+		
+		super.onEntityCollision(state, world, pos, entity);
 	}
 }
