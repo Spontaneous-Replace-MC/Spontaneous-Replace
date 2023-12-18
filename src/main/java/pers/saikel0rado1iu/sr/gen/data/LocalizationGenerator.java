@@ -84,6 +84,11 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("effects"), "Translation of Status Effects");
 			translationBuilder.add(StatusEffects.ACIDIZE, "Acidize");
 			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "Spider Camouflage");
+			translationBuilder.add(getCommentKey("death message"), "Translation of Death Message");
+			translationBuilder.add("death.attack.acidize", "%1$s dissolved");
+			translationBuilder.add("death.attack.acidize.player", "%1$s dissolved while fighting %2$s");
+			translationBuilder.add("death.attack.spider_toxin", "%1$s failed to escape the %2$s's toxin");
+			translationBuilder.add("death.attack.spider_toxin.item", "%1$s was toxined by %2$s using %3$s");
 			translationBuilder.add(getCommentKey("itemGroup"), "Translation of item group");
 			translationBuilder.add(ItemGroups.BUILDING_BLOCKS, "SR Building Blocks");
 			translationBuilder.add(ItemGroups.COLORED_BLOCKS, "SR Colored Blocks");
@@ -153,9 +158,13 @@ public interface LocalizationGenerator {
 			translationBuilder.add(Items.JUGER_REPEATING_CROSSBOW, "Ju-ger Repeating Crossbow");
 			translationBuilder.add(Items.MARKS_CROSSBOW, "Marks-Crossbow");
 			translationBuilder.add(Items.ARROWPROOF_VEST, "Arrowproof Vest");
+			translationBuilder.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK, "Block of Copper For Smelting Ingot");
 			translationBuilder.add(Blocks.REFINED_COPPER_BLOCK, "Block of Refined Copper");
 			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "Block of CuFe Alloy");
+			translationBuilder.add(Blocks.CUFE_BLOCK, "Block of CuFe");
 			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "Block of AuCu Alloy");
+			translationBuilder.add(Blocks.AUCU_BLOCK, "Block of AuCu");
+			translationBuilder.add(Blocks.PIG_IRON_BLOCK, "Block of Pig Iron");
 			translationBuilder.add(Blocks.STEEL_BLOCK, "Block of Steel");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_REFINED_COPPER), "Refined copper armor clanks");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_CUFE_ALLOY), "CuFe alloy armor clangs");
@@ -272,6 +281,10 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_A_NEW_SPIDER), "Kill a spontaneous-replace spider variant");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "Take This");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "Shoot a spray poison spider with an arrow");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "New Rotten Flesh");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "Cooking spider leg");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "Spider Camouflage");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "Equip the spider leather set to avoid triggering spider egg cocoons");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.KILL_ALL_SPIDERS), "Bane Of Arthropods");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_ALL_SPIDERS), "Kill all types of spiders");
 		}
@@ -321,6 +334,11 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("effects"), "状态效果翻译");
 			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
 			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛伪装");
+			translationBuilder.add(getCommentKey("death message"), "死亡消息翻译");
+			translationBuilder.add("death.attack.acidize", "%1$s溶解了");
+			translationBuilder.add("death.attack.acidize.player", "%1$s在与%2$s战斗时溶解了");
+			translationBuilder.add("death.attack.spider_toxin", "%1$s没能躲过%2$s的毒素");
+			translationBuilder.add("death.attack.spider_toxin.item", "%1$s被%2$s用%3$s发射的毒素杀死了");
 			translationBuilder.add(getCommentKey("itemGroup"), "物品组翻译");
 			translationBuilder.add(ItemGroups.BUILDING_BLOCKS, "「自然更替」建筑方块");
 			translationBuilder.add(ItemGroups.COLORED_BLOCKS, "「自然更替」染色方块");
@@ -390,9 +408,13 @@ public interface LocalizationGenerator {
 			translationBuilder.add(Items.JUGER_REPEATING_CROSSBOW, "诸葛连弩");
 			translationBuilder.add(Items.MARKS_CROSSBOW, "神臂弩");
 			translationBuilder.add(Items.ARROWPROOF_VEST, "防箭衣");
+			translationBuilder.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK, "炼锭铜块");
 			translationBuilder.add(Blocks.REFINED_COPPER_BLOCK, "精铜块");
-			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "铜铁块");
-			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金铜块");
+			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "铜铁合金块");
+			translationBuilder.add(Blocks.CUFE_BLOCK, "铜铁块");
+			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金铜合金块");
+			translationBuilder.add(Blocks.AUCU_BLOCK, "金铜块");
+			translationBuilder.add(Blocks.PIG_IRON_BLOCK, "生铁块");
 			translationBuilder.add(Blocks.STEEL_BLOCK, "钢块");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_REFINED_COPPER), "精铜盔甲：嗙嘡");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_CUFE_ALLOY), "铜铁盔甲：钪锵");
@@ -509,6 +531,10 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_A_NEW_SPIDER), "击杀一只特殊的蜘蛛变体");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "来尝尝这个");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "使用箭射中喷吐毒蛛");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "新款辣条");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "烹饪一份蜘蛛腿");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "蜘蛛伪装");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "装备蜘蛛护皮套装以避免触发蜘蛛卵茧");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.KILL_ALL_SPIDERS), "节肢杀手");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_ALL_SPIDERS), "击杀所有种类的蜘蛛");
 		}
@@ -525,7 +551,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("modmenu"), "Mod Menu 上可翻譯嘅模組描述與摘要");
 			translationBuilder.add(getLocalizationNameKey(SpontaneousReplace.DATA), "§6自然更替");
 			translationBuilder.add(getLocalizationSummaryKey(SpontaneousReplace.DATA), "通過新內容為玩家提供加強嘅原版冒險");
-			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§l模組簡介:§r\n　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒了生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯\n§l模組願景:§r\n　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
+			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§l模組簡介:§r\n　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯\n§l模組願景:§r\n　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
 			translationBuilder.add(getCommentKey("generic"), "通用模組組件翻譯");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, ""), "自然更替");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.mod"), "模組");
@@ -534,7 +560,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "changelog"), "更新日誌");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis"), "簡介");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§f§l模組簡介：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒了生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.vision"), "§f§l模組願景：");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"), "　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.config"), "設定");
@@ -558,6 +584,11 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("effects"), "狀態效果翻譯");
 			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
 			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛偽裝");
+			translationBuilder.add(getCommentKey("death message"), "死亡消息翻譯");
+			translationBuilder.add("death.attack.acidize", "%1$s 溶解咗");
+			translationBuilder.add("death.attack.acidize.player", "%1$s 同 %2$s 戰鬥時溶解咗");
+			translationBuilder.add("death.attack.spider_toxin", "%1$s 冇有躲過 %2$s 嘅毒素");
+			translationBuilder.add("death.attack.spider_toxin.item", "%1$s 被 %2$s 用 %3$s 發射嘅毒素殺死咗");
 			translationBuilder.add(getCommentKey("itemGroup"), "物品組翻譯");
 			translationBuilder.add(ItemGroups.BUILDING_BLOCKS, "「自然更替」建築方塊");
 			translationBuilder.add(ItemGroups.COLORED_BLOCKS, "「自然更替」染色方塊");
@@ -627,9 +658,13 @@ public interface LocalizationGenerator {
 			translationBuilder.add(Items.JUGER_REPEATING_CROSSBOW, "諸葛連弩");
 			translationBuilder.add(Items.MARKS_CROSSBOW, "神臂弩");
 			translationBuilder.add(Items.ARROWPROOF_VEST, "防箭衣");
+			translationBuilder.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK, "煉錠銅磚");
 			translationBuilder.add(Blocks.REFINED_COPPER_BLOCK, "精銅磚");
-			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "銅鐵磚");
-			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金銅磚");
+			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "銅鐵合金磚");
+			translationBuilder.add(Blocks.CUFE_BLOCK, "銅鐵磚");
+			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金銅合金磚");
+			translationBuilder.add(Blocks.AUCU_BLOCK, "金銅磚");
+			translationBuilder.add(Blocks.PIG_IRON_BLOCK, "生鐵磚");
 			translationBuilder.add(Blocks.STEEL_BLOCK, "鋼磚");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_REFINED_COPPER), "裝備精铜盔甲");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_CUFE_ALLOY), "裝備銅鐵盔甲");
@@ -746,6 +781,10 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_A_NEW_SPIDER), "擊殺一隻特殊嘅蜘蛛變體");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "來嚐嚐這個");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "使用箭射中噴吐毒蛛");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "新式腐肉");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "烹飪一份蜘蛛腿");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "蜘蛛偽裝");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "裝備蜘蛛護皮套裝以避免觸發蜘蛛卵繭");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.KILL_ALL_SPIDERS), "節肢剋星");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_ALL_SPIDERS), "擊殺所有種類嘅蜘蛛");
 		}
@@ -795,6 +834,11 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("effects"), "狀態效果翻譯");
 			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
 			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛偽裝");
+			translationBuilder.add(getCommentKey("death message"), "死亡訊息翻譯");
+			translationBuilder.add("death.attack.acidize", "%1$s 溶解了");
+			translationBuilder.add("death.attack.acidize.player", "%1$s 在與 %1$s 戰鬥時溶解了");
+			translationBuilder.add("death.attack.spider_toxin", "%1$s 未能躲過 %2$s 的毒素");
+			translationBuilder.add("death.attack.spider_toxin.item", "%1$s 被 %2$s 用 %3$s 打出的毒素殺死");
 			translationBuilder.add(getCommentKey("itemGroup"), "物品組翻譯");
 			translationBuilder.add(ItemGroups.BUILDING_BLOCKS, "「自然更替」建築方塊");
 			translationBuilder.add(ItemGroups.COLORED_BLOCKS, "「自然更替」染色方塊");
@@ -864,9 +908,13 @@ public interface LocalizationGenerator {
 			translationBuilder.add(Items.JUGER_REPEATING_CROSSBOW, "諸葛連弩");
 			translationBuilder.add(Items.MARKS_CROSSBOW, "神臂弩");
 			translationBuilder.add(Items.ARROWPROOF_VEST, "防箭衣");
+			translationBuilder.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK, "煉錠銅方塊");
 			translationBuilder.add(Blocks.REFINED_COPPER_BLOCK, "精銅方塊");
-			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "銅鐵方塊");
-			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金銅方塊");
+			translationBuilder.add(Blocks.CUFE_ALLOY_BLOCK, "銅鐵合金方塊");
+			translationBuilder.add(Blocks.CUFE_BLOCK, "銅鐵方塊");
+			translationBuilder.add(Blocks.AUCU_ALLOY_BLOCK, "金銅合金方塊");
+			translationBuilder.add(Blocks.AUCU_BLOCK, "金銅方塊");
+			translationBuilder.add(Blocks.PIG_IRON_BLOCK, "生鐵方塊");
 			translationBuilder.add(Blocks.STEEL_BLOCK, "鋼方塊");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_REFINED_COPPER), "精铜盔甲裝備聲");
 			translationBuilder.add(getSoundEventSubtitlesKey(SoundEvents.EQUIP_CUFE_ALLOY), "銅鐵盔甲裝備聲");
@@ -983,6 +1031,10 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_A_NEW_SPIDER), "擊殺一隻特殊的蜘蛛變體");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "來嚐嚐這個");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.SHOT_SPRAY_POISON_SPIDER), "使用箭射中噴吐毒蛛");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "新式腐肉");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_A_DEPOISON_SPIDER_LEG), "烹飪一份蜘蛛腿");
+			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "蜘蛛偽裝");
+			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.HAVE_EFFECT_SPIDER_CAMOUFLAGE), "裝備蜘蛛護皮套裝以避免觸發蜘蛛卵繭");
 			translationBuilder.add(getAdvancementTitleKey(AdvancementGenerator.KILL_ALL_SPIDERS), "節肢剋星");
 			translationBuilder.add(getAdvancementDescriptionKey(AdvancementGenerator.KILL_ALL_SPIDERS), "擊殺所有種類的蜘蛛");
 		}

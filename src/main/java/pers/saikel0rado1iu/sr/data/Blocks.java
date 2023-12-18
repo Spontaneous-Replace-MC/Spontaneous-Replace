@@ -55,12 +55,20 @@ import static pers.saikel0rado1iu.sr.variant.spider.mob.general.SpiderData.STICK
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class Blocks extends SilkBlock {
+	public static final Block COPPER_FOR_SMELTING_INGOT_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.RAW_COPPER_BLOCK)))
+			.build(SpontaneousReplace.DATA, "copper_for_smelting_ingot_block");
 	public static final Block REFINED_COPPER_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.COPPER_BLOCK)))
 			.build(SpontaneousReplace.DATA, "refined_copper_block");
-	public static final Block CUFE_ALLOY_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.IRON_BLOCK)))
+	public static final Block CUFE_ALLOY_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.RAW_IRON_BLOCK)))
 			.build(SpontaneousReplace.DATA, "cufe_alloy_block");
-	public static final Block AUCU_ALLOY_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.GOLD_BLOCK)))
+	public static final Block CUFE_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.IRON_BLOCK)))
+			.build(SpontaneousReplace.DATA, "cufe_block");
+	public static final Block AUCU_ALLOY_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.RAW_GOLD_BLOCK)))
 			.build(SpontaneousReplace.DATA, "aucu_alloy_block");
+	public static final Block AUCU_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.GOLD_BLOCK)))
+			.build(SpontaneousReplace.DATA, "aucu_block");
+	public static final Block PIG_IRON_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.IRON_BLOCK)))
+			.build(SpontaneousReplace.DATA, "pig_iron_block");
 	public static final Block STEEL_BLOCK = builder(new Block(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.METAL)))
 			.build(SpontaneousReplace.DATA, "steel_block");
 	public static final EerieRegolith EERIE_REGOLITH = builder(new EerieRegolith(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.PODZOL).mapColor(MapColor.BLACK)))

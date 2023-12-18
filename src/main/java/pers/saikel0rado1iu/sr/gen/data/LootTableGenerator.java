@@ -62,9 +62,13 @@ public interface LootTableGenerator {
 		
 		@Override
 		public void generate() {
+			addDrop(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK);
 			addDrop(Blocks.REFINED_COPPER_BLOCK);
 			addDrop(Blocks.CUFE_ALLOY_BLOCK);
+			addDrop(Blocks.CUFE_BLOCK);
 			addDrop(Blocks.AUCU_ALLOY_BLOCK);
+			addDrop(Blocks.AUCU_BLOCK);
+			addDrop(Blocks.PIG_IRON_BLOCK);
 			addDrop(Blocks.STEEL_BLOCK);
 			addDropWithSilkTouch(Blocks.EERIE_REGOLITH, GRAVEL);
 			addDropWithSilkTouch(Blocks.TREACHEROUS_SLUDGE, MUD);

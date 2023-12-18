@@ -26,14 +26,11 @@ package pers.saikel0rado1iu.sr.gen.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.silk.gen.data.family.EquipFamily;
@@ -67,6 +64,8 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 		offerSmithingIngredient(exporter, Ingredient.ofItems(Items.COPPER_INGOT), Ingredient.ofItems(Items.COPPER_INGOT), RecipeCategory.MISC, COPPER_FOR_SMELTING_INGOT);
 		offerSmelting(exporter, List.of(COPPER_FOR_SMELTING_INGOT), RecipeCategory.MISC, REFINED_COPPER_INGOT, 0.8F, TickUtil.getTick(20), getItemPath(REFINED_COPPER_INGOT));
 		offerBlasting(exporter, List.of(COPPER_FOR_SMELTING_INGOT), RecipeCategory.MISC, REFINED_COPPER_INGOT, 0.8F, TickUtil.getTick(10), getItemPath(REFINED_COPPER_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, COPPER_FOR_SMELTING_INGOT, RecipeCategory.BUILDING_BLOCKS, COPPER_FOR_SMELTING_INGOT_BLOCK,
+				convertBetween(COPPER_FOR_SMELTING_INGOT_BLOCK, COPPER_FOR_SMELTING_INGOT), getItemPath(COPPER_FOR_SMELTING_INGOT_BLOCK), convertBetween(COPPER_FOR_SMELTING_INGOT, COPPER_FOR_SMELTING_INGOT_BLOCK), getItemPath(COPPER_FOR_SMELTING_INGOT));
 		offerSmeltingInOneJson(exporter, List.of(REFINED_COPPER_SHOVEL, REFINED_COPPER_PICKAXE, REFINED_COPPER_AXE, REFINED_COPPER_HOE, REFINED_COPPER_SWORD, REFINED_COPPER_HELMET, REFINED_COPPER_CHESTPLATE, REFINED_COPPER_LEGGINGS, REFINED_COPPER_BOOTS),
 				RecipeCategory.MISC, REFINED_COPPER_NUGGET, 0.15F, TickUtil.getTick(20), getItemPath(REFINED_COPPER_NUGGET));
 		offerBlastingInOneJson(exporter, List.of(REFINED_COPPER_SHOVEL, REFINED_COPPER_PICKAXE, REFINED_COPPER_AXE, REFINED_COPPER_HOE, REFINED_COPPER_SWORD, REFINED_COPPER_HELMET, REFINED_COPPER_CHESTPLATE, REFINED_COPPER_LEGGINGS, REFINED_COPPER_BOOTS),
@@ -82,14 +81,16 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 		offerSmithingIngredient(exporter, Ingredient.ofItems(REFINED_COPPER_INGOT), Ingredient.ofItems(Items.IRON_INGOT), RecipeCategory.MISC, CUFE_ALLOY);
 		offerSmelting(exporter, List.of(CUFE_ALLOY), RecipeCategory.MISC, CUFE_ALLOY_INGOT, 0.8F, TickUtil.getTick(20), getItemPath(CUFE_ALLOY_INGOT));
 		offerBlasting(exporter, List.of(CUFE_ALLOY), RecipeCategory.MISC, CUFE_ALLOY_INGOT, 0.8F, TickUtil.getTick(10), getItemPath(CUFE_ALLOY_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CUFE_ALLOY, RecipeCategory.BUILDING_BLOCKS, CUFE_ALLOY_BLOCK,
+				convertBetween(CUFE_ALLOY_BLOCK, CUFE_ALLOY), getItemPath(CUFE_ALLOY_BLOCK), convertBetween(CUFE_ALLOY, CUFE_ALLOY_BLOCK), getItemPath(CUFE_ALLOY));
 		offerSmeltingInOneJson(exporter, List.of(CUFE_ALLOY_SHOVEL, CUFE_ALLOY_PICKAXE, CUFE_ALLOY_AXE, CUFE_ALLOY_HOE, CUFE_ALLOY_SWORD, CUFE_ALLOY_HELMET, CUFE_ALLOY_CHESTPLATE, CUFE_ALLOY_LEGGINGS, CUFE_ALLOY_BOOTS),
 				RecipeCategory.MISC, CUFE_ALLOY_NUGGET, 0.15F, TickUtil.getTick(20), getItemPath(CUFE_ALLOY_NUGGET));
 		offerBlastingInOneJson(exporter, List.of(CUFE_ALLOY_SHOVEL, CUFE_ALLOY_PICKAXE, CUFE_ALLOY_AXE, CUFE_ALLOY_HOE, CUFE_ALLOY_SWORD, CUFE_ALLOY_HELMET, CUFE_ALLOY_CHESTPLATE, CUFE_ALLOY_LEGGINGS, CUFE_ALLOY_BOOTS),
 				RecipeCategory.MISC, CUFE_ALLOY_NUGGET, 0.15F, TickUtil.getTick(10), getItemPath(CUFE_ALLOY_NUGGET));
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CUFE_ALLOY_NUGGET, RecipeCategory.MISC, CUFE_ALLOY_INGOT,
 				convertBetween(CUFE_ALLOY_INGOT, CUFE_ALLOY_NUGGET), getItemPath(CUFE_ALLOY_INGOT), convertBetween(CUFE_ALLOY_NUGGET, CUFE_ALLOY_INGOT), getItemPath(CUFE_ALLOY_NUGGET));
-		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CUFE_ALLOY_INGOT, RecipeCategory.BUILDING_BLOCKS, CUFE_ALLOY_BLOCK,
-				convertBetween(CUFE_ALLOY_BLOCK, CUFE_ALLOY_INGOT), getItemPath(CUFE_ALLOY_BLOCK), convertBetween(CUFE_ALLOY_INGOT, CUFE_ALLOY_BLOCK), getItemPath(CUFE_ALLOY_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CUFE_ALLOY_INGOT, RecipeCategory.BUILDING_BLOCKS, CUFE_BLOCK,
+				convertBetween(CUFE_BLOCK, CUFE_ALLOY_INGOT), getItemPath(CUFE_BLOCK), convertBetween(CUFE_ALLOY_INGOT, CUFE_BLOCK), getItemPath(CUFE_ALLOY_INGOT));
 		generateEquipRecipe(exporter, Ingredient.ofItems(CUFE_ALLOY_INGOT), EquipFamily.builder()
 				.shovel(CUFE_ALLOY_SHOVEL).pickaxe(CUFE_ALLOY_PICKAXE).axe(CUFE_ALLOY_AXE).hoe(CUFE_ALLOY_HOE).sword(CUFE_ALLOY_SWORD)
 				.helmet(CUFE_ALLOY_HELMET).chestplate(CUFE_ALLOY_CHESTPLATE).leggings(CUFE_ALLOY_LEGGINGS).boots(CUFE_ALLOY_BOOTS).build());
@@ -97,14 +98,16 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 		offerSmithingIngredient(exporter, Ingredient.ofItems(REFINED_COPPER_INGOT), Ingredient.ofItems(Items.GOLD_INGOT), RecipeCategory.MISC, AUCU_ALLOY);
 		offerSmelting(exporter, List.of(AUCU_ALLOY), RecipeCategory.MISC, AUCU_ALLOY_INGOT, 0.8F, TickUtil.getTick(20), getItemPath(AUCU_ALLOY_INGOT));
 		offerBlasting(exporter, List.of(AUCU_ALLOY), RecipeCategory.MISC, AUCU_ALLOY_INGOT, 0.8F, TickUtil.getTick(10), getItemPath(AUCU_ALLOY_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, AUCU_ALLOY, RecipeCategory.BUILDING_BLOCKS, AUCU_ALLOY_BLOCK,
+				convertBetween(AUCU_ALLOY_BLOCK, AUCU_ALLOY), getItemPath(AUCU_ALLOY_BLOCK), convertBetween(AUCU_ALLOY, AUCU_ALLOY_BLOCK), getItemPath(AUCU_ALLOY));
 		offerSmeltingInOneJson(exporter, List.of(AUCU_ALLOY_SHOVEL, AUCU_ALLOY_PICKAXE, AUCU_ALLOY_AXE, AUCU_ALLOY_HOE, AUCU_ALLOY_SWORD, AUCU_ALLOY_HELMET, AUCU_ALLOY_CHESTPLATE, AUCU_ALLOY_LEGGINGS, AUCU_ALLOY_BOOTS),
 				RecipeCategory.MISC, AUCU_ALLOY_NUGGET, 0.15F, TickUtil.getTick(20), getItemPath(AUCU_ALLOY_NUGGET));
 		offerBlastingInOneJson(exporter, List.of(AUCU_ALLOY_SHOVEL, AUCU_ALLOY_PICKAXE, AUCU_ALLOY_AXE, AUCU_ALLOY_HOE, AUCU_ALLOY_SWORD, AUCU_ALLOY_HELMET, AUCU_ALLOY_CHESTPLATE, AUCU_ALLOY_LEGGINGS, AUCU_ALLOY_BOOTS),
 				RecipeCategory.MISC, AUCU_ALLOY_NUGGET, 0.15F, TickUtil.getTick(10), getItemPath(AUCU_ALLOY_NUGGET));
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, AUCU_ALLOY_NUGGET, RecipeCategory.MISC, AUCU_ALLOY_INGOT,
 				convertBetween(AUCU_ALLOY_INGOT, AUCU_ALLOY_NUGGET), getItemPath(AUCU_ALLOY_INGOT), convertBetween(AUCU_ALLOY_NUGGET, AUCU_ALLOY_INGOT), getItemPath(AUCU_ALLOY_NUGGET));
-		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, AUCU_ALLOY_INGOT, RecipeCategory.BUILDING_BLOCKS, AUCU_ALLOY_BLOCK,
-				convertBetween(AUCU_ALLOY_BLOCK, AUCU_ALLOY_INGOT), getItemPath(AUCU_ALLOY_BLOCK), convertBetween(AUCU_ALLOY_INGOT, AUCU_ALLOY_BLOCK), getItemPath(AUCU_ALLOY_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, AUCU_ALLOY_INGOT, RecipeCategory.BUILDING_BLOCKS, AUCU_BLOCK,
+				convertBetween(AUCU_BLOCK, AUCU_ALLOY_INGOT), getItemPath(AUCU_BLOCK), convertBetween(AUCU_ALLOY_INGOT, AUCU_BLOCK), getItemPath(AUCU_ALLOY_INGOT));
 		generateEquipRecipe(exporter, Ingredient.ofItems(AUCU_ALLOY_INGOT), EquipFamily.builder()
 				.shovel(AUCU_ALLOY_SHOVEL).pickaxe(AUCU_ALLOY_PICKAXE).axe(AUCU_ALLOY_AXE).hoe(AUCU_ALLOY_HOE).sword(AUCU_ALLOY_SWORD)
 				.helmet(AUCU_ALLOY_HELMET).chestplate(AUCU_ALLOY_CHESTPLATE).leggings(AUCU_ALLOY_LEGGINGS).boots(AUCU_ALLOY_BOOTS).build());
@@ -125,6 +128,8 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 		offerSmithingIngredient(exporter, Ingredient.ofItems(CLEAN_COAL), Ingredient.ofItems(Items.IRON_INGOT), RecipeCategory.MISC, PIG_IRON);
 		offerSmelting(exporter, List.of(PIG_IRON), RecipeCategory.MISC, STEEL_INGOT, 0.8F, TickUtil.getTick(20), getItemPath(STEEL_INGOT));
 		offerBlasting(exporter, List.of(PIG_IRON), RecipeCategory.MISC, STEEL_INGOT, 0.8F, TickUtil.getTick(10), getItemPath(STEEL_INGOT));
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, PIG_IRON, RecipeCategory.BUILDING_BLOCKS, PIG_IRON_BLOCK,
+				convertBetween(PIG_IRON_BLOCK, PIG_IRON), getItemPath(PIG_IRON_BLOCK), convertBetween(PIG_IRON, PIG_IRON_BLOCK), getItemPath(PIG_IRON));
 		offerSmeltingInOneJson(exporter, List.of(STEEL_SHOVEL, STEEL_PICKAXE, STEEL_AXE, STEEL_HOE, STEEL_SWORD, STEEL_HELMET, STEEL_CHESTPLATE, STEEL_LEGGINGS, STEEL_BOOTS),
 				RecipeCategory.MISC, Items.IRON_INGOT, 0.15F, TickUtil.getTick(20), getItemPath(Items.IRON_INGOT));
 		offerBlastingInOneJson(exporter, List.of(STEEL_SHOVEL, STEEL_PICKAXE, STEEL_AXE, STEEL_HOE, STEEL_SWORD, STEEL_HELMET, STEEL_CHESTPLATE, STEEL_LEGGINGS, STEEL_BOOTS),
@@ -200,9 +205,15 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 				.criterion(hasItem(COMPOSITE_FABRIC), conditionsFromItem(COMPOSITE_FABRIC))
 				.criterion(hasItem(STEEL_INGOT), conditionsFromItem(STEEL_INGOT))
 				.offerTo(exporter, getItemPath(ARROWPROOF_VEST));
-		offerFoodCookingRecipe(exporter, getItemPath(Items.FURNACE), RecipeSerializer.SMELTING, TickUtil.getTick(10), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
-		offerFoodCookingRecipe(exporter, getItemPath(Items.SMOKER), RecipeSerializer.SMOKING, TickUtil.getTick(5), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
-		offerFoodCookingRecipe(exporter, getItemPath(Items.CAMPFIRE), RecipeSerializer.CAMPFIRE_COOKING, TickUtil.getTick(30), SPIDER_LEG, DEPOISON_SPIDER_LEG, 0.35F);
+		CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(10))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
+				.offerTo(exporter, RecipeProvider.getSmeltingItemPath(DEPOISON_SPIDER_LEG));
+		CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(5))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
+				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.SMOKER));
+		CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(SPIDER_LEG), RecipeCategory.FOOD, DEPOISON_SPIDER_LEG, 0.35F, TickUtil.getTick(30))
+				.criterion(hasItem(SPIDER_LEG), conditionsFromItem(SPIDER_LEG))
+				.offerTo(exporter, RecipeProvider.convertBetween(DEPOISON_SPIDER_LEG, Items.CAMPFIRE));
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(Items.STRING), Ingredient.ofItems(COMPACT_GOSSAMER), COMPACT_STRING);
 		offerCrossCompactingRecipe(exporter, RecipeCategory.MISC, Ingredient.ofItems(COMPACT_STRING), Ingredient.ofItems(STICKY_COMPACT_GOSSAMER), COMPOSITE_STRING);
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, COMPOSITE_STRING, RecipeCategory.MISC, COMPOSITE_FABRIC,

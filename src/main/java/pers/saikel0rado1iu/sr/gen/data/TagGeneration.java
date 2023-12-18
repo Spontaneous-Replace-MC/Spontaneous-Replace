@@ -88,9 +88,13 @@ public interface TagGeneration {
 		@Override
 		protected void configure(RegistryWrapper.WrapperLookup arg) {
 			getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+					.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK)
 					.add(Blocks.REFINED_COPPER_BLOCK)
 					.add(Blocks.CUFE_ALLOY_BLOCK)
+					.add(Blocks.CUFE_BLOCK)
 					.add(Blocks.AUCU_ALLOY_BLOCK)
+					.add(Blocks.AUCU_BLOCK)
+					.add(Blocks.PIG_IRON_BLOCK)
 					.add(Blocks.STEEL_BLOCK)
 					.add(Blocks.EERIE_RIND)
 					.add(Blocks.ICE_EERIE_RIND)
@@ -99,10 +103,14 @@ public interface TagGeneration {
 					.add(Blocks.WATER_EERIE_RIND)
 					.add(Blocks.EERIE_BOUGH);
 			getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+					.add(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK)
 					.add(Blocks.REFINED_COPPER_BLOCK)
-					.add(Blocks.CUFE_ALLOY_BLOCK);
+					.add(Blocks.CUFE_ALLOY_BLOCK)
+					.add(Blocks.CUFE_BLOCK);
 			getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
 					.add(Blocks.AUCU_ALLOY_BLOCK)
+					.add(Blocks.AUCU_BLOCK)
+					.add(Blocks.PIG_IRON_BLOCK)
 					.add(Blocks.STEEL_BLOCK)
 					.add(Blocks.EERIE_RIND)
 					.add(Blocks.ICE_EERIE_RIND)
@@ -111,8 +119,8 @@ public interface TagGeneration {
 					.add(Blocks.WATER_EERIE_RIND)
 					.add(Blocks.EERIE_BOUGH);
 			getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
-					.add(Blocks.CUFE_ALLOY_BLOCK)
-					.add(Blocks.AUCU_ALLOY_BLOCK)
+					.add(Blocks.CUFE_BLOCK)
+					.add(Blocks.AUCU_BLOCK)
 					.add(Blocks.STEEL_BLOCK);
 			getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
 					.add(Blocks.EERIE_REGOLITH)

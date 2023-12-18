@@ -50,9 +50,13 @@ public final class ModelGenerator extends FabricModelProvider {
 	
 	@Override
 	public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+		blockStateModelGenerator.registerSimpleCubeAll(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(Blocks.REFINED_COPPER_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(Blocks.CUFE_ALLOY_BLOCK);
+		blockStateModelGenerator.registerSimpleCubeAll(Blocks.CUFE_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(Blocks.AUCU_ALLOY_BLOCK);
+		blockStateModelGenerator.registerSimpleCubeAll(Blocks.AUCU_BLOCK);
+		blockStateModelGenerator.registerSimpleCubeAll(Blocks.PIG_IRON_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(Blocks.STEEL_BLOCK);
 		blockStateModelGenerator.registerSingleton(Blocks.EERIE_REGOLITH, TexturedModel.CUBE_BOTTOM_TOP);
 		blockStateModelGenerator.registerSimpleCubeAll(Blocks.TREACHEROUS_SLUDGE);
@@ -79,11 +83,11 @@ public final class ModelGenerator extends FabricModelProvider {
 		itemModelGenerator.register(Items.COPPER_FOR_SMELTING_INGOT, Models.GENERATED);
 		itemModelGenerator.register(Items.REFINED_COPPER_INGOT, Models.GENERATED);
 		itemModelGenerator.register(Items.REFINED_COPPER_NUGGET, Models.GENERATED);
-		itemModelGenerator.register(Items.REFINED_COPPER_SHOVEL, Models.GENERATED);
-		itemModelGenerator.register(Items.REFINED_COPPER_PICKAXE, Models.GENERATED);
-		itemModelGenerator.register(Items.REFINED_COPPER_AXE, Models.GENERATED);
-		itemModelGenerator.register(Items.REFINED_COPPER_HOE, Models.GENERATED);
-		itemModelGenerator.register(Items.REFINED_COPPER_SWORD, Models.GENERATED);
+		itemModelGenerator.register(Items.REFINED_COPPER_SHOVEL, Models.HANDHELD);
+		itemModelGenerator.register(Items.REFINED_COPPER_PICKAXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.REFINED_COPPER_AXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.REFINED_COPPER_HOE, Models.HANDHELD);
+		itemModelGenerator.register(Items.REFINED_COPPER_SWORD, Models.HANDHELD);
 		itemModelGenerator.registerArmor(Items.REFINED_COPPER_HELMET);
 		itemModelGenerator.registerArmor(Items.REFINED_COPPER_CHESTPLATE);
 		itemModelGenerator.registerArmor(Items.REFINED_COPPER_LEGGINGS);
@@ -91,11 +95,11 @@ public final class ModelGenerator extends FabricModelProvider {
 		itemModelGenerator.register(Items.CUFE_ALLOY, Models.GENERATED);
 		itemModelGenerator.register(Items.CUFE_ALLOY_INGOT, Models.GENERATED);
 		itemModelGenerator.register(Items.CUFE_ALLOY_NUGGET, Models.GENERATED);
-		itemModelGenerator.register(Items.CUFE_ALLOY_SHOVEL, Models.GENERATED);
-		itemModelGenerator.register(Items.CUFE_ALLOY_PICKAXE, Models.GENERATED);
-		itemModelGenerator.register(Items.CUFE_ALLOY_AXE, Models.GENERATED);
-		itemModelGenerator.register(Items.CUFE_ALLOY_HOE, Models.GENERATED);
-		itemModelGenerator.register(Items.CUFE_ALLOY_SWORD, Models.GENERATED);
+		itemModelGenerator.register(Items.CUFE_ALLOY_SHOVEL, Models.HANDHELD);
+		itemModelGenerator.register(Items.CUFE_ALLOY_PICKAXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.CUFE_ALLOY_AXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.CUFE_ALLOY_HOE, Models.HANDHELD);
+		itemModelGenerator.register(Items.CUFE_ALLOY_SWORD, Models.HANDHELD);
 		itemModelGenerator.registerArmor(Items.CUFE_ALLOY_HELMET);
 		itemModelGenerator.registerArmor(Items.CUFE_ALLOY_CHESTPLATE);
 		itemModelGenerator.registerArmor(Items.CUFE_ALLOY_LEGGINGS);
@@ -103,11 +107,11 @@ public final class ModelGenerator extends FabricModelProvider {
 		itemModelGenerator.register(Items.AUCU_ALLOY, Models.GENERATED);
 		itemModelGenerator.register(Items.AUCU_ALLOY_INGOT, Models.GENERATED);
 		itemModelGenerator.register(Items.AUCU_ALLOY_NUGGET, Models.GENERATED);
-		itemModelGenerator.register(Items.AUCU_ALLOY_SHOVEL, Models.GENERATED);
-		itemModelGenerator.register(Items.AUCU_ALLOY_PICKAXE, Models.GENERATED);
-		itemModelGenerator.register(Items.AUCU_ALLOY_AXE, Models.GENERATED);
-		itemModelGenerator.register(Items.AUCU_ALLOY_HOE, Models.GENERATED);
-		itemModelGenerator.register(Items.AUCU_ALLOY_SWORD, Models.GENERATED);
+		itemModelGenerator.register(Items.AUCU_ALLOY_SHOVEL, Models.HANDHELD);
+		itemModelGenerator.register(Items.AUCU_ALLOY_PICKAXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.AUCU_ALLOY_AXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.AUCU_ALLOY_HOE, Models.HANDHELD);
+		itemModelGenerator.register(Items.AUCU_ALLOY_SWORD, Models.HANDHELD);
 		itemModelGenerator.registerArmor(Items.AUCU_ALLOY_HELMET);
 		itemModelGenerator.registerArmor(Items.AUCU_ALLOY_CHESTPLATE);
 		itemModelGenerator.registerArmor(Items.AUCU_ALLOY_LEGGINGS);
@@ -115,11 +119,11 @@ public final class ModelGenerator extends FabricModelProvider {
 		itemModelGenerator.register(Items.CLEAN_COAL, Models.GENERATED);
 		itemModelGenerator.register(Items.PIG_IRON, Models.GENERATED);
 		itemModelGenerator.register(Items.STEEL_INGOT, Models.GENERATED);
-		itemModelGenerator.register(Items.STEEL_SHOVEL, Models.GENERATED);
-		itemModelGenerator.register(Items.STEEL_PICKAXE, Models.GENERATED);
-		itemModelGenerator.register(Items.STEEL_AXE, Models.GENERATED);
-		itemModelGenerator.register(Items.STEEL_HOE, Models.GENERATED);
-		itemModelGenerator.register(Items.STEEL_SWORD, Models.GENERATED);
+		itemModelGenerator.register(Items.STEEL_SHOVEL, Models.HANDHELD);
+		itemModelGenerator.register(Items.STEEL_PICKAXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.STEEL_AXE, Models.HANDHELD);
+		itemModelGenerator.register(Items.STEEL_HOE, Models.HANDHELD);
+		itemModelGenerator.register(Items.STEEL_SWORD, Models.HANDHELD);
 		itemModelGenerator.registerArmor(Items.STEEL_HELMET);
 		itemModelGenerator.registerArmor(Items.STEEL_CHESTPLATE);
 		itemModelGenerator.registerArmor(Items.STEEL_LEGGINGS);
