@@ -39,6 +39,7 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import pers.saikel0rado1iu.sr.gen.data.DamageTypes;
 
 import static pers.saikel0rado1iu.sr.data.EntityTypes.TOXIN;
 import static pers.saikel0rado1iu.sr.data.ParticleTypes.TOXIN_PARTICLE;
@@ -104,7 +105,7 @@ public class ToxinEntity extends ProjectileEntity {
 		super.onEntityHit(entityHitResult);
 		net.minecraft.entity.Entity entity = entityHitResult.getEntity();
 		if (entity instanceof LivingEntity livingEntity) {
-			livingEntity.damage(getDamageSources().mobAttack((LivingEntity) getOwner()), 1.0f);
+			livingEntity.damage(getDamageSources().create(DamageTypes.SPIDER_TOXIN, this, getOwner()), 1.0f);
 			livingEntity.addStatusEffect((new StatusEffectInstance(StatusEffects.POISON, 20 * 15, 0)));
 		}
 	}
