@@ -63,6 +63,8 @@ public final class Items extends SilkItem {
 	public static final Item ICON = builder(new Item(new FabricItemSettings())).build(SpontaneousReplace.DATA, "icon");
 	public static final Item COPPER_FOR_SMELTING_INGOT = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "copper_for_smelting_ingot");
+	public static final BlockItem COPPER_FOR_SMELTING_INGOT_BLOCK = builder(new BlockItem(Blocks.COPPER_FOR_SMELTING_INGOT_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "copper_for_smelting_ingot_block");
 	public static final Item REFINED_COPPER_INGOT = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "refined_copper_ingot");
 	public static final Item REFINED_COPPER_NUGGET = builder(new Item(new FabricItemSettings()))
@@ -89,12 +91,14 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "refined_copper_boots");
 	public static final Item CUFE_ALLOY = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "cufe_alloy");
+	public static final BlockItem CUFE_ALLOY_BLOCK = builder(new BlockItem(Blocks.CUFE_ALLOY_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "cufe_alloy_block");
 	public static final Item CUFE_ALLOY_INGOT = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "cufe_alloy_ingot");
 	public static final Item CUFE_ALLOY_NUGGET = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "cufe_alloy_nugget");
-	public static final BlockItem CUFE_ALLOY_BLOCK = builder(new BlockItem(Blocks.CUFE_ALLOY_BLOCK, new FabricItemSettings()))
-			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "cufe_alloy_block");
+	public static final BlockItem CUFE_BLOCK = builder(new BlockItem(Blocks.CUFE_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "cufe_block");
 	public static final ShovelItem CUFE_ALLOY_SHOVEL = builder(CuFeTool.MATERIAL.createShovel(4.5F, new FabricItemSettings()))
 			.group(ItemGroups.TOOLS).build(SpontaneousReplace.DATA, "cufe_alloy_shovel");
 	public static final PickaxeItem CUFE_ALLOY_PICKAXE = builder(CuFeTool.MATERIAL.createPickaxe(4, new FabricItemSettings()))
@@ -115,12 +119,14 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "cufe_alloy_boots");
 	public static final Item AUCU_ALLOY = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "aucu_alloy");
+	public static final BlockItem AUCU_ALLOY_BLOCK = builder(new BlockItem(Blocks.AUCU_ALLOY_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "aucu_alloy_block");
 	public static final Item AUCU_ALLOY_INGOT = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "aucu_alloy_ingot");
 	public static final Item AUCU_ALLOY_NUGGET = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "aucu_alloy_nugget");
-	public static final BlockItem AUCU_ALLOY_BLOCK = builder(new BlockItem(Blocks.AUCU_ALLOY_BLOCK, new FabricItemSettings()))
-			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "aucu_alloy_block");
+	public static final BlockItem AUCU_BLOCK = builder(new BlockItem(Blocks.AUCU_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "aucu_block");
 	public static final ShovelItem AUCU_ALLOY_SHOVEL = builder(AuCuTool.MATERIAL.createShovel(3.5F, new FabricItemSettings()))
 			.group(ItemGroups.TOOLS).build(SpontaneousReplace.DATA, "aucu_alloy_shovel");
 	public static final PickaxeItem AUCU_ALLOY_PICKAXE = builder(AuCuTool.MATERIAL.createPickaxe(2, new FabricItemSettings()))
@@ -143,6 +149,8 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "clean_coal");
 	public static final Item PIG_IRON = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "pig_iron");
+	public static final BlockItem PIG_IRON_BLOCK = builder(new BlockItem(Blocks.PIG_IRON_BLOCK, new FabricItemSettings()))
+			.group(ItemGroups.BUILDING_BLOCKS).build(SpontaneousReplace.DATA, "pig_alloy_block");
 	public static final Item STEEL_INGOT = builder(new Item(new FabricItemSettings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "steel_ingot");
 	public static final BlockItem STEEL_BLOCK = builder(new BlockItem(Blocks.STEEL_BLOCK, new FabricItemSettings()))
