@@ -24,13 +24,7 @@
 
 package pers.saikel0rado1iu.sr.gen.world;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.registry.RegistryWrapper;
-import pers.saikel0rado1iu.silk.api.ModBasicData;
 import pers.saikel0rado1iu.silk.gen.world.*;
-import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
-
-import java.util.concurrent.CompletableFuture;
 
 /**
  * <h2 style="color:FFC800">自然更替世界生成器</h2>
@@ -38,10 +32,6 @@ import java.util.concurrent.CompletableFuture;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class WorldGenerator extends SilkWorldGenerator {
-	public WorldGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-		super(output, registriesFuture);
-	}
-	
 	@Override
 	public SilkBiomeKey biomes() {
 		return new BiomeKeys();
@@ -70,10 +60,5 @@ public class WorldGenerator extends SilkWorldGenerator {
 	@Override
 	public SilkWorldPreset worldPresets() {
 		return new WorldPresets();
-	}
-	
-	@Override
-	public ModBasicData getMod() {
-		return SpontaneousReplace.DATA;
 	}
 }

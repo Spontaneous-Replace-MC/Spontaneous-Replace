@@ -25,7 +25,10 @@
 package pers.saikel0rado1iu.sr.gen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
+import net.minecraft.registry.RegistryWrapper;
 import pers.saikel0rado1iu.silk.gen.ModDataGeneration;
+import pers.saikel0rado1iu.silk.gen.data.SilkDamageType;
 import pers.saikel0rado1iu.silk.gen.world.SilkWorldGenerator;
 import pers.saikel0rado1iu.sr.gen.data.*;
 import pers.saikel0rado1iu.sr.gen.world.WorldGenerator;
@@ -55,7 +58,16 @@ public final class DataGeneration extends ModDataGeneration {
 	}
 	
 	@Override
-	public FabricDataGenerator.Pack.RegistryDependentFactory<SilkWorldGenerator> worldGen() {
-		return WorldGenerator::new;
+	public SilkWorldGenerator worldGen() {
+		return new WorldGenerator();
+	}
+	
+	@Override
+	public SilkDamageType damageType() {
+		return new DamageTypes();
+	}
+	
+	@Override
+	public void dynamicRegistry(RegistryWrapper.WrapperLookup wrapperLookup, FabricDynamicRegistryProvider.Entries entries) {
 	}
 }
