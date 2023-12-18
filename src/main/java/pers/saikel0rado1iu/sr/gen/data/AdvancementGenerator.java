@@ -38,10 +38,7 @@ import net.minecraft.loot.context.LootContext;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.predicate.DamagePredicate;
 import net.minecraft.predicate.NumberRange;
-import net.minecraft.predicate.entity.DistancePredicate;
-import net.minecraft.predicate.entity.EntityPredicate;
-import net.minecraft.predicate.entity.LocationPredicate;
-import net.minecraft.predicate.entity.LootContextPredicate;
+import net.minecraft.predicate.entity.*;
 import net.minecraft.predicate.item.EnchantmentPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.Registries;
@@ -53,6 +50,7 @@ import pers.saikel0rado1iu.silk.api.registry.gen.data.criterion.ShotProjectileCr
 import pers.saikel0rado1iu.silk.gen.data.SilkAdvancement;
 import pers.saikel0rado1iu.sr.data.EntityTypes;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
+import pers.saikel0rado1iu.sr.data.StatusEffects;
 
 import java.util.List;
 import java.util.Optional;
@@ -65,6 +63,7 @@ import static pers.saikel0rado1iu.sr.data.Items.*;
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
+@SuppressWarnings("DataFlowIssue")
 public final class AdvancementGenerator extends FabricAdvancementProvider {
 	private static final ItemStack POTION_STACK = new ItemStack(Items.POTION);
 	private static final ItemStack POISON_ARROW_STACK = new ItemStack(Items.TIPPED_ARROW);
@@ -152,12 +151,10 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					false)
 			.parent(HAVE_A_NEW_METAL)
-			.criterion(RecipeProvider.hasItem(REFINED_COPPER_INGOT), InventoryChangedCriterion.Conditions.items(REFINED_COPPER_INGOT))
 			.criterion(RecipeProvider.hasItem(CUFE_ALLOY_INGOT), InventoryChangedCriterion.Conditions.items(CUFE_ALLOY_INGOT))
 			.criterion(RecipeProvider.hasItem(AUCU_ALLOY_INGOT), InventoryChangedCriterion.Conditions.items(AUCU_ALLOY_INGOT))
 			.criterion(RecipeProvider.hasItem(STEEL_INGOT), InventoryChangedCriterion.Conditions.items(STEEL_INGOT))
 			.requirements(AdvancementRequirements.anyOf(List.of(
-					RecipeProvider.hasItem(REFINED_COPPER_INGOT),
 					RecipeProvider.hasItem(CUFE_ALLOY_INGOT),
 					RecipeProvider.hasItem(AUCU_ALLOY_INGOT),
 					RecipeProvider.hasItem(STEEL_INGOT))))
@@ -549,6 +546,31 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					Optional.of(DamagePredicate.Builder.create().sourceEntity(EntityPredicate.Builder.create().type(EntityType.ARROW).build()).build()),
 					Optional.of(EntityPredicate.Builder.create().type(EntityTypes.SPRAY_POISON_SPIDER).build())))
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), SR_PATH + "/shot_spray_poison_spider"));
+	public static final AdvancementEntry HAVE_A_DEPOISON_SPIDER_LEG = Advancement.Builder.create()
+			.display(DEPOISON_SPIDER_LEG,
+					SilkAdvancement.getAdvancementTitle(SpontaneousReplace.DATA, "have_a_depoison_spider_leg"),
+					SilkAdvancement.getAdvancementDescription(SpontaneousReplace.DATA, "have_a_depoison_spider_leg"),
+					null,
+					AdvancementFrame.TASK,
+					true,
+					true,
+					false)
+			.parent(KILL_A_NEW_SPIDER)
+			.criterion(RecipeProvider.hasItem(DEPOISON_SPIDER_LEG), InventoryChangedCriterion.Conditions.items(DEPOISON_SPIDER_LEG))
+			.build(new Identifier(SpontaneousReplace.DATA.getId(), SR_PATH + "/have_a_depoison_spider_leg"));
+	public static final AdvancementEntry HAVE_EFFECT_SPIDER_CAMOUFLAGE = Advancement.Builder.create()
+			.display(SPIDER_EGG_COCOON,
+					SilkAdvancement.getAdvancementTitle(SpontaneousReplace.DATA, "have_effect_spider_camouflage"),
+					SilkAdvancement.getAdvancementDescription(SpontaneousReplace.DATA, "have_effect_spider_camouflage"),
+					null,
+					AdvancementFrame.TASK,
+					true,
+					true,
+					false)
+			.parent(HAVE_A_DEPOISON_SPIDER_LEG)
+			.criterion(Registries.STATUS_EFFECT.getId(StatusEffects.SPIDER_CAMOUFLAGE).toString(), EffectsChangedCriterion.Conditions
+					.create(EntityEffectPredicate.Builder.create().addEffect(StatusEffects.SPIDER_CAMOUFLAGE)))
+			.build(new Identifier(SpontaneousReplace.DATA.getId(), SR_PATH + "/have_effect_spider_camouflage"));
 	public static final AdvancementEntry KILL_ALL_SPIDERS = Advancement.Builder.create()
 			.display(Items.SPIDER_SPAWN_EGG,
 					SilkAdvancement.getAdvancementTitle(SpontaneousReplace.DATA, "kill_all_spiders"),
@@ -622,6 +644,8 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 		consumer.accept(FIND_A_SPIDER_BIOME);
 		consumer.accept(KILL_A_NEW_SPIDER);
 		consumer.accept(SHOT_SPRAY_POISON_SPIDER);
+		consumer.accept(HAVE_A_DEPOISON_SPIDER_LEG);
+		consumer.accept(HAVE_EFFECT_SPIDER_CAMOUFLAGE);
 		consumer.accept(KILL_ALL_SPIDERS);
 	}
 }
