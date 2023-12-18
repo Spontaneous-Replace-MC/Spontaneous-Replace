@@ -27,6 +27,7 @@ package pers.saikel0rado1iu.sr.variant.general.effect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import pers.saikel0rado1iu.sr.gen.data.DamageTypes;
 
 /**
  * <h2 style="color:FFC800">酸化状态效果</h2>
@@ -41,7 +42,7 @@ public class Acidize extends StatusEffect {
 	@Override
 	public void applyUpdateEffect(LivingEntity entity, int amplifier) {
 		super.applyUpdateEffect(entity, amplifier);
-		entity.damage(entity.getDamageSources().magic(), 1.0f);
+		entity.damage(entity.getDamageSources().create(DamageTypes.ACIDIZE), 1);
 	}
 	
 	@Override
