@@ -24,6 +24,12 @@
 
 package pers.saikel0rado1iu.sr.data;
 
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
+import pers.saikel0rado1iu.silk.api.ModBasicData;
 import pers.saikel0rado1iu.silk.api.registry.SilkStatusEffect;
 import pers.saikel0rado1iu.sr.variant.general.effect.Acidize;
 import pers.saikel0rado1iu.sr.variant.spider.effect.SpiderCamouflage;
@@ -34,7 +40,10 @@ import pers.saikel0rado1iu.sr.variant.spider.effect.SpiderCamouflage;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class StatusEffects extends SilkStatusEffect {
-	public static final SpiderCamouflage SPIDER_CAMOUFLAGE = builder(new SpiderCamouflage()).build(SpontaneousReplace.DATA, "spider_camouflage");
-	public static final Acidize ACIDIZE = builder(new Acidize()).build(SpontaneousReplace.DATA, "acidize");
+	public static final RegistryEntry<StatusEffect> SPIDER_CAMOUFLAGE = register(new SpiderCamouflage(), "spider_camouflage");
+	public static final RegistryEntry<StatusEffect> ACIDIZE = register(new Acidize(), "acidize");
 	
+	private static RegistryEntry<StatusEffect> register(StatusEffect statusEffect, String id) {
+		return Registry.registerReference(Registries.STATUS_EFFECT, new Identifier(((ModBasicData) SpontaneousReplace.DATA).getId(), id), statusEffect);
+	}
 }
