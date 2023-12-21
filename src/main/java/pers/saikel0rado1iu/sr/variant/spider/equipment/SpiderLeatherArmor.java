@@ -38,9 +38,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-import static pers.saikel0rado1iu.sr.data.StatusEffects.SPIDER_CAMOUFLAGE;
 import static pers.saikel0rado1iu.sr.data.Items.*;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.EQUIP_SPIDER_LEATHER_ARMOR;
+import static pers.saikel0rado1iu.sr.data.StatusEffects.SPIDER_CAMOUFLAGE;
 
 /**
  * <h2 style="color:FFC800">蜘蛛护皮套装</h2>
@@ -66,7 +66,7 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	 */
 	@Override
 	default @NotNull Map<StatusEffect, Integer> getStatusEffects() {
-		return Map.of(SPIDER_CAMOUFLAGE, 1);
+		return Map.of(SPIDER_CAMOUFLAGE.value(), 1);
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	 */
 	@Override
 	default @NotNull Map<StatusEffect, Float> getStatusEffectsStackingLevel() {
-		return Map.of(SPIDER_CAMOUFLAGE, 0F);
+		return Map.of(SPIDER_CAMOUFLAGE.value(), 0F);
 	}
 	
 	/**
@@ -91,7 +91,7 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	 */
 	@Override
 	default @NotNull Map<StatusEffect, Optional<Map<Item, Optional<Set<EquipmentSlot>>>>> getStatusEffectsKit() {
-		return Map.of(SPIDER_CAMOUFLAGE, Optional.of(Map.of(SPIDER_LEATHER_CAP, Optional.of(Set.of(EquipmentSlot.HEAD)), SPIDER_LEATHER_TUNIC, Optional.of(Set.of(EquipmentSlot.CHEST)))));
+		return Map.of(SPIDER_CAMOUFLAGE.value(), Optional.of(Map.of(SPIDER_LEATHER_CAP, Optional.of(Set.of(EquipmentSlot.HEAD)), SPIDER_LEATHER_TUNIC, Optional.of(Set.of(EquipmentSlot.CHEST)))));
 	}
 	
 	/**
@@ -104,7 +104,7 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	 */
 	@Override
 	default @NotNull Map<StatusEffect, Optional<Integer>> getKitTriggerThreshold() {
-		return Map.of(SPIDER_CAMOUFLAGE, Optional.empty());
+		return Map.of(SPIDER_CAMOUFLAGE.value(), Optional.empty());
 	}
 	
 	@Override
