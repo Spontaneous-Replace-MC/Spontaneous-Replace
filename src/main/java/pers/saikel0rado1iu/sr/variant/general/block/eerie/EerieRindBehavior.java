@@ -41,8 +41,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -72,10 +72,10 @@ public interface EerieRindBehavior {
 	CauldronBehavior CLEAN_SHULKER_BOX = (state, world, pos, player, hand, stack) -> {
 		Block block = Block.getBlockFromItem(stack.getItem());
 		if (!(block instanceof ShulkerBoxBlock)) {
-			return ActionResult.PASS;
+			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else {
 			if (!world.isClient) {
-				if (cantUse(world, pos)) return ActionResult.PASS;
+				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 				ItemStack itemStack = new ItemStack(Blocks.SHULKER_BOX);
 				if (stack.hasNbt()) {
 					itemStack.setNbt(Objects.requireNonNull(stack.getNbt()).copy());
@@ -86,15 +86,15 @@ public interface EerieRindBehavior {
 				LeveledEerieRind.decrementFluidLevel(state, world, pos);
 			}
 			
-			return ActionResult.success(world.isClient);
+			return ItemActionResult.success(world.isClient);
 		}
 	};
 	CauldronBehavior CLEAN_BANNER = (state, world, pos, player, hand, stack) -> {
 		if (BannerBlockEntity.getPatternCount(stack) <= 0) {
-			return ActionResult.PASS;
+			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else {
 			if (!world.isClient) {
-				if (cantUse(world, pos)) return ActionResult.PASS;
+				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 				ItemStack itemStack = stack.copyWithCount(1);
 				BannerBlockEntity.loadFromItemStack(itemStack);
 				if (!player.getAbilities().creativeMode) {
@@ -113,30 +113,30 @@ public interface EerieRindBehavior {
 				LeveledEerieRind.decrementFluidLevel(state, world, pos);
 			}
 			
-			return ActionResult.success(world.isClient);
+			return ItemActionResult.success(world.isClient);
 		}
 	};
 	CauldronBehavior CLEAN_DYEABLE_ITEM = (state, world, pos, player, hand, stack) -> {
 		Item item = stack.getItem();
 		if (!(item instanceof DyeableItem dyeableItem)) {
-			return ActionResult.PASS;
+			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else if (!dyeableItem.hasColor(stack)) {
-			return ActionResult.PASS;
+			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else {
 			if (!world.isClient) {
-				if (cantUse(world, pos)) return ActionResult.PASS;
+				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 				dyeableItem.removeColor(stack);
 				player.incrementStat(Stats.CLEAN_ARMOR);
 				LeveledEerieRind.decrementFluidLevel(state, world, pos);
 			}
 			
-			return ActionResult.success(world.isClient);
+			return ItemActionResult.success(world.isClient);
 		}
 	};
 	
 	static CauldronBehavior.CauldronBehaviorMap createMap(String name) {
 		Object2ObjectOpenHashMap<Item, CauldronBehavior> object2ObjectOpenHashMap = new Object2ObjectOpenHashMap<>();
-		object2ObjectOpenHashMap.defaultReturnValue((state, world, pos, player, hand, stack) -> ActionResult.PASS);
+		object2ObjectOpenHashMap.defaultReturnValue((state, world, pos, player, hand, stack) -> ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION);
 		CauldronBehavior.CauldronBehaviorMap cauldronBehaviorMap = new CauldronBehavior.CauldronBehaviorMap(name, object2ObjectOpenHashMap);
 		BEHAVIOR_MAPS.put(name, cauldronBehaviorMap);
 		return cauldronBehaviorMap;
@@ -146,10 +146,10 @@ public interface EerieRindBehavior {
 		registerBucketBehavior(EMPTY_BEHAVIOR.map());
 		EMPTY_BEHAVIOR.map().put(Items.POTION, (state, world, pos, player, hand, stack) -> {
 			if (PotionUtil.getPotion(stack) != Potions.WATER) {
-				return ActionResult.PASS;
+				return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 			} else {
 				if (!world.isClient) {
-					if (cantUse(world, pos)) return ActionResult.PASS;
+					if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 					Item item = stack.getItem();
 					player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
 					player.incrementStat(Stats.USE_CAULDRON);
@@ -159,14 +159,14 @@ public interface EerieRindBehavior {
 					world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
 				}
 				
-				return ActionResult.success(world.isClient);
+				return ItemActionResult.success(world.isClient);
 			}
 		});
 		registerBucketBehavior(WATER_BEHAVIOR.map());
 		WATER_BEHAVIOR.map().put(Items.BUCKET, (state, world, pos, player, hand, stack) -> emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(Items.WATER_BUCKET), (blockState) -> blockState.get(LeveledEerieRind.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL));
 		WATER_BEHAVIOR.map().put(Items.GLASS_BOTTLE, (state, world, pos, player, hand, stack) -> {
 			if (!world.isClient) {
-				if (cantUse(world, pos)) return ActionResult.PASS;
+				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 				Item item = stack.getItem();
 				player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER)));
 				player.incrementStat(Stats.USE_CAULDRON);
@@ -176,12 +176,12 @@ public interface EerieRindBehavior {
 				world.emitGameEvent(null, GameEvent.FLUID_PICKUP, pos);
 			}
 			
-			return ActionResult.success(world.isClient);
+			return ItemActionResult.success(world.isClient);
 		});
 		WATER_BEHAVIOR.map().put(Items.POTION, (state, world, pos, player, hand, stack) -> {
 			if (state.get(LeveledEerieRind.LEVEL) != 3 && PotionUtil.getPotion(stack) == Potions.WATER) {
 				if (!world.isClient) {
-					if (cantUse(world, pos)) return ActionResult.PASS;
+					if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 					player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
 					player.incrementStat(Stats.USE_CAULDRON);
 					player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
@@ -190,9 +190,9 @@ public interface EerieRindBehavior {
 					world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
 				}
 				
-				return ActionResult.success(world.isClient);
+				return ItemActionResult.success(world.isClient);
 			} else {
-				return ActionResult.PASS;
+				return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 			}
 		});
 		WATER_BEHAVIOR.map().put(Items.LEATHER_BOOTS, CLEAN_DYEABLE_ITEM);
@@ -244,12 +244,12 @@ public interface EerieRindBehavior {
 		behavior.put(Items.POWDER_SNOW_BUCKET, FILL_WITH_POWDER_SNOW);
 	}
 	
-	static ActionResult emptyCauldron(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, ItemStack output, Predicate<BlockState> fullPredicate, SoundEvent soundEvent) {
+	static ItemActionResult emptyCauldron(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, ItemStack output, Predicate<BlockState> fullPredicate, SoundEvent soundEvent) {
 		if (!fullPredicate.test(state)) {
-			return ActionResult.PASS;
+			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else {
 			if (!world.isClient) {
-				if (cantUse(world, pos)) return ActionResult.PASS;
+				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 				Item item = stack.getItem();
 				player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, output));
 				player.incrementStat(Stats.USE_CAULDRON);
@@ -259,13 +259,13 @@ public interface EerieRindBehavior {
 				world.emitGameEvent(null, GameEvent.FLUID_PICKUP, pos);
 			}
 			
-			return ActionResult.success(world.isClient);
+			return ItemActionResult.success(world.isClient);
 		}
 	}
 	
-	static ActionResult fillCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent) {
+	static ItemActionResult fillCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent) {
 		if (!world.isClient) {
-			if (cantUse(world, pos)) return ActionResult.PASS;
+			if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 			Item item = stack.getItem();
 			player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.BUCKET)));
 			player.incrementStat(Stats.FILL_CAULDRON);
@@ -275,7 +275,7 @@ public interface EerieRindBehavior {
 			world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
 		}
 		
-		return ActionResult.success(world.isClient);
+		return ItemActionResult.success(world.isClient);
 	}
 	
 	static boolean cantUse(World world, BlockPos pos) {
@@ -287,5 +287,5 @@ public interface EerieRindBehavior {
 	}
 	
 	@SuppressWarnings("unused")
-	ActionResult interact(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack);
+	ItemActionResult interact(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack);
 }
