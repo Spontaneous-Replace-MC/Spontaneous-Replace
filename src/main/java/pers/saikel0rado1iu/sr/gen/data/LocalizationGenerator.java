@@ -82,8 +82,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(ResourcesPack.getName(SpontaneousReplace.DATA), "§6SR Default Resource");
 			translationBuilder.add(DataPack.getName(SpontaneousReplace.DATA), "§6SR Default Data");
 			translationBuilder.add(getCommentKey("effects"), "Translation of Status Effects");
-			translationBuilder.add(StatusEffects.ACIDIZE, "Acidize");
-			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "Spider Camouflage");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "Acidize");
+			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE.value(), "Spider Camouflage");
 			translationBuilder.add(getCommentKey("death message"), "Translation of Death Message");
 			translationBuilder.add("death.attack.acidize", "%1$s dissolved");
 			translationBuilder.add("death.attack.acidize.player", "%1$s dissolved while fighting %2$s");
@@ -332,8 +332,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(ResourcesPack.getName(SpontaneousReplace.DATA), "§6「自然更替」默认资源包");
 			translationBuilder.add(DataPack.getName(SpontaneousReplace.DATA), "§6「自然更替」默认数据包");
 			translationBuilder.add(getCommentKey("effects"), "状态效果翻译");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
-			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛伪装");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
+			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE.value(), "蜘蛛伪装");
 			translationBuilder.add(getCommentKey("death message"), "死亡消息翻译");
 			translationBuilder.add("death.attack.acidize", "%1$s溶解了");
 			translationBuilder.add("death.attack.acidize.player", "%1$s在与%2$s战斗时溶解了");
@@ -582,8 +582,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(ResourcesPack.getName(SpontaneousReplace.DATA), "§6「自然更替」默認資源包");
 			translationBuilder.add(DataPack.getName(SpontaneousReplace.DATA), "§6「自然更替」默認數據包");
 			translationBuilder.add(getCommentKey("effects"), "狀態效果翻譯");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
-			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛偽裝");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
+			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE.value(), "蜘蛛偽裝");
 			translationBuilder.add(getCommentKey("death message"), "死亡消息翻譯");
 			translationBuilder.add("death.attack.acidize", "%1$s 溶解咗");
 			translationBuilder.add("death.attack.acidize.player", "%1$s 同 %2$s 戰鬥時溶解咗");
@@ -832,8 +832,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(ResourcesPack.getName(SpontaneousReplace.DATA), "§6「自然更替」預設資源包");
 			translationBuilder.add(DataPack.getName(SpontaneousReplace.DATA), "§6「自然更替」預設資料包");
 			translationBuilder.add(getCommentKey("effects"), "狀態效果翻譯");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
-			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE, "蜘蛛偽裝");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
+			translationBuilder.add(StatusEffects.SPIDER_CAMOUFLAGE.value(), "蜘蛛偽裝");
 			translationBuilder.add(getCommentKey("death message"), "死亡訊息翻譯");
 			translationBuilder.add("death.attack.acidize", "%1$s 溶解了");
 			translationBuilder.add("death.attack.acidize.player", "%1$s 在與 %1$s 戰鬥時溶解了");
