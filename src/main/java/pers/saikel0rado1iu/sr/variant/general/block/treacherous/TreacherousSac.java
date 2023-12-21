@@ -33,12 +33,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -89,7 +88,7 @@ public class TreacherousSac extends Block {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(3) == 0) {
 			java.util.Random randomValue = new java.util.Random();
-			ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE,
+			ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
 					pos.getX() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 					pos.getY() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 					pos.getZ() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
@@ -123,19 +122,17 @@ public class TreacherousSac extends Block {
 	 */
 	@SuppressWarnings("deprecation")
 	@Override
-	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		ItemStack stack = player.getStackInHand(hand);
-		Item item = stack.getItem();
-		if (item instanceof AxeItem) {
+	public ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+		if (stack.getItem() instanceof AxeItem) {
 			if (!world.isClient) {
 				stack.damage(1, player, (p) -> p.sendToolBreakStatus(hand));
 				sacUnstable(world, pos, player);
 			}
 			
-			player.incrementStat(Stats.USED.getOrCreateStat(item));
-			return ActionResult.success(world.isClient);
+			player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
+			return ItemActionResult.success(world.isClient);
 		}
-		return super.onUse(state, world, pos, player, hand, hit);
+		return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
 	}
 	
 	/**
