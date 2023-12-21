@@ -568,7 +568,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 					true,
 					false)
 			.parent(HAVE_A_DEPOISON_SPIDER_LEG)
-			.criterion(Registries.STATUS_EFFECT.getId(StatusEffects.SPIDER_CAMOUFLAGE).toString(), EffectsChangedCriterion.Conditions
+			.criterion(Registries.STATUS_EFFECT.getId(StatusEffects.SPIDER_CAMOUFLAGE.value()).toString(), EffectsChangedCriterion.Conditions
 					.create(EntityEffectPredicate.Builder.create().addEffect(StatusEffects.SPIDER_CAMOUFLAGE)))
 			.build(new Identifier(SpontaneousReplace.DATA.getId(), SR_PATH + "/have_effect_spider_camouflage"));
 	public static final AdvancementEntry KILL_ALL_SPIDERS = Advancement.Builder.create()
