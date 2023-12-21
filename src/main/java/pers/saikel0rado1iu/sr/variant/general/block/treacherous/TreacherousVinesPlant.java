@@ -65,7 +65,7 @@ public class TreacherousVinesPlant extends WeepingVinesPlantBlock {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(5) == 0) {
 			java.util.Random randomValue = new java.util.Random();
-			ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE,
+			ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
 					pos.getX() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 					pos.getY() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 					pos.getZ() + POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
