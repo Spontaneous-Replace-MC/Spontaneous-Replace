@@ -24,8 +24,6 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.mob.larva;
 
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.EscapeDangerGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -57,14 +55,6 @@ public class SpiderLarvaEntity extends SpiderEntity {
 				.add(EntityAttributes.GENERIC_MAX_HEALTH, SpiderLarvaData.HP)
 				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, SpiderLarvaData.DAMAGE)
 				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, SpiderLarvaData.SPEED_COEFFICIENT);
-	}
-	
-	/**
-	 * 修正眼睛高度
-	 */
-	@Override
-	protected float getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions) {
-		return super.getActiveEyeHeight(pose, dimensions) / 2;
 	}
 	
 	/**
