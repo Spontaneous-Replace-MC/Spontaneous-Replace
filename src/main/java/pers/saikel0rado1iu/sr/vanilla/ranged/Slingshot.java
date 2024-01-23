@@ -140,7 +140,7 @@ public class Slingshot extends Bow implements CustomEnchantment {
 				}
 				
 				// 设置工具损伤
-				stack.damage(1, player, (ply) -> ply.sendToolBreakStatus(player.getActiveHand()));
+				stack.damage(1, player, LivingEntity.getSlotForHand(player.getActiveHand()));
 				
 				// 生成弹丸实体
 				world.spawnEntity(pelletEntity);
