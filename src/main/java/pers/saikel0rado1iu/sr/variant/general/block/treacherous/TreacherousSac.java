@@ -47,6 +47,7 @@ import pers.saikel0rado1iu.silk.util.ParticleUtil;
 import pers.saikel0rado1iu.sr.data.StatusEffects;
 
 import java.util.Random;
+import java.util.function.ToIntFunction;
 
 import static pers.saikel0rado1iu.silk.api.registry.SilkEntityType.POS_SHIFTING;
 import static pers.saikel0rado1iu.sr.variant.general.VariantData.TREACHEROUS_PLANT_STABILITY;
@@ -57,7 +58,7 @@ import static pers.saikel0rado1iu.sr.variant.general.VariantData.TREACHEROUS_PLA
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class TreacherousSac extends Block {
-	public static final int TREACHEROUS_SAC_LUMINANCE = 5;
+	public static final ToIntFunction<BlockState> TREACHEROUS_SAC_LUMINANCE = (state) -> 5;
 	
 	public TreacherousSac(Settings settings) {
 		super(settings);
@@ -120,12 +121,11 @@ public class TreacherousSac extends Block {
 	/**
 	 * 如果被斧右键使用则会爆炸
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		if (stack.getItem() instanceof AxeItem) {
 			if (!world.isClient) {
-				stack.damage(1, player, (p) -> p.sendToolBreakStatus(hand));
+				stack.damage(1, player, LivingEntity.getSlotForHand(hand));
 				sacUnstable(world, pos, player);
 			}
 			
@@ -138,14 +138,12 @@ public class TreacherousSac extends Block {
 	/**
 	 * 如果被弹射物击中
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
 		BlockPos blockPos = hit.getBlockPos();
 		Entity entity = projectile.getOwner();
 		if (projectile instanceof PersistentProjectileEntity && projectile.canModifyAt(world, blockPos)) {
-			if (!world.isClient)
-				sacUnstable(world, blockPos, entity instanceof LivingEntity ? (LivingEntity) entity : null);
+			if (!world.isClient) sacUnstable(world, blockPos, entity instanceof LivingEntity ? (LivingEntity) entity : null);
 		}
 	}
 	

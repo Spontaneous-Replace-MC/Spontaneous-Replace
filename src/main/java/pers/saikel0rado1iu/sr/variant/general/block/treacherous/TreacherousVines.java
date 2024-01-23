@@ -37,6 +37,7 @@ import pers.saikel0rado1iu.silk.util.TickUtil;
 import pers.saikel0rado1iu.sr.data.StatusEffects;
 
 import java.util.Random;
+import java.util.function.ToIntFunction;
 
 import static pers.saikel0rado1iu.silk.api.registry.SilkEntityType.POS_SHIFTING;
 import static pers.saikel0rado1iu.sr.data.Blocks.TREACHEROUS_VINES_PLANT;
@@ -48,7 +49,7 @@ import static pers.saikel0rado1iu.sr.variant.general.VariantData.TREACHEROUS_PLA
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public class TreacherousVines extends WeepingVinesBlock {
-	public static final int TREACHEROUS_VINES_LUMINANCE = 7;
+	public static final ToIntFunction<BlockState> TREACHEROUS_VINES_LUMINANCE = (state) -> 7;
 	
 	public TreacherousVines(Settings settings) {
 		super(settings);
@@ -77,7 +78,6 @@ public class TreacherousVines extends WeepingVinesBlock {
 	/**
 	 * 玩家接触会中毒
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 		super.onEntityCollision(state, world, pos, entity);
