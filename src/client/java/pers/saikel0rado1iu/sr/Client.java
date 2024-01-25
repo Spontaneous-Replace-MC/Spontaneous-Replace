@@ -29,6 +29,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.world.WorldCreator;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
+import net.minecraft.world.dimension.DimensionOptions;
 import pers.saikel0rado1iu.silk.api.ModBasicData;
 import pers.saikel0rado1iu.silk.api.ModClient;
 import pers.saikel0rado1iu.silk.api.callback.GameMenuScreenAddButtonCallback;
@@ -39,10 +40,14 @@ import pers.saikel0rado1iu.silk.api.registry.*;
 import pers.saikel0rado1iu.silk.gen.data.SilkLanguageProvider;
 import pers.saikel0rado1iu.silk.util.TextUtil;
 import pers.saikel0rado1iu.silk.util.update.UpdateSystem;
+import pers.saikel0rado1iu.silk.util.world.upgrade.WorldUpgradeSystem;
+import pers.saikel0rado1iu.silk.util.world.upgrade.data.WorldUpgradeData;
 import pers.saikel0rado1iu.sr.data.Configs;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 import pers.saikel0rado1iu.sr.data.client.*;
 import pers.saikel0rado1iu.sr.gen.world.WorldPresets;
+import pers.saikel0rado1iu.sr.gen.world.chunk.ClassicChunkGenerator;
+import pers.saikel0rado1iu.sr.gen.world.chunk.SnapshotChunkGenerator;
 import pers.saikel0rado1iu.sr.screen.ConfigScreen;
 import pers.saikel0rado1iu.sr.screen.PlaceholderScreen;
 
@@ -59,6 +64,8 @@ public final class Client extends ModClient {
 	@Override
 	public void client(ModBasicData modBasicData) {
 		UpdateSystem.registryUpdate(Configs.UPDATE_DATA, true);
+		WorldUpgradeSystem.registryUpgradeWorld(new WorldUpgradeData<>(SpontaneousReplace.DATA, DimensionOptions.OVERWORLD, ClassicChunkGenerator::getInstance));
+		WorldUpgradeSystem.registryUpgradeWorld(new WorldUpgradeData<>(SpontaneousReplace.DATA, DimensionOptions.OVERWORLD, SnapshotChunkGenerator::getInstance));
 		GameMenuScreenAddButtonCallback.EVENT.register((adder, client, screen) -> {
 			if (Configs.canShowSettingsButton()) {
 				adder.add(ButtonWidget.builder(Text.translatable(TextUtil.configText(SpontaneousReplace.DATA, "")),
