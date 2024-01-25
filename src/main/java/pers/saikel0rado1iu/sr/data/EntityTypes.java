@@ -28,10 +28,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.entity.*;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
@@ -86,7 +83,7 @@ public class EntityTypes extends SilkEntityType {
 			.otherRegister(spiderLarvaEntityEntityType -> FabricDefaultAttributeRegistry.register(spiderLarvaEntityEntityType, SpiderLarvaEntity.createSpiderAttributes()))
 			.build(SpontaneousReplace.DATA, SpiderLarvaData.ID);
 	public static final EntityType<GuardSpiderEntity> GUARD_SPIDER = builder(FabricEntityTypeBuilder.createMob().spawnGroup(SpawnGroup.MONSTER).entityFactory(GuardSpiderEntity::new)
-			.spawnRestriction(SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(GuardSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
+			.spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(GuardSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
 			.dimensions(EntityDimensions.fixed(GuardSpiderData.BOX_WEIGHT, GuardSpiderData.BOX_HEIGHT)).build())
 			.otherRegister(guardSpiderEntityEntityType -> FabricDefaultAttributeRegistry.register(guardSpiderEntityEntityType, GuardSpiderEntity.createSpiderAttributes()))
 			.build(SpontaneousReplace.DATA, GuardSpiderData.ID);
@@ -94,12 +91,12 @@ public class EntityTypes extends SilkEntityType {
 			.dimensions(EntityDimensions.fixed(PROJECTILE_BOX, PROJECTILE_BOX)).trackRangeBlocks(PROJECTILE_RANGE).trackedUpdateRate(PROJECTILE_UPDATE_RATE).build())
 			.build(SpontaneousReplace.DATA, "toxin_projectile");
 	public static final EntityType<SprayPoisonSpiderEntity> SPRAY_POISON_SPIDER = builder(FabricEntityTypeBuilder.createMob().spawnGroup(SpawnGroup.MONSTER).entityFactory(SprayPoisonSpiderEntity::new)
-			.spawnRestriction(SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(SprayPoisonSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
+			.spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(SprayPoisonSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
 			.dimensions(EntityDimensions.fixed(SprayPoisonSpiderData.BOX_WEIGHT, SprayPoisonSpiderData.BOX_HEIGHT)).build())
 			.otherRegister(sprayPoisonSpiderEntityEntityType -> FabricDefaultAttributeRegistry.register(sprayPoisonSpiderEntityEntityType, SprayPoisonSpiderEntity.createSpiderAttributes()))
 			.build(SpontaneousReplace.DATA, SprayPoisonSpiderData.ID);
 	public static final EntityType<WeavingWebSpiderEntity> WEAVING_WEB_SPIDER = builder(FabricEntityTypeBuilder.createMob().spawnGroup(SpawnGroup.MONSTER).entityFactory(WeavingWebSpiderEntity::new)
-			.spawnRestriction(SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(WeavingWebSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
+			.spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, SpawnUtil.builder(WeavingWebSpiderEntity.class).monster().biome(biomeRegistryEntry -> biomeRegistryEntry.isIn(Tags.Biome.IS_SPIDER_BIOME)).build())
 			.dimensions(EntityDimensions.fixed(WeavingWebSpiderData.BOX_WEIGHT, WeavingWebSpiderData.BOX_HEIGHT)).build())
 			.otherRegister(weavingWebSpiderEntityEntityType -> FabricDefaultAttributeRegistry.register(weavingWebSpiderEntityEntityType, WeavingWebSpiderEntity.createSpiderAttributes()))
 			.build(SpontaneousReplace.DATA, WeavingWebSpiderData.ID);
