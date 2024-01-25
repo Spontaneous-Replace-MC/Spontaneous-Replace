@@ -1,3 +1,10 @@
+## 1.20.4-0.5.5+bu——2024/01/26
+
+### Update：
+
+- Register world upgrader for 'SR Snapshot' world preset.
+- Major changes to the spider biome generation rules, first tested on the "SR Snapshot" world preset.
+
 ## 1.20.4-0.5.4+bu---2023/12/18
 
 ### Update：
