@@ -24,10 +24,21 @@
 
 package pers.saikel0rado1iu.sr.gen.world.biome.source;
 
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+import pers.saikel0rado1iu.silk.gen.world.biome.source.SilkVanillaBiomeParameters;
+import pers.saikel0rado1iu.sr.variant.spider.world.gen.biome.SpiderBiomeKeys;
+
+import java.util.List;
+
 /**
  * <h2 style="color:FFC800">自然更替的快照生物群系参数</h2>
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
-public class SnapshotBiomeParameters extends ClassicBiomeParameters {
+public class SnapshotBiomeParameters extends SilkVanillaBiomeParameters {
+	@Override
+	public List<RegistryKey<Biome>> getNonVanillaGeneratedBiome() {
+		return List.of(SpiderBiomeKeys.CREEPY_SPIDER_FOREST);
+	}
 }
