@@ -26,12 +26,11 @@ package pers.saikel0rado1iu.sr.gen.world;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.biome.source.MultiNoiseBiomeSource;
-import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.gen.WorldPreset;
-import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
 import pers.saikel0rado1iu.silk.gen.world.SilkWorldPreset;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
+import pers.saikel0rado1iu.sr.gen.world.chunk.ClassicChunkGenerator;
+import pers.saikel0rado1iu.sr.gen.world.chunk.SnapshotChunkGenerator;
 
 /**
  * <h2 style="color:FFC800">自然更替的世界预设</h2>
@@ -44,12 +43,7 @@ public final class WorldPresets extends SilkWorldPreset {
 	
 	@Override
 	public void bootstrap(Registerable<WorldPreset> registerable) {
-		Registrar registrar = new SilkWorldPreset.Registrar(registerable);
-		registrar.register(CLASSIC, new DimensionOptions(registrar.overworldDimensionType,
-				new NoiseChunkGenerator(MultiNoiseBiomeSource.create(registrar.multiNoisePresetLookup.getOrThrow(MultiNoiseBiomeSourceParameterLists.CLASSIC)),
-						registrar.chunkGeneratorSettingsLookup.getOrThrow(ChunkGeneratorSettings.CLASSIC))));
-		registrar.register(SNAPSHOT, new DimensionOptions(registrar.overworldDimensionType,
-				new NoiseChunkGenerator(MultiNoiseBiomeSource.create(registrar.multiNoisePresetLookup.getOrThrow(MultiNoiseBiomeSourceParameterLists.SNAPSHOT)),
-						registrar.chunkGeneratorSettingsLookup.getOrThrow(ChunkGeneratorSettings.SNAPSHOT))));
+		ClassicChunkGenerator.register(CLASSIC, registerable);
+		SnapshotChunkGenerator.register(SNAPSHOT, registerable);
 	}
 }
