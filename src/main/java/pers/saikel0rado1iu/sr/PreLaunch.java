@@ -26,10 +26,14 @@ package pers.saikel0rado1iu.sr;
 
 import pers.saikel0rado1iu.silk.api.ModBasicData;
 import pers.saikel0rado1iu.silk.api.ModPreLaunch;
+import pers.saikel0rado1iu.silk.api.callback.RegisterChunkGeneratorCodecCallback;
+import pers.saikel0rado1iu.silk.api.registry.gen.world.ChunkGeneratorCodecRegistry;
 import pers.saikel0rado1iu.silk.api.registry.gen.world.MultiNoiseBiomeSourceParameterListPresetRegistry;
 import pers.saikel0rado1iu.sr.data.Configs;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 import pers.saikel0rado1iu.sr.gen.world.MultiNoiseBiomeSourceParameterLists;
+import pers.saikel0rado1iu.sr.gen.world.chunk.ClassicChunkGenerator;
+import pers.saikel0rado1iu.sr.gen.world.chunk.SnapshotChunkGenerator;
 
 /**
  * <h2 style="color:FFC800">自然更替需要最先运行的主类</h2>
@@ -46,5 +50,7 @@ public final class PreLaunch extends ModPreLaunch {
 		Configs.CONFIGS.reader().load();
 		MultiNoiseBiomeSourceParameterListPresetRegistry.add(() -> MultiNoiseBiomeSourceParameterLists.Preset.CLASSIC);
 		MultiNoiseBiomeSourceParameterListPresetRegistry.add(() -> MultiNoiseBiomeSourceParameterLists.Preset.SNAPSHOT);
+		ChunkGeneratorCodecRegistry.add(() -> new RegisterChunkGeneratorCodecCallback.Data(ClassicChunkGenerator.CODEC, SpontaneousReplace.DATA, "classic"));
+		ChunkGeneratorCodecRegistry.add(() -> new RegisterChunkGeneratorCodecCallback.Data(SnapshotChunkGenerator.CODEC, SpontaneousReplace.DATA, "snapshot"));
 	}
 }
