@@ -31,7 +31,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.world.gen.densityfunction.DensityFunction;
-import net.minecraft.world.gen.densityfunction.DensityFunctions;
 import net.minecraft.world.gen.noise.NoiseRouter;
 import net.minecraft.world.gen.surfacebuilder.VanillaSurfaceRules;
 import pers.saikel0rado1iu.silk.gen.world.SilkChunkGeneratorSetting;
@@ -49,7 +48,7 @@ public final class ChunkGeneratorSettings extends SilkChunkGeneratorSetting {
 	
 	public static net.minecraft.world.gen.chunk.ChunkGeneratorSettings createSurfaceSettings(Registerable<?> registerable, boolean amplified, boolean largeBiomes) {
 		return new net.minecraft.world.gen.chunk.ChunkGeneratorSettings(SilkGenerationShapeConfig.SURFACE, Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(),
-				SrDensityFunctions.createSurfaceNoiseRouter(registerable.getRegistryLookup(RegistryKeys.DENSITY_FUNCTION), registerable.getRegistryLookup(RegistryKeys.NOISE_PARAMETERS), largeBiomes, amplified),
+				DensityFunctions.createSurfaceNoiseRouter(registerable.getRegistryLookup(RegistryKeys.DENSITY_FUNCTION), registerable.getRegistryLookup(RegistryKeys.NOISE_PARAMETERS), largeBiomes, amplified),
 				VanillaSurfaceRules.createOverworldSurfaceRule(), (new ClassicBiomeParameters()).getSpawnSuitabilityNoises(), 63, false, true, true, false);
 	}
 	
@@ -59,9 +58,9 @@ public final class ChunkGeneratorSettings extends SilkChunkGeneratorSetting {
 		registerable.register(SNAPSHOT, ChunkGeneratorSettings.createSurfaceSettings(registerable, false, false));
 	}
 	
-	public static class SrDensityFunctions extends DensityFunctions {
+	public static class DensityFunctions extends net.minecraft.world.gen.densityfunction.DensityFunctions {
 		public static NoiseRouter createSurfaceNoiseRouter(RegistryEntryLookup<DensityFunction> densityFunctionLookup, RegistryEntryLookup<DoublePerlinNoiseSampler.NoiseParameters> noiseParametersLookup, boolean largeBiomes, boolean amplified) {
-			return DensityFunctions.createSurfaceNoiseRouter(densityFunctionLookup, noiseParametersLookup, largeBiomes, amplified);
+			return net.minecraft.world.gen.densityfunction.DensityFunctions.createSurfaceNoiseRouter(densityFunctionLookup, noiseParametersLookup, largeBiomes, amplified);
 		}
 	}
 }
