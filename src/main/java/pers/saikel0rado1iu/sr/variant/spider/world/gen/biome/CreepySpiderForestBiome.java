@@ -24,23 +24,33 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.world.gen.biome;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.RegistryEntryLookup;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.biome.source.BiomeSource;
+import net.minecraft.world.biome.source.FixedBiomeSource;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import org.jetbrains.annotations.Nullable;
+import pers.saikel0rado1iu.silk.gen.world.chunk.CustomChunkGenerator;
 import pers.saikel0rado1iu.sr.data.EntityTypes;
 import pers.saikel0rado1iu.sr.variant.spider.world.gen.feature.SpiderPlacedFeatures;
+
+import java.util.function.Function;
 
 /**
  * <h2 style="color:FFC800">蜘蛛诡林生物群系</h2>
@@ -81,5 +91,29 @@ public class CreepySpiderForestBiome {
 		DefaultBiomeFeatures.addMineables(generationSettings);
 		DefaultBiomeFeatures.addSprings(generationSettings);
 		DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
+	}
+	
+	public static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
+		final int x = pos.getX();
+		pos.getY();
+		final int z = pos.getZ();
+		final int spiderPosBaseRadius = 2000;
+		final int spiderPosShiftingRadius = 200;
+		final int spiderSizeBaseRadius = 200;
+		final int spiderSizeShiftingRadius = 30;
+		int centerX = 0;
+		int centerZ = 0;
+		long posRadius = CustomChunkGenerator.getSeed() > 0 ? spiderPosBaseRadius + CustomChunkGenerator.getSeed() % spiderPosShiftingRadius : spiderPosBaseRadius - CustomChunkGenerator.getSeed() % spiderPosShiftingRadius;
+		double radian = Math.toRadians(CustomChunkGenerator.getSeed() % 360);
+		int posX = (int) (centerX + posRadius * Math.cos(radian));
+		int posZ = (int) (centerZ + posRadius * Math.sin(radian));
+		long sizeRadius = CustomChunkGenerator.getSeed() > 0 ? spiderSizeBaseRadius + CustomChunkGenerator.getSeed() % spiderSizeShiftingRadius : spiderSizeBaseRadius - CustomChunkGenerator.getSeed() % spiderSizeShiftingRadius;
+		return (Math.pow(x - posX, 2) + Math.pow(z - posZ, 2) > Math.pow(sizeRadius, 2)) ? biomeSource : getVariantBiomeSource.apply(SpiderBiomeKeys.CREEPY_SPIDER_FOREST);
+	}
+	
+	public static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
+		if (biome != SpiderBiomeKeys.CREEPY_SPIDER_FOREST) return originBlock;
+		if (estimateSurfaceHeight < settings.seaLevel() && pos.getY() < settings.seaLevel()) return settings.defaultBlock();
+		return originBlock;
 	}
 }
