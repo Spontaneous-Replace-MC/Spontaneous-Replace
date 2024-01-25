@@ -51,7 +51,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("modmenu"), "Translatable Descriptions and Summaries in Mod Menu");
 			translationBuilder.add(getLocalizationNameKey(SpontaneousReplace.DATA), "§6Spontaneous-Replace");
 			translationBuilder.add(getLocalizationSummaryKey(SpontaneousReplace.DATA), "Provide players with enhanced vanilla adventures with new content");
-			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§lMod introduction:§r\n     The wind whimper, thunder roared and bolt scream. A certain energy in the world of Minecraft awakened the potential within the Mobs being.\n     The power of the five elements will lead you to the origin of everything. seek, explore, defeat or forgive them.\n     Whether you will become an admirer of all Mobs, or an endless slaughterer, everything is your choice...\n§lMod Vision:§r\n     I hope to make a gameplay mod that is based on the core of the vanilla game and does not destroy the vanilla gameplay. It is very difficult to develop on this basis. Whether an item is added, how to design data so as not to destroy the balance of the game, These are all points that developers need to consider.\n    If you think the mod is doing a good job, you are welcome to sponsor my project, or translate this mod, thank your very much!");
+			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), """
+					§lMod introduction:§r
+					     The wind whimper, thunder roared and bolt scream. A certain energy in the world of Minecraft awakened the potential within the Mobs being.
+					     The power of the five elements will lead you to the origin of everything. seek, explore, defeat or forgive them.
+					     Whether you will become an admirer of all Mobs, or an endless slaughterer, everything is your choice...
+					§lMod Vision:§r
+					     I hope to make a gameplay mod that is based on the core of the vanilla game and does not destroy the vanilla gameplay. It is very difficult to develop on this basis. Whether an item is added, how to design data so as not to destroy the balance of the game, These are all points that developers need to consider.
+					     If you think the mod is doing a good job, you are welcome to sponsor my project, or translate this mod, thank your very much!""");
 			translationBuilder.add(getCommentKey("generic"), "Translation of general Mod components");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, ""), "Spontaneous-Replace");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.mod"), "Mod");
@@ -60,9 +67,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "changelog"), "Changelog");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis"), "Synopsis");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§f§lMod introduction:");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r   The wind whimper, thunder roared and bolt scream. A certain energy in the world of Minecraft awakened the potential within the Mobs being.\n   The power of the five elements will lead you to the origin of everything. seek, explore, defeat or forgive them.\n   Whether you will become an admirer of all Mobs, or an endless slaughterer, everything is your choice...");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), """
+					§r   The wind whimper, thunder roared and bolt scream. A certain energy in the world of Minecraft awakened the potential within the Mobs being.
+					   The power of the five elements will lead you to the origin of everything. seek, explore, defeat or forgive them.
+					   Whether you will become an admirer of all Mobs, or an endless slaughterer, everything is your choice...""");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.vision"), "§f§lMod Vision:");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"), "   I hope to make a gameplay mod that is based on the core of the vanilla game and does not destroy the vanilla gameplay. It is very difficult to develop on this basis. Whether an item is added, how to design data so as not to destroy the balance of the game, These are all points that developers need to consider.\n   If you think the mod is doing a good job, you are welcome to sponsor my project, or translate this mod, thank your very much!");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"),
+					"   I hope to make a gameplay mod that is based on the core of the vanilla game and does not destroy the vanilla gameplay. It is very difficult to develop on this basis. Whether an item is added, how to design data so as not to destroy the balance of the game, These are all points that developers need to consider.\n" +
+							"   If you think the mod is doing a good job, you are welcome to sponsor my project, or translate this mod, thank your very much!");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.config"), "Setting");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "homepage"), "Mod Website");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "support"), "Support Us");
@@ -76,6 +88,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "Disable Warning Advice");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "Need Other Mod");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "Go to https://modrinth.com/mod/dcwa Install this Mod enable feature");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "SR:");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "Too Old");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "This function has NOT been added YET, Please continue to pay ATTENTION to the homepage of this Mod to get UPDATES in time.");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "Spontaneous-Replace");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.SNAPSHOT), "SR Snapshot");
@@ -301,7 +315,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("modmenu"), "Mod Menu 上可翻译的模组描述与摘要");
 			translationBuilder.add(getLocalizationNameKey(SpontaneousReplace.DATA), "§6自然更替");
 			translationBuilder.add(getLocalizationSummaryKey(SpontaneousReplace.DATA), "通过新内容为玩家提供加强的原版冒险");
-			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§l模组简介：§r\n　　狂风呜咽，雷轰电鸣…在·Minecraft·的世界上的某种能量唤醒了生物体内的潜能。\n　　五种元素的力量会带你走向一切的起源。寻找，探索，击败或饶恕他们。\n　　你是会成为众生物的敬仰者，还是无尽的屠杀者，一切皆是你的选择……\n§l模组愿景：§r\n　　我希望做一个基于原版游戏内核，不破坏原版游戏玩法的玩法类模组。在这基础上进行开发十分困难，一件物品是否加入，怎样设计数据才不会破坏游戏平衡性，这些都是开发者需要考虑的点。\n　　如果你觉得模组做的不错，欢迎对我的项目进行赞助，或者对此模组进行翻译，十分感谢你们!");
+			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), """
+					§l模组简介：§r
+					　　狂风呜咽，雷轰电鸣…在·Minecraft·的世界上的某种能量唤醒了生物体内的潜能。
+					　　五种元素的力量会带你走向一切的起源。寻找，探索，击败或饶恕他们。
+					　　你是会成为众生物的敬仰者，还是无尽的屠杀者，一切皆是你的选择……
+					§l模组愿景：§r
+					　　我希望做一个基于原版游戏内核，不破坏原版游戏玩法的玩法类模组。在这基础上进行开发十分困难，一件物品是否加入，怎样设计数据才不会破坏游戏平衡性，这些都是开发者需要考虑的点。
+					　　如果你觉得模组做的不错，欢迎对我的项目进行赞助，或者对此模组进行翻译，十分感谢你们!""");
 			translationBuilder.add(getCommentKey("generic"), "通用模组组件翻译");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, ""), "自然更替");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.mod"), "模组");
@@ -310,9 +331,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "changelog"), "更新日志");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis"), "简介");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§f§l模组简介：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r　　狂风呜咽，雷轰电鸣…在·Minecraft·的世界上的某种能量唤醒了生物体内的潜能。\n　　五种元素的力量会带你走向一切的起源。寻找，探索，击败或饶恕他们。\n　　你是会成为众生物的敬仰者，还是无尽的屠杀者，一切皆是你的选择……");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), """
+					§r　　狂风呜咽，雷轰电鸣…在·Minecraft·的世界上的某种能量唤醒了生物体内的潜能。
+					　　五种元素的力量会带你走向一切的起源。寻找，探索，击败或饶恕他们。
+					　　你是会成为众生物的敬仰者，还是无尽的屠杀者，一切皆是你的选择……""");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.vision"), "§f§l模组愿景：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"), "　　我希望做一个基于原版游戏内核，不破坏原版游戏玩法的玩法类模组。在这基础上进行开发十分困难，一件物品是否加入，怎样设计数据才不会破坏游戏平衡性，这些都是开发者需要考虑的点。\n　　如果你觉得模组做的不错，欢迎对我的项目进行赞助，或者对此模组进行翻译，十分感谢你们!");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"),
+					"　　我希望做一个基于原版游戏内核，不破坏原版游戏玩法的玩法类模组。在这基础上进行开发十分困难，一件物品是否加入，怎样设计数据才不会破坏游戏平衡性，这些都是开发者需要考虑的点。\n" +
+							"　　如果你觉得模组做的不错，欢迎对我的项目进行赞助，或者对此模组进行翻译，十分感谢你们!");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.config"), "设置");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "homepage"), "模组官网");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "support"), "支持我们");
@@ -326,6 +352,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“实验性设置”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模组");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安装此模组开启功能");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "过旧");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未添加，请继续关注本模组首页以及时获取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.SNAPSHOT), "自然更替快照");
@@ -551,7 +579,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("modmenu"), "Mod Menu 上可翻譯嘅模組描述與摘要");
 			translationBuilder.add(getLocalizationNameKey(SpontaneousReplace.DATA), "§6自然更替");
 			translationBuilder.add(getLocalizationSummaryKey(SpontaneousReplace.DATA), "通過新內容為玩家提供加強嘅原版冒險");
-			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§l模組簡介:§r\n　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯\n§l模組願景:§r\n　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
+			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), """
+					§l模組簡介:§r
+					　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。
+					　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。
+					　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯
+					§l模組願景:§r
+					　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。
+					　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!""");
 			translationBuilder.add(getCommentKey("generic"), "通用模組組件翻譯");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, ""), "自然更替");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.mod"), "模組");
@@ -560,9 +595,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "changelog"), "更新日誌");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis"), "簡介");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§f§l模組簡介：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。\n　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), """
+					§r　　狂風嗚咽，雷轟電鳴⋯在·Minecraft·嘅世界上嘅某種能量喚醒咗生物體內嘅潛能。
+					　　五種元素嘅力量會帶你走向一切嘅起源。尋找，探索，擊敗或饒恕他們。
+					　　你是會成為眾生物嘅敬仰者，還是無盡嘅屠殺者，一切皆是你嘅選擇⋯⋯""");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.vision"), "§f§l模組願景：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"), "　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"),
+					"　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。\n" +
+							"　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.config"), "設定");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "homepage"), "模組官網");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "support"), "支持我們");
@@ -576,6 +616,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“實驗性質設定”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模組");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安裝此模組開啓功能");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "過舊");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未添加, 請繼續關注本模組首頁以及時獲取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.SNAPSHOT), "自然更替快照");
@@ -801,7 +843,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(getCommentKey("modmenu"), "Mod Menu 上可翻譯的模組描述與摘要");
 			translationBuilder.add(getLocalizationNameKey(SpontaneousReplace.DATA), "§6自然更替");
 			translationBuilder.add(getLocalizationSummaryKey(SpontaneousReplace.DATA), "透過新內容為玩家提供加強的原版冒險");
-			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), "§l模組簡介:§r\n　　狂風嗚咽，雷轟電鳴...在·Minecraft·的世界上的某種能量喚醒了生物體內的潛能。\n　　五種元素的力量會帶你走向一切的起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物的敬仰者，還是無盡的屠殺者，一切皆是你的選擇...\n§l模組願景:§r\n　　我希望做一個基於原版遊戲核心，不破壞原版遊戲玩法的玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計資料才不會破壞遊戲平衡性，這些都是開發者需要考慮的點。\n　　如果你覺得模組做的不錯，歡迎對我的專案進行贊助，或者對此模組進行翻譯，十分感謝你們!");
+			translationBuilder.add(getLocalizationDescriptionKey(SpontaneousReplace.DATA), """
+					§l模組簡介:§r
+					　　狂風嗚咽，雷轟電鳴...在·Minecraft·的世界上的某種能量喚醒了生物體內的潛能。
+					　　五種元素的力量會帶你走向一切的起源。尋找，探索，擊敗或饒恕他們。
+					　　你是會成為眾生物的敬仰者，還是無盡的屠殺者，一切皆是你的選擇...
+					§l模組願景:§r
+					　　我希望做一個基於原版遊戲核心，不破壞原版遊戲玩法的玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計資料才不會破壞遊戲平衡性，這些都是開發者需要考慮的點。
+					　　如果你覺得模組做的不錯，歡迎對我的專案進行贊助，或者對此模組進行翻譯，十分感謝你們!""");
 			translationBuilder.add(getCommentKey("generic"), "通用模組元件翻譯");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, ""), "自然更替");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.mod"), "模組");
@@ -810,9 +859,14 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "changelog"), "更新日誌");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis"), "簡介");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§f§l模組簡介：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), "§r　　狂風嗚咽，雷轟電鳴...在·Minecraft·的世界上的某種能量喚醒了生物體內的潛能。\n　　五種元素的力量會帶你走向一切的起源。尋找，探索，擊敗或饒恕他們。\n　　你是會成為眾生物的敬仰者，還是無盡的屠殺者，一切皆是你的選擇......");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.intro"), """
+					§r　　狂風嗚咽，雷轟電鳴...在·Minecraft·的世界上的某種能量喚醒了生物體內的潛能。
+					　　五種元素的力量會帶你走向一切的起源。尋找，探索，擊敗或饒恕他們。
+					　　你是會成為眾生物的敬仰者，還是無盡的屠殺者，一切皆是你的選擇......""");
 			translationBuilder.add(TextUtil.widgetTitle(SpontaneousReplace.DATA, "tab.synopsis.vision"), "§f§l模組願景：");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"), "　　我希望做一個基於原版遊戲核心，不破壞原版遊戲玩法的玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計資料才不會破壞遊戲平衡性，這些都是開發者需要考慮的點。\n　　如果你覺得模組做的不錯，歡迎對我的專案進行贊助，或者對此模組進行翻譯，十分感謝你們!");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.synopsis.vision"),
+					"　　我希望做一個基於原版遊戲核心，不破壞原版遊戲玩法的玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計資料才不會破壞遊戲平衡性，這些都是開發者需要考慮的點。\n" +
+							"　　如果你覺得模組做的不錯，歡迎對我的專案進行贊助，或者對此模組進行翻譯，十分感謝你們!");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "tab.config"), "設定");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "homepage"), "模組官網");
 			translationBuilder.add(widgetText(SpontaneousReplace.DATA, "support"), "支援我們");
@@ -826,6 +880,8 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“實驗性設定”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模組");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安裝此模組開啟功能");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "過舊");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未新增, 請繼續關注本模組首頁以及時獲取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.SNAPSHOT), "自然更替快照");
