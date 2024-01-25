@@ -24,15 +24,23 @@
 
 package pers.saikel0rado1iu.sr.variant.spider.world.gen.biome;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.BiomeSource;
+import net.minecraft.world.biome.source.FixedBiomeSource;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import org.jetbrains.annotations.Nullable;
 import pers.saikel0rado1iu.silk.gen.world.SilkBiomeKey;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
+
+import java.util.function.Function;
 
 /**
  * <h2 style="color:FFC800">自然更替的蜘蛛群系</h2>
@@ -41,6 +49,14 @@ import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
  */
 public final class SpiderBiomeKeys extends SilkBiomeKey {
 	public static final RegistryKey<Biome> CREEPY_SPIDER_FOREST = register(SpontaneousReplace.DATA, "creepy_spider_forest");
+	
+	public static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
+		return CreepySpiderForestBiome.getBiome(pos, biomeSource, getVariantBiomeSource);
+	}
+	
+	public static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
+		return CreepySpiderForestBiome.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, settings, biome);
+	}
 	
 	@Override
 	public void bootstrap(Registerable<Biome> registerable) {

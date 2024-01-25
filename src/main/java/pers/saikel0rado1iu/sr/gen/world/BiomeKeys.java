@@ -24,10 +24,19 @@
 
 package pers.saikel0rado1iu.sr.gen.world;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.BiomeSource;
+import net.minecraft.world.biome.source.FixedBiomeSource;
+import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
+import org.jetbrains.annotations.Nullable;
 import pers.saikel0rado1iu.silk.gen.world.SilkBiomeKey;
 import pers.saikel0rado1iu.sr.variant.spider.world.gen.biome.SpiderBiomeKeys;
+
+import java.util.function.Function;
 
 /**
  * <h2 style="color:FFC800">自然更替的生物群系</h2>
@@ -35,6 +44,14 @@ import pers.saikel0rado1iu.sr.variant.spider.world.gen.biome.SpiderBiomeKeys;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class BiomeKeys extends SilkBiomeKey {
+	public static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
+		return SpiderBiomeKeys.getBiome(pos, biomeSource, getVariantBiomeSource);
+	}
+	
+	public static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
+		return SpiderBiomeKeys.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, settings, biome);
+	}
+	
 	@Override
 	public void bootstrap(Registerable<Biome> registerable) {
 		new SpiderBiomeKeys().bootstrap(registerable);
