@@ -1,3 +1,9 @@
+## 1.20.4-0.5.6+bf——2024/01/27
+
+### Fixes：
+
+- Fixed the issue where getCodec() and codec() of the chunk generator use the same method name.
+
 ## 1.20.4-0.5.5+bu——2024/01/26
 
 ### Update：
