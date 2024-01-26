@@ -58,7 +58,7 @@
 		"minecraft": ">1.20.4",
 		"fabricloader": ">=0.15.6",
 		"fabric-api": ">=0.95.2",
-		"silk-api": ">=1.20.5-0.2.0"
+		"silk-api": ">=1.20.5-0.2.1"
 	},
 	"suggests": {
 		"another-mod": "*"
