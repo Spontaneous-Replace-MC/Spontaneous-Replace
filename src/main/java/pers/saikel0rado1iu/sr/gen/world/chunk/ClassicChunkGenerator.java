@@ -135,12 +135,17 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 		return Integer.compare(Integer.parseInt(savedVersion), Integer.parseInt(VERSION));
 	}
 	
+	@Override
+	protected Codec<? extends ChunkGenerator> getCodec() {
+		return CODEC;
+	}
+	
 	/**
 	 * 用于提供区块生成器的 {@link Codec}
 	 */
 	@Override
-	public Codec<? extends ChunkGenerator> getCodec() {
-		return CODEC;
+	public Codec<? extends ChunkGenerator> codec() {
+		return getCodec();
 	}
 	
 	/**
