@@ -92,7 +92,15 @@ public class SnapshotChunkGenerator extends ClassicChunkGenerator {
 	}
 	
 	@Override
-	public Codec<? extends ChunkGenerator> getCodec() {
+	protected Codec<? extends ChunkGenerator> getCodec() {
 		return CODEC;
+	}
+	
+	/**
+	 * 用于提供区块生成器的 {@link Codec}
+	 */
+	@Override
+	public Codec<? extends ChunkGenerator> codec() {
+		return getCodec();
 	}
 }
