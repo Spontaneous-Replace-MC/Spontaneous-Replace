@@ -32,7 +32,6 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.*;
@@ -134,16 +133,16 @@ public abstract class SpiderEntity extends net.minecraft.entity.mob.SpiderEntity
 	 */
 	@SuppressWarnings("ConstantValue")
 	@Override
-	public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+	public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
 		try {
-			MethodType methodType = MethodType.methodType(EntityData.class, ServerWorldAccess.class, LocalDifficulty.class, SpawnReason.class, EntityData.class, NbtCompound.class);
+			MethodType methodType = MethodType.methodType(EntityData.class, ServerWorldAccess.class, LocalDifficulty.class, SpawnReason.class, EntityData.class);
 			MethodHandles.Lookup lookup = MethodHandles.privateLookupIn(HostileEntity.class, MethodHandles.lookup());
 			
 			MethodHandle methodHandle = lookup.findSpecial(HostileEntity.class,
 					HostileEntity.class.getName().contains("class_") ? "method_5943" : "initialize",
 					methodType, HostileEntity.class).bindTo(this);
 			
-			return (EntityData) methodHandle.invoke(world, difficulty, spawnReason, entityData, entityNbt);
+			return (EntityData) methodHandle.invoke(world, difficulty, spawnReason, entityData);
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
 		}

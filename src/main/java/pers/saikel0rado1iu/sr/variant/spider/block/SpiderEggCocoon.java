@@ -259,7 +259,7 @@ public class SpiderEggCocoon extends BlockWithEntity {
 		 * @param spider 生成的蜘蛛实体
 		 */
 		public static void spawnSpiderEntity(HostileEntity spider, World world, BlockPos pos) {
-			Objects.requireNonNull(spider).initialize((ServerWorld) world, world.getLocalDifficulty(pos), SpawnReason.NATURAL, null, null);
+			Objects.requireNonNull(spider).initialize((ServerWorld) world, world.getLocalDifficulty(pos), SpawnReason.NATURAL, null);
 			spider.refreshPositionAndAngles(pos, 0, 0);
 			
 			((ServerWorld) world).spawnEntityAndPassengers(spider);
