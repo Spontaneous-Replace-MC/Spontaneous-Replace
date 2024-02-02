@@ -34,7 +34,9 @@ import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.CrossbowModelPredica
 import pers.saikel0rado1iu.silk.api.registry.SilkItem;
 import pers.saikel0rado1iu.sr.vanilla.ranged.JugerRepeatingCrossbow;
 import pers.saikel0rado1iu.sr.vanilla.ranged.MarksCrossbow;
+import pers.saikel0rado1iu.sr.vanilla.ranged.armor.ArrowproofVest;
 
+import static net.minecraft.item.DyeableItem.DEFAULT_COLOR;
 import static pers.saikel0rado1iu.sr.data.Items.*;
 
 /**
@@ -78,6 +80,7 @@ public class Items extends SilkItem {
 				return MarksCrossbow.isShootEnd(stack) ? 1 : 0;
 			});
 		});
-		clientRegister(ARROWPROOF_VEST, dyeableArmorItem -> ColorProviderRegistry.ITEM.register(((stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem) stack.getItem()).getColor(stack)), ARROWPROOF_VEST));
+		clientRegister(ARROWPROOF_VEST, dyeableArmorItem -> ColorProviderRegistry.ITEM.register(((stack, tintIndex) -> tintIndex > 0 ? -1 :
+				(DyeableItem.getColor(stack) == DEFAULT_COLOR ? ArrowproofVest.COLOR : DyeableItem.getColor(stack))), ARROWPROOF_VEST));
 	}
 }

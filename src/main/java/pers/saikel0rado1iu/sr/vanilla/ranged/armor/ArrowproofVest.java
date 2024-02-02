@@ -25,13 +25,19 @@
 package pers.saikel0rado1iu.sr.vanilla.ranged.armor;
 
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ArmorMaterials;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 import pers.saikel0rado1iu.silk.api.item.WithProjectileProtection;
 import pers.saikel0rado1iu.silk.api.item.armor.Armor;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -45,6 +51,7 @@ import static pers.saikel0rado1iu.sr.data.SoundEvents.EQUIP_ARROWPROOF_VEST;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public interface ArrowproofVest extends Armor, WithProjectileProtection {
+	int COLOR = 0xFFFFB3;
 	ArrowproofVest MATERIAL = new ArrowproofVest() {
 	};
 	
@@ -53,19 +60,15 @@ public interface ArrowproofVest extends Armor, WithProjectileProtection {
 		return "arrowproof_vest";
 	}
 	
+	@Override
+	default List<ArmorMaterial.Layer> getLayers() {
+		return List.of(new ArmorMaterial.Layer(new Identifier(getId()), "", true),
+				new ArmorMaterial.Layer(new Identifier(getId()), "_overlay", false));
+	}
 	
 	@Override
-	default DyeableArmorItem createChestplate(Item.Settings settings) {
-		return new DyeableArmorItem(this, ArmorItem.Type.CHESTPLATE, settings) {
-			/**
-			 * 设置默认染色
-			 */
-			@Override
-			public int getColor(ItemStack stack) {
-				int color = super.getColor(stack);
-				return color == DEFAULT_COLOR ? 0xFFFFB3 : color;
-			}
-		};
+	default Item createChestplate(net.minecraft.item.Item.Settings settings) {
+		return new Item(register(), ArmorItem.Type.CHESTPLATE, settings.maxDamageIfAbsent(ArmorItem.Type.CHESTPLATE.getMaxDamage(this.getDurability())));
 	}
 	
 	@Override
@@ -85,11 +88,11 @@ public interface ArrowproofVest extends Armor, WithProjectileProtection {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.TURTLE.getEnchantability();
+		return ArmorMaterials.TURTLE.value().getEnchantability();
 	}
 	
 	@Override
-	default SoundEvent getEquipSound() {
+	default RegistryEntry<SoundEvent> getEquipSound() {
 		return EQUIP_ARROWPROOF_VEST;
 	}
 	
@@ -102,7 +105,6 @@ public interface ArrowproofVest extends Armor, WithProjectileProtection {
 	default float getToughness() {
 		return 5;
 	}
-	
 	
 	/**
 	 * 设置弹射物保护的保护伤害处理
@@ -133,5 +135,11 @@ public interface ArrowproofVest extends Armor, WithProjectileProtection {
 	@Override
 	default Optional<Set<EquipmentSlot>> getEffectiveEquipmentSlot() {
 		return Optional.of(Set.of(EquipmentSlot.CHEST));
+	}
+	
+	class Item extends ArmorItem implements DyeableItem {
+		public Item(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
+			super(material, type, settings);
+		}
 	}
 }
