@@ -26,6 +26,7 @@ package pers.saikel0rado1iu.sr.vanilla.copper;
 
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import org.jetbrains.annotations.NotNull;
 import pers.saikel0rado1iu.silk.api.item.armor.Armor;
@@ -65,11 +66,11 @@ public interface RefinedCopperArmor extends Armor {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.GOLD.getEnchantability() - 5;
+		return ArmorMaterials.GOLD.value().getEnchantability() - 5;
 	}
 	
 	@Override
-	default SoundEvent getEquipSound() {
+	default RegistryEntry<SoundEvent> getEquipSound() {
 		return EQUIP_REFINED_COPPER;
 	}
 	
@@ -80,6 +81,6 @@ public interface RefinedCopperArmor extends Armor {
 	
 	@Override
 	default float getToughness() {
-		return ArmorMaterials.CHAIN.getToughness() + 0.5F;
+		return ArmorMaterials.CHAIN.value().getToughness() + 0.5F;
 	}
 }
