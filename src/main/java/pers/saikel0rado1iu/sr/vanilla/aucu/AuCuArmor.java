@@ -27,6 +27,7 @@ package pers.saikel0rado1iu.sr.vanilla.aucu;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import org.jetbrains.annotations.NotNull;
 import pers.saikel0rado1iu.silk.api.item.PiglinIgnore;
@@ -70,11 +71,11 @@ public interface AuCuArmor extends Armor, PiglinIgnore {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.GOLD.getEnchantability() + 5;
+		return ArmorMaterials.GOLD.value().getEnchantability() + 5;
 	}
 	
 	@Override
-	default SoundEvent getEquipSound() {
+	default RegistryEntry<SoundEvent> getEquipSound() {
 		return EQUIP_AUCU_ALLOY;
 	}
 	
@@ -85,7 +86,7 @@ public interface AuCuArmor extends Armor, PiglinIgnore {
 	
 	@Override
 	default float getToughness() {
-		return ArmorMaterials.GOLD.getToughness();
+		return ArmorMaterials.GOLD.value().getToughness();
 	}
 	
 	/**

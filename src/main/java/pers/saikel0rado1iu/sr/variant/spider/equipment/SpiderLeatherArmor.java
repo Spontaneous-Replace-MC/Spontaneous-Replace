@@ -29,6 +29,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import org.jetbrains.annotations.NotNull;
 import pers.saikel0rado1iu.silk.api.item.WithStatusEffects;
@@ -129,11 +130,11 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.LEATHER.getEnchantability();
+		return ArmorMaterials.LEATHER.value().getEnchantability();
 	}
 	
 	@Override
-	default SoundEvent getEquipSound() {
+	default RegistryEntry<SoundEvent> getEquipSound() {
 		return EQUIP_SPIDER_LEATHER_ARMOR;
 	}
 	

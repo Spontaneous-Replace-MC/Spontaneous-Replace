@@ -188,7 +188,7 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "juger_repeating_crossbow");
 	public static final MarksCrossbow MARKS_CROSSBOW = builder(new MarksCrossbow(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() * 3).fireproof()))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "marks_crossbow");
-	public static final DyeableArmorItem ARROWPROOF_VEST = builder(ArrowproofVest.MATERIAL.createChestplate(new Item.Settings()))
+	public static final ArrowproofVest.Item ARROWPROOF_VEST = builder(ArrowproofVest.MATERIAL.createChestplate(new Item.Settings()))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "arrowproof_vest");
 	public static final BlockItem EERIE_REGOLITH = builder(new BlockItem(Blocks.EERIE_REGOLITH, new Item.Settings()))
 			.group(ItemGroups.NATURAL).build(SpontaneousReplace.DATA, "eerie_regolith");

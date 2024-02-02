@@ -25,6 +25,7 @@
 package pers.saikel0rado1iu.sr.vanilla.cufe;
 
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import org.jetbrains.annotations.NotNull;
 import pers.saikel0rado1iu.silk.api.item.armor.Armor;
@@ -69,7 +70,7 @@ public interface CuFeArmor extends Armor {
 	}
 	
 	@Override
-	default SoundEvent getEquipSound() {
+	default RegistryEntry<SoundEvent> getEquipSound() {
 		return EQUIP_CUFE_ALLOY;
 	}
 	
