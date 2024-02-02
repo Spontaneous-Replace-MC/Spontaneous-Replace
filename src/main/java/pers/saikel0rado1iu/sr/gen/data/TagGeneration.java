@@ -58,6 +58,8 @@ public interface TagGeneration {
 		
 		@Override
 		protected void configure(RegistryWrapper.WrapperLookup arg) {
+			getOrCreateTagBuilder(ItemTags.DYEABLE)
+					.add(Items.ARROWPROOF_VEST);
 			getOrCreateTagBuilder(ItemTags.COALS)
 					.add(Items.CLEAN_COAL);
 			getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
@@ -197,6 +199,11 @@ public interface TagGeneration {
 		protected void configure(RegistryWrapper.WrapperLookup arg) {
 			getOrCreateTagBuilder(EntityTypeTags.ARROWS)
 					.add(EntityTypes.STEEL_ARROW);
+			getOrCreateTagBuilder(EntityTypeTags.ARTHROPOD)
+					.add(EntityTypes.SPIDER_LARVA)
+					.add(EntityTypes.GUARD_SPIDER)
+					.add(EntityTypes.SPRAY_POISON_SPIDER)
+					.add(EntityTypes.WEAVING_WEB_SPIDER);
 			putSpawnGroupEntityInTags(this::getOrCreateTagBuilder, SilkEntityTypeTags.MONSTERS, SpawnGroup.MONSTER, SpontaneousReplace.DATA);
 		}
 	}
