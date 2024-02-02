@@ -118,14 +118,14 @@ public interface EerieRindBehavior {
 	};
 	CauldronBehavior CLEAN_DYEABLE_ITEM = (state, world, pos, player, hand, stack) -> {
 		Item item = stack.getItem();
-		if (!(item instanceof DyeableItem dyeableItem)) {
+		if (!(item instanceof DyeableItem)) {
 			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-		} else if (!dyeableItem.hasColor(stack)) {
+		} else if (!DyeableItem.hasColor(stack)) {
 			return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else {
 			if (!world.isClient) {
 				if (cantUse(world, pos)) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-				dyeableItem.removeColor(stack);
+				DyeableItem.removeColor(stack);
 				player.incrementStat(Stats.CLEAN_ARMOR);
 				LeveledEerieRind.decrementFluidLevel(state, world, pos);
 			}
