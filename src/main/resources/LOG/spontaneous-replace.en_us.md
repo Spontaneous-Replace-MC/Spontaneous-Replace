@@ -1,19 +1,27 @@
+## 1.20.4-0.5.7+bu——2024/02/06
+
+### Update:
+
+-
+	- The world generator of 'SR Snapshot' has been updated. Now the boundary of 'Creepy Spider Forest' has a noise transition, which temporarily reduces the
+	  problem of excessive difficulty for players to enter the biome.
+
 ## 1.20.4-0.5.6+bf——2024/01/27
 
-### Fixes：
+### Fixes:
 
 - Fixed the issue where getCodec() and codec() of the chunk generator use the same method name.
 
 ## 1.20.4-0.5.5+bu——2024/01/26
 
-### Update：
+### Update:
 
 - Register world upgrader for 'SR Snapshot' world preset.
 - Major changes to the spider biome generation rules, first tested on the "SR Snapshot" world preset.
 
 ## 1.20.4-0.5.4+bu---2023/12/18
 
-### Update：
+### Update:
 
 - Added the block 'Block of Copper For Smelting Ingot'.
 - Added the block 'Block of CuFe'.
