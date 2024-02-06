@@ -115,6 +115,11 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 						registrar.chunkGeneratorSettingsLookup.getOrThrow(pers.saikel0rado1iu.sr.gen.world.ChunkGeneratorSettings.CLASSIC))));
 	}
 	
+	@Override
+	protected Codec<? extends ChunkGenerator> getCodec() {
+		return CODEC;
+	}
+	
 	/**
 	 * 用于提供生成器版本以供判断，需要在 {@link Codec} 中添加此参数，这样才能正确保存版本号
 	 */
@@ -135,11 +140,6 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 		return Integer.compare(Integer.parseInt(savedVersion), Integer.parseInt(VERSION));
 	}
 	
-	@Override
-	protected Codec<? extends ChunkGenerator> getCodec() {
-		return CODEC;
-	}
-	
 	/**
 	 * 用于提供区块生成器的 {@link Codec}
 	 */
@@ -158,7 +158,7 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 	 */
 	@Override
 	public boolean canFlushChunk(BlockPos pos, ChunkStorageData chunk, String version) {
-		return false;
+		return BiomeKeys.Classic.canFlushChunk(pos, chunk, version);
 	}
 	
 	/**
@@ -171,7 +171,7 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 	 */
 	@Override
 	public boolean canUpgradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
-		return false;
+		return BiomeKeys.Classic.canUpgradeChunk(pos, chunk, version);
 	}
 	
 	/**
@@ -184,7 +184,7 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 	 */
 	@Override
 	public boolean canDowngradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
-		return false;
+		return BiomeKeys.Classic.canDowngradeChunk(pos, chunk, version);
 	}
 	
 	public FixedBiomeSource getVariantBiomeSource(RegistryKey<Biome> biome) {
@@ -236,7 +236,7 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 	 */
 	@Override
 	public BiomeSource getBiomeSource(BlockPos pos) {
-		return BiomeKeys.getBiome(pos, biomeSource, this::getVariantBiomeSource);
+		return BiomeKeys.Classic.getBiome(pos, biomeSource, this::getVariantBiomeSource);
 	}
 	
 	/**
@@ -252,6 +252,6 @@ public class ClassicChunkGenerator extends SilkNoiseChunkGenerator implements Cu
 		RegistryKey<Biome> biomeKey = null;
 		BiomeSource source = getBiomeSource(pos);
 		if (source != biomeSource) for (RegistryEntry<Biome> entry : source.getBiomes()) if (entry.getKey().isPresent()) biomeKey = entry.getKey().get();
-		return BiomeKeys.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, getSettings().value(), biomeKey);
+		return BiomeKeys.Classic.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, getSettings().value(), biomeKey);
 	}
 }

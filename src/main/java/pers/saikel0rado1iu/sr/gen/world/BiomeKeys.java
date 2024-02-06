@@ -34,6 +34,7 @@ import net.minecraft.world.biome.source.FixedBiomeSource;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import org.jetbrains.annotations.Nullable;
 import pers.saikel0rado1iu.silk.gen.world.SilkBiomeKey;
+import pers.saikel0rado1iu.silk.util.world.upgrade.data.ChunkStorageData;
 import pers.saikel0rado1iu.sr.variant.spider.world.gen.biome.SpiderBiomeKeys;
 
 import java.util.function.Function;
@@ -44,16 +45,52 @@ import java.util.function.Function;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class BiomeKeys extends SilkBiomeKey {
-	public static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
-		return SpiderBiomeKeys.getBiome(pos, biomeSource, getVariantBiomeSource);
-	}
-	
-	public static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
-		return SpiderBiomeKeys.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, settings, biome);
-	}
-	
 	@Override
 	public void bootstrap(Registerable<Biome> registerable) {
 		new SpiderBiomeKeys().bootstrap(registerable);
+	}
+	
+	public interface Classic {
+		static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
+			return SpiderBiomeKeys.Classic.getBiome(pos, biomeSource, getVariantBiomeSource);
+		}
+		
+		static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
+			return SpiderBiomeKeys.Classic.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, settings, biome);
+		}
+		
+		static boolean canFlushChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Classic.canFlushChunk(pos, chunk, version);
+		}
+		
+		static boolean canUpgradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Classic.canUpgradeChunk(pos, chunk, version);
+		}
+		
+		static boolean canDowngradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Classic.canDowngradeChunk(pos, chunk, version);
+		}
+	}
+	
+	public interface Snapshot {
+		static BiomeSource getBiome(BlockPos pos, BiomeSource biomeSource, Function<RegistryKey<Biome>, FixedBiomeSource> getVariantBiomeSource) {
+			return SpiderBiomeKeys.Snapshot.getBiome(pos, biomeSource, getVariantBiomeSource);
+		}
+		
+		static BlockState setTerrainNoise(BlockPos pos, BlockState originBlock, int estimateSurfaceHeight, ChunkGeneratorSettings settings, @Nullable RegistryKey<Biome> biome) {
+			return SpiderBiomeKeys.Snapshot.setTerrainNoise(pos, originBlock, estimateSurfaceHeight, settings, biome);
+		}
+		
+		static boolean canFlushChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Snapshot.canFlushChunk(pos, chunk, version);
+		}
+		
+		static boolean canUpgradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Snapshot.canUpgradeChunk(pos, chunk, version);
+		}
+		
+		static boolean canDowngradeChunk(BlockPos pos, ChunkStorageData chunk, String version) {
+			return SpiderBiomeKeys.Snapshot.canDowngradeChunk(pos, chunk, version);
+		}
 	}
 }
