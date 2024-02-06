@@ -88,7 +88,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "Disable Warning Advice");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "Need Other Mod");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "Go to https://modrinth.com/mod/dcwa Install this Mod enable feature");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "SR:");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "SR Snapshot:");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "Too Old");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "This function has NOT been added YET, Please continue to pay ATTENTION to the homepage of this Mod to get UPDATES in time.");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "Spontaneous-Replace");
@@ -352,7 +352,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“实验性设置”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模组");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安装此模组开启功能");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替快照：");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "过旧");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未添加，请继续关注本模组首页以及时获取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
@@ -616,7 +616,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“實驗性質設定”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模組");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安裝此模組開啓功能");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替快照：");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "過舊");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未添加, 請繼續關注本模組首頁以及時獲取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
@@ -880,7 +880,7 @@ public interface LocalizationGenerator {
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE), "禁用“實驗性設定”警告");
 			translationBuilder.add(TextUtil.configText(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "需要其他模組");
 			translationBuilder.add(TextUtil.configTip(SpontaneousReplace.DATA, Configs.DISABLE_WARNING_ADVICE + ".need_other_mod"), "前往 https://modrinth.com/mod/dcwa 安裝此模組開啟功能");
-			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替：");
+			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator"), "自然更替快照：");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "generator.non_version"), "過舊");
 			translationBuilder.add(TextUtil.widgetText(SpontaneousReplace.DATA, "placeholder"), "此功能尚未新增, 請繼續關注本模組首頁以及時獲取更新。");
 			translationBuilder.add(getWorldPresetKey(WorldPresets.CLASSIC), "自然更替");
