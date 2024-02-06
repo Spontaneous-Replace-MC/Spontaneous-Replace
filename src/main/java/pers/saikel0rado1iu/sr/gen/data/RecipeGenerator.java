@@ -32,6 +32,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.silk.gen.data.family.EquipFamily;
 import pers.saikel0rado1iu.silk.gen.data.recipe.NbtShapedRecipeJsonBuilder;
@@ -39,6 +40,7 @@ import pers.saikel0rado1iu.silk.util.TickUtil;
 import pers.saikel0rado1iu.sr.data.SpontaneousReplace;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import static pers.saikel0rado1iu.silk.gen.data.SilkRecipeJsonBuilder.*;
 import static pers.saikel0rado1iu.sr.data.Items.*;
@@ -49,8 +51,8 @@ import static pers.saikel0rado1iu.sr.data.Items.*;
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
 public final class RecipeGenerator extends FabricRecipeProvider {
-	public RecipeGenerator(FabricDataOutput output) {
-		super(output);
+	public RecipeGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+		super(output, registriesFuture);
 	}
 	
 	@Override
