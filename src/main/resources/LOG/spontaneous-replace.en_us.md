@@ -2,9 +2,8 @@
 
 ### Update:
 
--
-	- The world generator of 'SR Snapshot' has been updated. Now the boundary of 'Creepy Spider Forest' has a noise transition, which temporarily reduces the
-	  problem of excessive difficulty for players to enter the biome.
+- The world generator of 'SR Snapshot' has been updated. Now the boundary of 'Creepy Spider Forest' has a noise transition, which temporarily reduces the
+  problem of excessive difficulty for players to enter the biome.
 
 ## 1.20.4-0.5.6+bf——2024/01/27
 
