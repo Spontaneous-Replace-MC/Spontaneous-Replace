@@ -42,6 +42,7 @@ import net.minecraft.predicate.entity.*;
 import net.minecraft.predicate.item.EnchantmentPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.BiomeKeys;
 import pers.saikel0rado1iu.silk.api.entity.SilkEntityTypeTags;
@@ -54,6 +55,7 @@ import pers.saikel0rado1iu.sr.data.StatusEffects;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 import static pers.saikel0rado1iu.sr.data.Items.*;
@@ -600,8 +602,8 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 		POISON_ARROW_STACK.setSubNbt("Potion", NbtString.of("poison"));
 	}
 	
-	public AdvancementGenerator(FabricDataOutput dataGenerator) {
-		super(dataGenerator);
+	public AdvancementGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+		super(output, registryLookup);
 	}
 	
 	@Override

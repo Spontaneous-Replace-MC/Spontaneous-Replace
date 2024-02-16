@@ -27,6 +27,7 @@ package pers.saikel0rado1iu.sr.variant.spider.mob.spray;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
@@ -68,7 +69,7 @@ public class ToxinEntity extends ProjectileEntity {
 	}
 	
 	@Override
-	protected void initDataTracker() {
+	protected void initDataTracker(DataTracker.Builder builder) {
 	}
 	
 	/**

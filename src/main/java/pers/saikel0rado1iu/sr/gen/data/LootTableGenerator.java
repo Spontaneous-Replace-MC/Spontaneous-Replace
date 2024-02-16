@@ -38,11 +38,13 @@ import net.minecraft.loot.function.LootingEnchantLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.sr.data.Blocks;
 import pers.saikel0rado1iu.sr.data.EntityTypes;
 import pers.saikel0rado1iu.sr.data.Items;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
 import static net.minecraft.block.Blocks.*;
@@ -56,8 +58,8 @@ import static pers.saikel0rado1iu.silk.gen.data.SilkLootTableGenerator.*;
  */
 public interface LootTableGenerator {
 	final class Block extends FabricBlockLootTableProvider {
-		public Block(FabricDataOutput dataOutput) {
-			super(dataOutput);
+		public Block(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, registryLookup);
 		}
 		
 		@Override
@@ -89,8 +91,8 @@ public interface LootTableGenerator {
 	}
 	
 	final class Entity extends SimpleFabricLootTableProvider {
-		public Entity(FabricDataOutput dataOutput) {
-			super(dataOutput, LootContextTypes.ENTITY);
+		public Entity(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(output, registryLookup, LootContextTypes.ENTITY);
 		}
 		
 		@Override
