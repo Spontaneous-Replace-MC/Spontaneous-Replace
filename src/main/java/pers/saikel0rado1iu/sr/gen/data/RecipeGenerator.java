@@ -26,10 +26,12 @@ package pers.saikel0rado1iu.sr.gen.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtString;
+import net.minecraft.potion.Potions;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -221,7 +223,7 @@ public final class RecipeGenerator extends FabricRecipeProvider {
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, COMPOSITE_STRING, RecipeCategory.MISC, COMPOSITE_FABRIC,
 				convertBetween(COMPOSITE_FABRIC, COMPOSITE_STRING), getItemPath(COMPOSITE_FABRIC), convertBetween(COMPOSITE_STRING, COMPOSITE_FABRIC), getItemPath(COMPOSITE_STRING));
 		ItemStack out1 = new ItemStack(Items.TIPPED_ARROW, 4);
-		out1.setSubNbt("Potion", NbtString.of("poison"));
+		out1.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Potions.POISON));
 		NbtShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, out1).group(getItemPath(out1.getItem())).input('#', SPIDER_FANG).input('X', Items.STICK).input('@', Items.FEATHER)
 				.pattern("#")
 				.pattern("X")
