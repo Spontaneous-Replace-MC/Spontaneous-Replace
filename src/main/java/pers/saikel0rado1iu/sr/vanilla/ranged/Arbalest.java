@@ -24,15 +24,17 @@
 
 package pers.saikel0rado1iu.sr.vanilla.ranged;
 
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ChargedProjectilesComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.Crossbow;
 import pers.saikel0rado1iu.silk.util.TickUtil;
 
 import java.util.Map;
 
+import static pers.saikel0rado1iu.silk.ropestick.DataComponentTypes.PROJECTILE_ID;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
@@ -103,16 +105,15 @@ public class Arbalest extends Crossbow {
 	 */
 	@Override
 	public float getProjectileId(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
-		if (!getAllProjectile(stack).isEmpty()) {
-			ItemStack useProjectile = getAllProjectile(stack).get(0);
-			if (useProjectile.isOf(Items.ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
-			else if (useProjectile.isOf(Items.TIPPED_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.1F);
-			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.2F);
-			else if (useProjectile.isOf(Items.FIREWORK_ROCKET)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.3F);
+		ChargedProjectilesComponent chargedProjectilesComponent = stack.getOrDefault(DataComponentTypes.CHARGED_PROJECTILES, ChargedProjectilesComponent.DEFAULT);
+		if (!chargedProjectilesComponent.getProjectiles().isEmpty()) {
+			ItemStack useProjectile = chargedProjectilesComponent.getProjectiles().get(0);
+			if (useProjectile.isOf(Items.ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0));
+			else if (useProjectile.isOf(Items.TIPPED_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.1F));
+			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.2F));
+			else if (useProjectile.isOf(Items.FIREWORK_ROCKET)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.3F));
 		}
-		return nbtCompound.getFloat(PROJECTILE_ID_KEY);
+		return stack.getOrDefault(PROJECTILE_ID, new ProjectileIdComponent(0)).projectileId();
 	}
 	
 	/**

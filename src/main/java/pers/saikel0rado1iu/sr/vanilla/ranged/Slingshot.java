@@ -32,7 +32,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
@@ -52,6 +51,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+import static pers.saikel0rado1iu.silk.ropestick.DataComponentTypes.PROJECTILE_ID;
 import static pers.saikel0rado1iu.sr.data.Items.STONEBALL;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.SLINGSHOT_THROW;
 
@@ -193,15 +193,13 @@ public class Slingshot extends Bow implements CustomEnchantment {
 	 */
 	@Override
 	public void setProjectileId(ItemStack stack, ItemStack useProjectile) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
 		if (useProjectile != null) {
-			if (useProjectile.isOf(STONEBALL)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
-			else if (useProjectile.isOf(Items.EGG)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.1F);
-			else if (useProjectile.isOf(Items.SNOWBALL)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.2F);
-			else if (useProjectile.isOf(Items.ENDER_PEARL)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.3F);
-			else if (useProjectile.isOf(Items.SPLASH_POTION)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.4F);
-			else if (useProjectile.isOf(Items.LINGERING_POTION)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.5F);
+			if (useProjectile.isOf(STONEBALL)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0));
+			else if (useProjectile.isOf(Items.EGG)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.1F));
+			else if (useProjectile.isOf(Items.SNOWBALL)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.2F));
+			else if (useProjectile.isOf(Items.ENDER_PEARL)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.3F));
+			else if (useProjectile.isOf(Items.SPLASH_POTION)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.4F));
+			else if (useProjectile.isOf(Items.LINGERING_POTION)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.5F));
 		}
 	}
 	
@@ -210,8 +208,7 @@ public class Slingshot extends Bow implements CustomEnchantment {
 	 */
 	@Override
 	public float getProjectileId(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null ? nbtCompound.getFloat(PROJECTILE_ID_KEY) : 0;
+		return stack.getOrDefault(PROJECTILE_ID, new ProjectileIdComponent(0)).projectileId();
 	}
 	
 	/**

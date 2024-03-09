@@ -24,20 +24,23 @@
 
 package pers.saikel0rado1iu.sr.vanilla.ranged;
 
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.mojang.serialization.Codec;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ChargedProjectilesComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -49,6 +52,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Final;
 import pers.saikel0rado1iu.silk.api.item.CustomEnchantment;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.Crossbow;
 import pers.saikel0rado1iu.silk.util.TickUtil;
@@ -57,6 +61,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import static pers.saikel0rado1iu.silk.ropestick.DataComponentTypes.PROJECTILE_ID;
+import static pers.saikel0rado1iu.sr.data.DataComponentTypes.CHARGED_PROJECTILE_NUM;
+import static pers.saikel0rado1iu.sr.data.DataComponentTypes.IS_SHOOT;
 import static pers.saikel0rado1iu.sr.data.SoundEvents.*;
 
 /**
@@ -74,16 +81,17 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	}
 	
 	/**
-	 * 清除弹药
+	 * 获取 NBT 是否射击以供 JSON 渲染使用
 	 */
-	protected static void clearProjectiles(ItemStack crossbow) {
-		// 清除写在 NBT 中的弹药数据
-		NbtCompound nbtCompound = crossbow.getNbt();
-		if (nbtCompound != null) {
-			NbtList nbtList = nbtCompound.getList("ChargedProjectileNum", NbtElement.LIST_TYPE);
-			nbtList.clear();
-			nbtCompound.put("ChargedProjectileNum", nbtList);
-		}
+	public static boolean getIsShoot(ItemStack stack) {
+		return stack.getOrDefault(IS_SHOOT, new IsShootComponent(false)).isShoot;
+	}
+	
+	/**
+	 * 设置是否射击的 NBT 以供 JSON 渲染使用
+	 */
+	public static void setIsShoot(ItemStack stack, boolean isShoot) {
+		stack.set(IS_SHOOT, new IsShootComponent(isShoot));
 	}
 	
 	/**
@@ -92,40 +100,16 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	 * @return 设置后的已装填弹药数
 	 */
 	public static int getChargedProjectileNum(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null ? nbtCompound.getInt("ChargedProjectileNum") : 0;
+		return stack.getOrDefault(CHARGED_PROJECTILE_NUM, new ChargedProjectileNumComponent(0)).num;
 	}
 	
 	/**
-	 * 设置是否射击的 NBT 以供 JSON 渲染使用
+	 * 设置已装填弹药数
+	 *
+	 * @param value 设置值
 	 */
-	public static void setIsShoot(ItemStack stack, boolean isShoot) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putBoolean("IsShoot", isShoot);
-		nbtCompound.getBoolean("IsShoot");
-	}
-	
-	/**
-	 * 获取 NBT 是否射击以供 JSON 渲染使用
-	 */
-	public static boolean getIsShoot(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null && nbtCompound.getBoolean("IsShoot");
-	}
-	
-	/**
-	 * 发射后
-	 */
-	@Override
-	protected void postShootProjectile(World world, LivingEntity entity, ItemStack stack) {
-		// 如果实体为玩家实体
-		if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
-			// 触发弩的射击
-			if (!world.isClient) Criteria.SHOT_CROSSBOW.trigger(serverPlayerEntity, stack);
-			serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-		}
-		// 清除弹药
-		if (getChargedProjectileNum(stack) == 1) clearProjectiles(stack);
+	public void setChargedProjectileNum(ItemStack stack, int value) {
+		stack.set(CHARGED_PROJECTILE_NUM, new ChargedProjectileNumComponent(value));
 	}
 	
 	@Override
@@ -159,11 +143,9 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	@Override
 	public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
 		// 到了每个弹药可装填的时间则装填每个弹药
-		for (int count = 1; count <= getChargedProjectileNum(stack) && !isCharged(stack); count++) loadAllProjectile(user, stack);
+		for (int count = 0; count < getChargedProjectileNum(stack); count++) loadAllProjectile(user, stack);
 		
-		if (getChargedProjectileNum(stack) > 0 && !isCharged(stack)) {
-			// 设置已装填
-			setCharged(stack, true);
+		if (getChargedProjectileNum(stack) > 0) {
 			// 获取声音类别
 			SoundCategory soundCategory = user instanceof PlayerEntity ? SoundCategory.PLAYERS : SoundCategory.HOSTILE;
 			// 播放弩装填结束音效
@@ -176,33 +158,38 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	 */
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-		// 默认操作
+		// 获取玩家手中的物品堆
 		ItemStack itemStack = user.getStackInHand(hand);
 		maxUseTicks = TickUtil.getTick(getCanLoadPulletNum(user, itemStack));
 		setProjectileId(itemStack, user.getProjectileType(itemStack));
-		// 如果已装填
-		if (isCharged(itemStack)) {
-			// 发射所有
-			shootAllProjectile(world, user, hand, itemStack, getMaxProjectileSpeed(itemStack), getFiringError());
+		
+		// 获取物品堆中的ChargedProjectilesComponent组件
+		ChargedProjectilesComponent chargedProjectilesComponent = itemStack.get(DataComponentTypes.CHARGED_PROJECTILES);
+		
+		// 如果ChargedProjectilesComponent组件不为空且不为空的话
+		if (chargedProjectilesComponent != null && !chargedProjectilesComponent.isEmpty() && getChargedProjectileNum(itemStack) != 0) {
+			// 发射所有已充能的弹药
+			shootAll(world, user, hand, itemStack, getMaxProjectileSpeed(chargedProjectilesComponent), getFiringError(), null);
 			setIsShoot(itemStack, true);
 			// 设置装填数量
 			setChargedProjectileNum(itemStack, getChargedProjectileNum(itemStack) - 1);
-			// 设置未装填
-			if (getChargedProjectileNum(itemStack) <= 0) setCharged(itemStack, false);
+			// 返回表示消耗了物品堆的TypedActionResult对象
 			return TypedActionResult.consume(itemStack);
-			// 如果使用者有弹药
-		} else if (!user.getProjectileType(itemStack).isEmpty()) {
+		}
+		
+		// 如果玩家手中的物品堆不为空的话
+		if (!user.getProjectileType(itemStack).isEmpty()) {
 			// 但未装填
-			if (!isCharged(itemStack)) {
+			if (getChargedProjectileNum(itemStack) == 0 || (chargedProjectilesComponent != null && chargedProjectilesComponent.getProjectiles().isEmpty())) {
 				charged = false;
 				loaded = false;
+				// 设置玩家当前的手为当前手
 				user.setCurrentHand(hand);
 			}
 			return TypedActionResult.consume(itemStack);
-			// 如果未装填
-		} else {
-			return TypedActionResult.fail(itemStack);
 		}
+		
+		return TypedActionResult.fail(itemStack);
 	}
 	
 	/**
@@ -230,40 +217,54 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 		super.usageTick(world, user, stack, remainingUseTicks);
 	}
 	
+	@Override
+	protected boolean loadAllProjectile(LivingEntity shooter, ItemStack crossbow) {
+		List<ItemStack> list = CrossbowItem.load(crossbow, shooter.getProjectileType(crossbow), shooter);
+		if (list.isEmpty()) return false;
+		crossbow.set(DataComponentTypes.CHARGED_PROJECTILES, ChargedProjectilesComponent.of(Lists.newArrayList(Iterables.concat(list,
+				crossbow.getOrDefault(DataComponentTypes.CHARGED_PROJECTILES, ChargedProjectilesComponent.DEFAULT).getProjectiles()))));
+		return true;
+	}
+	
 	/**
 	 * 发射所有
 	 */
 	@Override
-	public void shootAllProjectile(World world, LivingEntity entity, Hand hand, ItemStack stack, float speed, float divergence) {
-		// 获取弹药与单发弹药数量
-		List<ItemStack> projectiles = getAllProjectile(stack);
-		int num = EnchantmentHelper.getLevel(Enchantments.MULTISHOT, stack) == 0 ? 1 : 3;
-		// 获取所有音高
-		float[] soundPitches = getSoundPitches(entity.getRandom());
-		
-		// 发射所有弹药
-		for (int i = 0; i < num; ++i) {
-			ItemStack itemStack = projectiles.get(i);
-			// 如果实体为玩家且在创造模式
-			boolean isPlayerAndInCreative = entity instanceof PlayerEntity && ((PlayerEntity) entity).getAbilities().creativeMode;
-			// 设置“多重射击”的不同角度弹药发射
-			if (!itemStack.isEmpty()) {
-				if (i == 0) shootProjectile(world, entity, hand, stack, itemStack, soundPitches[i], isPlayerAndInCreative, speed, divergence, 0);
-				else shootProjectile(world, entity, hand, stack, itemStack, soundPitches[i], isPlayerAndInCreative, speed, divergence, 1);
-			}
+	protected void shootAll(World world, LivingEntity shooter, Hand hand, ItemStack stack, List<ItemStack> projectiles, float speed, float divergence, boolean critical, @Nullable LivingEntity target) {
+		// 基础角度增量
+		float baseAngleIncrement = 20F / Math.max(1, projectiles.size() - 1);
+		// 起始角度
+		float startAngle = (float) ((projectiles.size() - 1) % 2) * baseAngleIncrement / 2;
+		for (int i = 0; i < (EnchantmentHelper.getLevel(Enchantments.MULTISHOT, stack) == 0 ? 1 : 3) && i < projectiles.size(); ++i) {
+			ItemStack projectileStack = projectiles.get(i);
+			if (projectileStack.isEmpty()) continue;
+			// 对武器进行损伤
+			stack.damage(getWeaponStackDamage(projectileStack), shooter, LivingEntity.getSlotForHand(hand));
+			// 创建投射物实体
+			ProjectileEntity projectileEntity = createArrowEntity(world, shooter, stack, projectileStack, critical);
+			// 射出投射物
+			shoot(shooter, projectileEntity, i, speed, divergence, startAngle, target);
+			// 在世界中生成投射物实体
+			world.spawnEntity(projectileEntity);
 		}
-		// 射击后操作
-		postShootProjectile(world, entity, stack);
 	}
 	
 	/**
-	 * 设置已装填弹药数
-	 *
-	 * @param value 设置值
+	 * 发射后
 	 */
-	public void setChargedProjectileNum(ItemStack stack, int value) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putInt("ChargedProjectileNum", value);
+	@Override
+	public void shootAll(World world, LivingEntity shooter, Hand hand, ItemStack stack, float speed, float divergence, @Nullable LivingEntity livingEntity) {
+		if (world.isClient()) return;
+		ChargedProjectilesComponent chargedProjectilesComponent = stack.getOrDefault(DataComponentTypes.CHARGED_PROJECTILES, ChargedProjectilesComponent.DEFAULT);
+		if (chargedProjectilesComponent == null || chargedProjectilesComponent.isEmpty()) return;
+		shootAll(world, shooter, hand, stack, chargedProjectilesComponent.getProjectiles(), speed, divergence, shooter instanceof PlayerEntity, livingEntity);
+		if (shooter instanceof ServerPlayerEntity serverPlayerEntity) {
+			Criteria.SHOT_CROSSBOW.trigger(serverPlayerEntity, stack);
+			serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
+		}
+		List<ItemStack> itemStacks = chargedProjectilesComponent.getProjectiles();
+		for (int i = 0; i < (EnchantmentHelper.getLevel(Enchantments.MULTISHOT, stack) == 0 ? 1 : 3) && !itemStacks.isEmpty(); i++) itemStacks.remove(0);
+		stack.set(DataComponentTypes.CHARGED_PROJECTILES, ChargedProjectilesComponent.of(itemStacks));
 	}
 	
 	/**
@@ -271,8 +272,10 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	 */
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+		ChargedProjectilesComponent chargedProjectilesComponent = stack.get(DataComponentTypes.CHARGED_PROJECTILES);
+		if (chargedProjectilesComponent == null || chargedProjectilesComponent.isEmpty()) return;
 		// 获取弹药
-		List<ItemStack> projectiles = getAllProjectile(stack);
+		List<ItemStack> projectiles = chargedProjectilesComponent.getProjectiles();
 		// 如果已装填且弹药不为空
 		if (isCharged(stack) && !projectiles.isEmpty()) {
 			ItemStack bullet = projectiles.get(0);
@@ -331,13 +334,11 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	 */
 	@Override
 	public void setProjectileId(ItemStack stack, ItemStack useProjectile) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
 		if (useProjectile != null) {
-			if (useProjectile.isOf(Items.ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
-			else if (useProjectile.isOf(Items.TIPPED_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.1F);
-			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.2F);
-			else if (useProjectile.isOf(Items.FIREWORK_ROCKET)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.3F);
+			if (useProjectile.isOf(Items.ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0));
+			else if (useProjectile.isOf(Items.TIPPED_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.1F));
+			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.2F));
+			else if (useProjectile.isOf(Items.FIREWORK_ROCKET)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.3F));
 		}
 	}
 	
@@ -346,8 +347,7 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 	 */
 	@Override
 	public float getProjectileId(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null ? nbtCompound.getFloat(PROJECTILE_ID_KEY) : 0;
+		return stack.getOrDefault(PROJECTILE_ID, new ProjectileIdComponent(0)).projectileId();
 	}
 	
 	/**
@@ -369,5 +369,13 @@ public class JugerRepeatingCrossbow extends Crossbow implements CustomEnchantmen
 				Enchantments.UNBREAKING,
 				Enchantments.VANISHING_CURSE,
 				Enchantments.MENDING);
+	}
+	
+	public record ChargedProjectileNumComponent(@Final int num) {
+		public static final Codec<ChargedProjectileNumComponent> CODEC = Codec.INT.xmap(ChargedProjectileNumComponent::new, ChargedProjectileNumComponent::num);
+	}
+	
+	public record IsShootComponent(@Final boolean isShoot) {
+		public static final Codec<IsShootComponent> CODEC = Codec.BOOL.xmap(IsShootComponent::new, IsShootComponent::isShoot);
 	}
 }

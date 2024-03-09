@@ -29,7 +29,6 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -37,6 +36,8 @@ import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.Bow;
 import pers.saikel0rado1iu.silk.util.TickUtil;
 
 import java.util.Map;
+
+import static pers.saikel0rado1iu.silk.ropestick.DataComponentTypes.PROJECTILE_ID;
 
 /**
  * <h2 style="color:FFC800">反曲弓</h2>
@@ -96,12 +97,10 @@ public class RecurveBow extends Bow {
 	 */
 	@Override
 	public void setProjectileId(ItemStack stack, ItemStack useProjectile) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
 		if (useProjectile != null) {
-			if (useProjectile.isOf(Items.ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0);
-			else if (useProjectile.isOf(Items.TIPPED_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.1F);
-			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) nbtCompound.putFloat(PROJECTILE_ID_KEY, 0.2F);
+			if (useProjectile.isOf(Items.ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0));
+			else if (useProjectile.isOf(Items.TIPPED_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.1F));
+			else if (useProjectile.isOf(Items.SPECTRAL_ARROW)) stack.set(PROJECTILE_ID, new ProjectileIdComponent(0.2F));
 		}
 	}
 	
@@ -110,8 +109,7 @@ public class RecurveBow extends Bow {
 	 */
 	@Override
 	public float getProjectileId(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null ? nbtCompound.getFloat(PROJECTILE_ID_KEY) : 0;
+		return stack.getOrDefault(PROJECTILE_ID, new ProjectileIdComponent(0)).projectileId();
 	}
 	
 	/**

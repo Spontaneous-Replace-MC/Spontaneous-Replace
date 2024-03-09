@@ -24,6 +24,7 @@
 
 package pers.saikel0rado1iu.sr.vanilla.ranged;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -31,20 +32,22 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Final;
 import pers.saikel0rado1iu.silk.api.item.CustomEnchantment;
 import pers.saikel0rado1iu.silk.api.item.tool.UsingMovementMultiplier;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.BreakingShield;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.Crossbow;
 import pers.saikel0rado1iu.silk.util.TickUtil;
+import pers.saikel0rado1iu.sr.data.DataComponentTypes;
 import pers.saikel0rado1iu.sr.vanilla.ranged.projectile.steelarrow.SteelArrowEntity;
 
 import java.util.Arrays;
@@ -71,33 +74,31 @@ public class MarksCrossbow extends Crossbow implements BreakingShield, CustomEnc
 	 * 是否已发射完毕
 	 */
 	public static boolean isShootEnd(ItemStack stack) {
-		NbtCompound nbtCompound = stack.getNbt();
-		return nbtCompound != null && nbtCompound.getBoolean("ShootEnd");
+		return stack.getOrDefault(DataComponentTypes.SHOOT_END, new ShootEndComponent(false)).isShootEnd;
 	}
 	
 	/**
 	 * 设置是否已发射完毕
 	 */
 	public static void setShootEnd(ItemStack stack, boolean end) {
-		NbtCompound nbtCompound = stack.getOrCreateNbt();
-		nbtCompound.putBoolean("ShootEnd", end);
+		stack.set(DataComponentTypes.SHOOT_END, new ShootEndComponent(end));
 	}
 	
 	@Override
-	protected PersistentProjectileEntity createArrow(World world, LivingEntity entity, ItemStack crossbow, ItemStack arrow) {
-		// 创建箭实体
-		PersistentProjectileEntity persistentProjectileEntity = STEEL_ARROW.createArrow(world, arrow, entity);
-		// 如果是玩家则设置暴击
-		if (entity instanceof PlayerEntity) persistentProjectileEntity.setCritical(true);
-		// 设置声音
-		persistentProjectileEntity.setSound(SoundEvents.ITEM_CROSSBOW_HIT);
-		// 设置由弩射击
-		persistentProjectileEntity.setShotFromCrossbow(true);
-		// 设置“穿透”效果
-		int piercingLevel = EnchantmentHelper.getLevel(Enchantments.PIERCING, crossbow);
-		if (piercingLevel > 0) persistentProjectileEntity.setPierceLevel((byte) piercingLevel);
-		
-		return persistentProjectileEntity;
+	protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
+		ProjectileEntity projectile = super.createArrowEntity(world, shooter, weaponStack, projectileStack, critical);
+		if (!(projectile instanceof SteelArrowEntity)) {
+			projectile = STEEL_ARROW.createArrow(world, new ItemStack(STEEL_ARROW), shooter);
+			if (projectile instanceof PersistentProjectileEntity persistentProjectile) {
+				// 设置由弩射击
+				persistentProjectile.setShotFromCrossbow(true);
+				// 设置“穿透”效果
+				int piercingLevel = EnchantmentHelper.getLevel(Enchantments.PIERCING, weaponStack);
+				if (piercingLevel > 0) persistentProjectile.setPierceLevel((byte) piercingLevel);
+			}
+			return projectile;
+		}
+		return projectile;
 	}
 	
 	@Override
@@ -168,10 +169,11 @@ public class MarksCrossbow extends Crossbow implements BreakingShield, CustomEnc
 		return UseAction.BOW;
 	}
 	
+	
 	@Override
-	public void shootAllProjectile(World world, LivingEntity entity, Hand hand, ItemStack stack, float speed, float divergence) {
+	protected void shootAll(World world, LivingEntity shooter, Hand hand, ItemStack stack, List<ItemStack> projectiles, float speed, float divergence, boolean critical, @Nullable LivingEntity target) {
+		super.shootAll(world, shooter, hand, stack, projectiles, speed, divergence, critical, target);
 		setShootEnd(stack, true);
-		super.shootAllProjectile(world, entity, hand, stack, speed, divergence);
 	}
 	
 	@Override
@@ -249,5 +251,9 @@ public class MarksCrossbow extends Crossbow implements BreakingShield, CustomEnc
 	@Override
 	public float getShieldDamage(float v) {
 		return v / 2;
+	}
+	
+	public record ShootEndComponent(@Final boolean isShootEnd) {
+		public static final Codec<ShootEndComponent> CODEC = Codec.BOOL.xmap(ShootEndComponent::new, ShootEndComponent::isShootEnd);
 	}
 }
