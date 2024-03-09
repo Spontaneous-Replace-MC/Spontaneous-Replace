@@ -91,7 +91,6 @@ public class EerieBough extends ConnectingBlock {
 	 * <p>毁坏改木枝方块上关联的所有木枝方块</p>
 	 * <p>Warning! 由于使用了递归可能产生重大程序问题</p>
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (neighborState.isAir()) {
@@ -243,7 +242,6 @@ public class EerieBough extends ConnectingBlock {
 	 * <p>如果方块的两个方向有木枝则这两个方向叠加的块是木枝则不能放置</p>
 	 * <p>如果方块底部没有方块且四周没有木枝则不能放置</p>
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
 		if (!world.getBlockState(pos).isAir()) return false;
@@ -294,7 +292,6 @@ public class EerieBough extends ConnectingBlock {
 		return this.withConnectionProperties(ctx.getWorld(), ctx.getBlockPos());
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 		if (!state.canPlaceAt(world, pos)) world.breakBlock(pos, true);
@@ -305,9 +302,8 @@ public class EerieBough extends ConnectingBlock {
 		builder.add(NORTH, EAST, SOUTH, WEST, UP, DOWN);
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
-	public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
+	protected boolean canPathfindThrough(BlockState state, NavigationType type) {
 		return false;
 	}
 	
