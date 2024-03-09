@@ -523,11 +523,11 @@
 	"overrides": [
 		{"predicate": {"pulling": 1, "pull": 0.2}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_0"},
 		{"predicate": {"pulling": 1, "pull": 0.58}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_1"},
-		{"predicate": {"pulling": 1, "pull": 0.2, "bullet": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_firework_0"},
-		{"predicate": {"pulling": 1, "pull": 0.58, "bullet": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_firework_1"},
+		{"predicate": {"pulling": 1, "pull": 0.2, "projectile_id": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_firework_0"},
+		{"predicate": {"pulling": 1, "pull": 0.58, "projectile_id": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_firework_1"},
 		{"predicate": {"pulling": 1, "pull": 1}, "model": "spontaneous-replace:item/juger_repeating_crossbow/pulling_2"},
 		{"predicate": {"charged": 1, "shoot": 0}, "model": "spontaneous-replace:item/juger_repeating_crossbow/arrow"},
-		{"predicate": {"charged": 1, "shoot": 0, "bullet": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/firework"},
+		{"predicate": {"charged": 1, "shoot": 0, "projectile_id": 0.3}, "model": "spontaneous-replace:item/juger_repeating_crossbow/firework"},
 		{"predicate": {"charged": 1, "shoot": 1}, "model": "spontaneous-replace:item/juger_repeating_crossbow/shoot"}
 	],
 	"display": {

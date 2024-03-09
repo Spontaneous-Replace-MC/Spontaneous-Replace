@@ -73,7 +73,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/humanoid_0",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/humanoid_0",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -84,7 +84,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/humanoid_1",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/humanoid_1",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -95,7 +95,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/humanoid_2",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/humanoid_2",
           "functions": [
             {
               "function": "minecraft:apply_bonus",

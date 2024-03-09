@@ -11,7 +11,7 @@
           "children": [
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/zombie",
+              "value": "spontaneous-replace:blocks/mobs/zombie",
               "functions": [
                 {
                   "function": "set_count",
@@ -29,7 +29,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/drowned",
+              "value": "spontaneous-replace:blocks/mobs/drowned",
               "functions": [
                 {
                   "function": "set_count",
@@ -47,7 +47,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/husk",
+              "value": "spontaneous-replace:blocks/mobs/husk",
               "functions": [
                 {
                   "function": "set_count",

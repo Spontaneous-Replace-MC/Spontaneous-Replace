@@ -141,7 +141,7 @@
           "children": [
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/pig",
+              "value": "spontaneous-replace:blocks/mobs/pig",
               "functions": [
                 {
                   "function": "set_count",
@@ -159,7 +159,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/sheep",
+              "value": "spontaneous-replace:blocks/mobs/sheep",
               "functions": [
                 {
                   "function": "set_count",
@@ -177,7 +177,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/cow",
+              "value": "spontaneous-replace:blocks/mobs/cow",
               "functions": [
                 {
                   "function": "set_count",
@@ -197,7 +197,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/large_0",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/large_0",
           "functions": [
             {
               "function": "minecraft:apply_bonus",

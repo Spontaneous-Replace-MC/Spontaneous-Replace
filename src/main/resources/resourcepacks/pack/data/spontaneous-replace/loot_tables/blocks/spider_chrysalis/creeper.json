@@ -73,7 +73,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/mobs/creeper",
+          "value": "spontaneous-replace:blocks/mobs/creeper",
           "functions": [
             {
               "function": "set_count",

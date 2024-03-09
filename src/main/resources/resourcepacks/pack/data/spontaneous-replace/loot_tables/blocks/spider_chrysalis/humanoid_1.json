@@ -11,7 +11,7 @@
           "children": [
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/skeleton",
+              "value": "spontaneous-replace:blocks/mobs/skeleton",
               "functions": [
                 {
                   "function": "set_count",
@@ -29,7 +29,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "name": "spontaneous-replace:blocks/mobs/stray",
+              "value": "spontaneous-replace:blocks/mobs/stray",
               "functions": [
                 {
                   "function": "set_count",

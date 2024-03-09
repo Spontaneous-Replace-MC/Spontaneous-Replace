@@ -73,7 +73,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/villager_0",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/villager_0",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -84,7 +84,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/villager_1",
+          "value": "spontaneous-replace:blocks/spider_chrysalis/villager_1",
           "functions": [
             {
               "function": "minecraft:apply_bonus",

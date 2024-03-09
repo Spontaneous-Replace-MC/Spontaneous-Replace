@@ -70,7 +70,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/mobs/chicken",
+          "value": "spontaneous-replace:blocks/mobs/chicken",
           "functions": [
             {
               "function": "set_count",

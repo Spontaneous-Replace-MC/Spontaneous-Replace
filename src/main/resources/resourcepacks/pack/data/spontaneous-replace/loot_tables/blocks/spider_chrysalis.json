@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/default"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/default"
         }
       ],
       "conditions": [
@@ -29,7 +29,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/large"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/large"
         }
       ],
       "conditions": [
@@ -51,7 +51,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/small"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/small"
         }
       ],
       "conditions": [
@@ -73,7 +73,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/humanoid"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/humanoid"
         }
       ],
       "conditions": [
@@ -95,7 +95,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/villager"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/villager"
         }
       ],
       "conditions": [
@@ -117,7 +117,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/chicken"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/chicken"
         }
       ],
       "conditions": [
@@ -139,7 +139,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/creeper"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/creeper"
         }
       ],
       "conditions": [
@@ -161,7 +161,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "spontaneous-replace:blocks/spider_chrysalis/iron_golem"
+          "value": "spontaneous-replace:blocks/spider_chrysalis/iron_golem"
         }
       ],
       "conditions": [
