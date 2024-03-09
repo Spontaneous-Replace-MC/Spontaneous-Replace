@@ -61,6 +61,11 @@ public class SteelArrowEntity extends PersistentProjectileEntity implements Fixe
 	}
 	
 	@Override
+	protected ItemStack getDefaultItemStack() {
+		return new ItemStack(Items.STEEL_ARROW);
+	}
+	
+	@Override
 	public float getFixedDamage() {
 		return 50;
 	}
