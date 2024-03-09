@@ -26,7 +26,7 @@ package pers.saikel0rado1iu.sr.data.client;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.item.DyeableItem;
+import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.BowModelPredicateProvider;
 import pers.saikel0rado1iu.silk.api.item.tool.weapon.ranged.Crossbow;
@@ -36,7 +36,6 @@ import pers.saikel0rado1iu.sr.vanilla.ranged.JugerRepeatingCrossbow;
 import pers.saikel0rado1iu.sr.vanilla.ranged.MarksCrossbow;
 import pers.saikel0rado1iu.sr.vanilla.ranged.armor.ArrowproofVest;
 
-import static net.minecraft.item.DyeableItem.DEFAULT_COLOR;
 import static pers.saikel0rado1iu.sr.data.Items.*;
 
 /**
@@ -80,7 +79,6 @@ public class Items extends SilkItem {
 				return MarksCrossbow.isShootEnd(stack) ? 1 : 0;
 			});
 		});
-		clientRegister(ARROWPROOF_VEST, dyeableArmorItem -> ColorProviderRegistry.ITEM.register(((stack, tintIndex) -> tintIndex > 0 ? -1 :
-				(DyeableItem.getColor(stack) == DEFAULT_COLOR ? ArrowproofVest.COLOR : DyeableItem.getColor(stack))), ARROWPROOF_VEST));
+		clientRegister(ARROWPROOF_VEST, dyeableArmorItem -> ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex > 0 ? -1 : DyedColorComponent.getColor(stack, ArrowproofVest.COLOR), ARROWPROOF_VEST));
 	}
 }
