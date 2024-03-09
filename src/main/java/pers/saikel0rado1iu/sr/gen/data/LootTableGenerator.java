@@ -96,8 +96,8 @@ public interface LootTableGenerator {
 		}
 		
 		@Override
-		public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-			addEntityDrop(exporter, EntityTypes.GUARD_SPIDER, LootTable.builder()
+		public void accept(RegistryWrapper.WrapperLookup registryLookup, BiConsumer<Identifier, LootTable.Builder> consumer) {
+			addEntityDrop(consumer, EntityTypes.GUARD_SPIDER, LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))
@@ -107,7 +107,7 @@ public interface LootTableGenerator {
 							.with(ItemEntry.builder(Items.SPIDER_LEATHER)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(-1, 1))))
 							.apply(LootingEnchantLootFunction.builder(UniformLootNumberProvider.create(0, 1)))));
-			addEntityDrop(exporter, EntityTypes.SPRAY_POISON_SPIDER, LootTable.builder()
+			addEntityDrop(consumer, EntityTypes.SPRAY_POISON_SPIDER, LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))
@@ -117,7 +117,7 @@ public interface LootTableGenerator {
 							.with(ItemEntry.builder(Items.SPIDER_FANG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(-1, 1))))
 							.apply(LootingEnchantLootFunction.builder(UniformLootNumberProvider.create(0, 1)))));
-			addEntityDrop(exporter, EntityTypes.WEAVING_WEB_SPIDER, LootTable.builder()
+			addEntityDrop(consumer, EntityTypes.WEAVING_WEB_SPIDER, LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))
