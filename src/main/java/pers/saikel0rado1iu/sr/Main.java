@@ -86,6 +86,11 @@ public final class Main extends ModMain {
 	}
 	
 	@Override
+	public SilkDataComponentType dataComponentTypes() {
+		return new DataComponentTypes();
+	}
+	
+	@Override
 	public DataPack modDataPack(ModBasicData mod, ResourcePackActivationType type) {
 		return new DataPack(mod, type, "pack");
 	}
