@@ -7,8 +7,7 @@
 		"general.block.EerieRindMixin$Cauldron",
 		"general.block.EerieRindMixin$LavaCauldron",
 		"general.block.EerieRindMixin$PowderSnowCauldron",
-		"general.block.EerieRindMixin$WaterCauldron",
-		"general.item.ArrowproofVestMixin"
+		"general.block.EerieRindMixin$WaterCauldron"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -3,6 +3,7 @@
 	"package": "pers.saikel0rado1iu.sr.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"client": [
+		"general.item.ArrowproofVestMixin",
 		"screen.SpontaneousReplaceScreenMixin"
 	],
 	"injectors": {

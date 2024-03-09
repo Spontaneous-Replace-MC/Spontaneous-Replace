@@ -24,15 +24,17 @@
 
 package pers.saikel0rado1iu.sr.mixin.general.item;
 
-import net.minecraft.item.DyeableItem;
+import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
+import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.util.Colors;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import pers.saikel0rado1iu.sr.data.Items;
 import pers.saikel0rado1iu.sr.vanilla.ranged.armor.ArrowproofVest;
-
-import static net.minecraft.item.DyeableItem.DEFAULT_COLOR;
 
 /**
  * <h2 style="color:FFC800">防箭衣混入</h2>
@@ -40,12 +42,19 @@ import static net.minecraft.item.DyeableItem.DEFAULT_COLOR;
  *
  * @author <a href="https://github.com/Saikel-Orado-Liu"><img alt="author" src="https://avatars.githubusercontent.com/u/88531138?s=64&v=4"></a>
  */
-@Mixin(DyeableItem.class)
-interface ArrowproofVestMixin {
-	@Inject(method = "getColor", at = @At("RETURN"), cancellable = true)
-	private static void getColor(ItemStack stack, CallbackInfoReturnable<Integer> cir) {
-		if (!(stack.getItem() instanceof ArrowproofVest.Item)) return;
-		int color = cir.getReturnValue();
-		cir.setReturnValue(color == DEFAULT_COLOR ? ArrowproofVest.COLOR : color);
+@Mixin(ArmorFeatureRenderer.class)
+abstract class ArrowproofVestMixin {
+	@Unique
+	private ItemStack stack;
+	
+	@ModifyVariable(method = "renderArmor", at = @At("STORE"), ordinal = 0)
+	private ItemStack getItemStack(ItemStack stack) {
+		return this.stack = stack;
+	}
+	
+	@ModifyVariable(method = "renderArmor", at = @At("STORE"), ordinal = 1)
+	private int renderArmor(int value) {
+		return !stack.getItem().getName().equals(Items.ARROWPROOF_VEST.getName()) ? value
+				: stack.isIn(ItemTags.DYEABLE) ? DyedColorComponent.getColor(stack, ArrowproofVest.COLOR) : Colors.WHITE;
 	}
 }
