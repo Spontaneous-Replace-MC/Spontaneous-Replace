@@ -28,6 +28,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.*;
 import net.minecraft.advancement.criterion.*;
+import net.minecraft.class_9356;
+import net.minecraft.class_9361;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.enchantment.Enchantments;
@@ -36,9 +38,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.condition.EntityPropertiesLootCondition;
 import net.minecraft.loot.context.LootContext;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtOps;
-import net.minecraft.nbt.NbtString;
 import net.minecraft.potion.Potions;
 import net.minecraft.predicate.DamagePredicate;
 import net.minecraft.predicate.NumberRange;
@@ -393,9 +392,10 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 						true,
 						true)
 				.criterion(RecipeProvider.hasItem(JUGER_REPEATING_CROSSBOW), InventoryChangedCriterion.Conditions.items(ItemPredicate.Builder.create().items(JUGER_REPEATING_CROSSBOW)
-						.enchantment(new EnchantmentPredicate(Enchantments.MULTISHOT, NumberRange.IntRange.exactly(1)))
-						.enchantment(new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)))
-						.enchantment(new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))).build()))
+						.method_58179(class_9361.ENCHANTMENTS, class_9356.method_58173(List.of(
+								new EnchantmentPredicate(Enchantments.MULTISHOT, NumberRange.IntRange.exactly(1)),
+								new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)),
+								new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))))).build()))
 				.rewards(AdvancementRewards.Builder.experience(100))
 				.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/have_legend_juger_repeating_crossbow"));
 		USE_JUGER_REPEATING_CROSSBOW_SHOT_1000_ARROWS = registryLookup -> Advancement.Builder.create()
@@ -475,9 +475,10 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 						true,
 						true)
 				.criterion(RecipeProvider.hasItem(MARKS_CROSSBOW), InventoryChangedCriterion.Conditions.items(ItemPredicate.Builder.create().items(MARKS_CROSSBOW)
-						.enchantment(new EnchantmentPredicate(Enchantments.PIERCING, NumberRange.IntRange.exactly(4)))
-						.enchantment(new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)))
-						.enchantment(new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))).build()))
+						.method_58179(class_9361.ENCHANTMENTS, class_9356.method_58173(List.of(
+								new EnchantmentPredicate(Enchantments.PIERCING, NumberRange.IntRange.exactly(4)),
+								new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)),
+								new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))))).build()))
 				.rewards(AdvancementRewards.Builder.experience(100))
 				.build(new Identifier(SpontaneousReplace.DATA.getId(), VANILLA_PATH + "/have_legend_marks_crossbow"));
 		HAVE_ALL_BASIC_RANGED = registryLookup -> Advancement.Builder.create()
