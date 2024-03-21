@@ -66,7 +66,7 @@ public interface RefinedCopperArmor extends Armor {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.GOLD.value().getEnchantability() - 5;
+		return ArmorMaterials.GOLD.value().enchantability() - 5;
 	}
 	
 	@Override
@@ -81,6 +81,6 @@ public interface RefinedCopperArmor extends Armor {
 	
 	@Override
 	default float getToughness() {
-		return ArmorMaterials.CHAIN.value().getToughness() + 0.5F;
+		return ArmorMaterials.CHAIN.value().toughness() + 0.5F;
 	}
 }

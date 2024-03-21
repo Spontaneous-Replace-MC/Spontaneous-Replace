@@ -24,8 +24,10 @@
 
 package pers.saikel0rado1iu.sr.vanilla.aucu;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.TagKey;
 import pers.saikel0rado1iu.silk.api.item.tool.Tool;
 
 import static pers.saikel0rado1iu.sr.data.Items.AUCU_ALLOY_INGOT;
@@ -56,8 +58,8 @@ public interface AuCuTool extends Tool {
 	}
 	
 	@Override
-	default int getMiningLevel() {
-		return ToolMaterials.STONE.getMiningLevel();
+	default TagKey<Block> getInverseTag() {
+		return ToolMaterials.GOLD.getInverseTag();
 	}
 	
 	@Override

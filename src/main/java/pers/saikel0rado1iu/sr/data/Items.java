@@ -25,6 +25,7 @@
 package pers.saikel0rado1iu.sr.data;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -51,6 +52,8 @@ import pers.saikel0rado1iu.sr.variant.spider.mob.larva.SpiderLarvaData;
 import pers.saikel0rado1iu.sr.variant.spider.mob.spray.SprayPoisonSpiderData;
 import pers.saikel0rado1iu.sr.variant.spider.mob.weaving.WeavingWebSpiderData;
 
+import static net.minecraft.item.Items.BOW;
+import static net.minecraft.item.Items.CROSSBOW;
 import static pers.saikel0rado1iu.sr.data.EntityTypes.*;
 
 /**
@@ -176,17 +179,17 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "stoneball");
 	public static final SteelArrowItem STEEL_ARROW = builder(new SteelArrowItem(new Item.Settings().maxCount(4)))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "steel_arrow");
-	public static final Slingshot SLINGSHOT = builder(new Slingshot(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() / 2)))
+	public static final Slingshot SLINGSHOT = builder(new Slingshot(new Item.Settings().maxDamage(BOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) / 2)))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "slingshot");
-	public static final RecurveBow RECURVE_BOW = builder(new RecurveBow(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() * 2)))
+	public static final RecurveBow RECURVE_BOW = builder(new RecurveBow(new Item.Settings().maxDamage(BOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) * 2)))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "recurve_bow");
-	public static final Arbalest ARBALEST = builder(new Arbalest(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.CROSSBOW.getMaxDamage() * 2)))
+	public static final Arbalest ARBALEST = builder(new Arbalest(new Item.Settings().maxDamage(CROSSBOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) * 2)))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "arbalest");
-	public static final CompoundBow COMPOUND_BOW = builder(new CompoundBow(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() * 5)))
+	public static final CompoundBow COMPOUND_BOW = builder(new CompoundBow(new Item.Settings().maxDamage(BOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) * 5)))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "compound_bow");
-	public static final JugerRepeatingCrossbow JUGER_REPEATING_CROSSBOW = builder(new JugerRepeatingCrossbow(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() * 3).fireproof()))
+	public static final JugerRepeatingCrossbow JUGER_REPEATING_CROSSBOW = builder(new JugerRepeatingCrossbow(new Item.Settings().maxDamage(BOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) * 3).fireproof()))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "juger_repeating_crossbow");
-	public static final MarksCrossbow MARKS_CROSSBOW = builder(new MarksCrossbow(new Item.Settings().maxDamageIfAbsent(net.minecraft.item.Items.BOW.getMaxDamage() * 3).fireproof()))
+	public static final MarksCrossbow MARKS_CROSSBOW = builder(new MarksCrossbow(new Item.Settings().maxDamage(BOW.getComponents().getOrDefault(DataComponentTypes.MAX_DAMAGE, 0) * 3).fireproof()))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "marks_crossbow");
 	public static final ArmorItem ARROWPROOF_VEST = builder(ArrowproofVest.MATERIAL.createChestplate(new Item.Settings()))
 			.group(ItemGroups.COMBAT).build(SpontaneousReplace.DATA, "arrowproof_vest");
@@ -220,7 +223,7 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.NATURAL).build(SpontaneousReplace.DATA, "spider_chrysalis");
 	public static final BlockItem SPIDER_EGG_COCOON = builder(new BlockItem(Blocks.SPIDER_EGG_COCOON, new Item.Settings()))
 			.group(ItemGroups.NATURAL).build(SpontaneousReplace.DATA, "spider_egg_cocoon");
-	public static final FoodComponent SPIDER_LEG_FOOD_COMPONENT = new FoodComponent.Builder().meat().hunger(4)
+	public static final FoodComponent SPIDER_LEG_FOOD_COMPONENT = new FoodComponent.Builder().hunger(4)
 			.statusEffect(new StatusEffectInstance(StatusEffects.POISON, TickUtil.getTick(10), 1), 1).build();
 	public static final Item SPIDER_LEG = builder(new Item(new Item.Settings().food(SPIDER_LEG_FOOD_COMPONENT)))
 			.group(ItemGroups.FOOD_AND_DRINK, ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "spider_leg");
@@ -232,7 +235,7 @@ public final class Items extends SilkItem {
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "compact_gossamer");
 	public static final Item STICKY_COMPACT_GOSSAMER = builder(new Item(new Item.Settings()))
 			.group(ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "sticky_compact_gossamer");
-	public static final FoodComponent DEPOISON_SPIDER_LEG_FOOD_COMPONENT = new FoodComponent.Builder().meat().hunger(5).saturationModifier(PlayerUtil.getSaturationRatio(3))
+	public static final FoodComponent DEPOISON_SPIDER_LEG_FOOD_COMPONENT = new FoodComponent.Builder().hunger(5).saturationModifier(PlayerUtil.getSaturationRatio(3))
 			.statusEffect(new StatusEffectInstance(StatusEffects.POISON, TickUtil.getTick(5), 0), 0.25F).build();
 	public static final Item DEPOISON_SPIDER_LEG = builder(new Item(new Item.Settings().food(DEPOISON_SPIDER_LEG_FOOD_COMPONENT)))
 			.group(ItemGroups.FOOD_AND_DRINK, ItemGroups.INGREDIENTS).build(SpontaneousReplace.DATA, "depoison_spider_leg");

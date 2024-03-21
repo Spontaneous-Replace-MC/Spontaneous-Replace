@@ -82,7 +82,7 @@ public interface ArrowproofVest extends Armor, WithProjectileProtection {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.TURTLE.value().getEnchantability();
+		return ArmorMaterials.TURTLE.value().enchantability();
 	}
 	
 	@Override

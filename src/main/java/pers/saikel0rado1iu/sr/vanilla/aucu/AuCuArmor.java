@@ -71,7 +71,7 @@ public interface AuCuArmor extends Armor, PiglinIgnore {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.GOLD.value().getEnchantability() + 5;
+		return ArmorMaterials.GOLD.value().enchantability() + 5;
 	}
 	
 	@Override
@@ -86,7 +86,7 @@ public interface AuCuArmor extends Armor, PiglinIgnore {
 	
 	@Override
 	default float getToughness() {
-		return ArmorMaterials.GOLD.value().getToughness();
+		return ArmorMaterials.GOLD.value().toughness();
 	}
 	
 	/**

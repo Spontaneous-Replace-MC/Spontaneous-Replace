@@ -24,8 +24,10 @@
 
 package pers.saikel0rado1iu.sr.vanilla.steel;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.TagKey;
 import pers.saikel0rado1iu.silk.api.item.tool.Tool;
 import pers.saikel0rado1iu.sr.vanilla.cufe.CuFeTool;
 
@@ -57,8 +59,8 @@ public interface SteelTool extends Tool {
 	}
 	
 	@Override
-	default int getMiningLevel() {
-		return ToolMaterials.IRON.getMiningLevel();
+	default TagKey<Block> getInverseTag() {
+		return ToolMaterials.IRON.getInverseTag();
 	}
 	
 	@Override

@@ -38,8 +38,8 @@ import net.minecraft.loot.function.LootingEnchantLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 import pers.saikel0rado1iu.sr.data.Blocks;
 import pers.saikel0rado1iu.sr.data.EntityTypes;
 import pers.saikel0rado1iu.sr.data.Items;
@@ -49,7 +49,8 @@ import java.util.function.BiConsumer;
 
 import static net.minecraft.block.Blocks.*;
 import static net.minecraft.item.Items.STRING;
-import static pers.saikel0rado1iu.silk.gen.data.SilkLootTableGenerator.*;
+import static pers.saikel0rado1iu.silk.gen.data.SilkLootTableGenerator.NEEDS_ENTITY_ON_FIRE;
+import static pers.saikel0rado1iu.silk.gen.data.SilkLootTableGenerator.addBlockDrop;
 
 /**
  * <h2 style="color:FFC800">自然更替的战利品表生成器</h2>
@@ -96,8 +97,8 @@ public interface LootTableGenerator {
 		}
 		
 		@Override
-		public void accept(RegistryWrapper.WrapperLookup registryLookup, BiConsumer<Identifier, LootTable.Builder> consumer) {
-			addEntityDrop(consumer, EntityTypes.GUARD_SPIDER, LootTable.builder()
+		public void accept(RegistryWrapper.WrapperLookup registryLookup, BiConsumer<RegistryKey<LootTable>, LootTable.Builder> consumer) {
+			consumer.accept(EntityTypes.GUARD_SPIDER.getLootTableId(), LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))
@@ -107,7 +108,7 @@ public interface LootTableGenerator {
 							.with(ItemEntry.builder(Items.SPIDER_LEATHER)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(-1, 1))))
 							.apply(LootingEnchantLootFunction.builder(UniformLootNumberProvider.create(0, 1)))));
-			addEntityDrop(consumer, EntityTypes.SPRAY_POISON_SPIDER, LootTable.builder()
+			consumer.accept(EntityTypes.SPRAY_POISON_SPIDER.getLootTableId(), LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))
@@ -117,7 +118,7 @@ public interface LootTableGenerator {
 							.with(ItemEntry.builder(Items.SPIDER_FANG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(-1, 1))))
 							.apply(LootingEnchantLootFunction.builder(UniformLootNumberProvider.create(0, 1)))));
-			addEntityDrop(consumer, EntityTypes.WEAVING_WEB_SPIDER, LootTable.builder()
+			consumer.accept(EntityTypes.WEAVING_WEB_SPIDER.getLootTableId(), LootTable.builder()
 					.pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1))
 							.with(ItemEntry.builder(Items.SPIDER_LEG)
 									.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 2)))

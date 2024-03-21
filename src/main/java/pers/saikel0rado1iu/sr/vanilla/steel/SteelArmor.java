@@ -66,7 +66,7 @@ public interface SteelArmor extends Armor {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.NETHERITE.value().getEnchantability();
+		return ArmorMaterials.NETHERITE.value().enchantability();
 	}
 	
 	@Override
@@ -81,6 +81,6 @@ public interface SteelArmor extends Armor {
 	
 	@Override
 	default float getToughness() {
-		return ArmorMaterials.DIAMOND.value().getToughness() - 0.5F;
+		return ArmorMaterials.DIAMOND.value().toughness() - 0.5F;
 	}
 }

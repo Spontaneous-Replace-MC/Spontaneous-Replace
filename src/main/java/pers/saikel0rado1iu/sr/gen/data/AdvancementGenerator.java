@@ -28,8 +28,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.*;
 import net.minecraft.advancement.criterion.*;
-import net.minecraft.class_9356;
-import net.minecraft.class_9361;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.enchantment.Enchantments;
@@ -43,7 +41,9 @@ import net.minecraft.predicate.DamagePredicate;
 import net.minecraft.predicate.NumberRange;
 import net.minecraft.predicate.entity.*;
 import net.minecraft.predicate.item.EnchantmentPredicate;
+import net.minecraft.predicate.item.EnchantmentsPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.predicate.item.ItemSubPredicateTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -392,7 +392,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 						true,
 						true)
 				.criterion(RecipeProvider.hasItem(JUGER_REPEATING_CROSSBOW), InventoryChangedCriterion.Conditions.items(ItemPredicate.Builder.create().items(JUGER_REPEATING_CROSSBOW)
-						.method_58179(class_9361.ENCHANTMENTS, class_9356.method_58173(List.of(
+						.subPredicate(ItemSubPredicateTypes.ENCHANTMENTS, EnchantmentsPredicate.enchantments(List.of(
 								new EnchantmentPredicate(Enchantments.MULTISHOT, NumberRange.IntRange.exactly(1)),
 								new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)),
 								new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))))).build()))
@@ -475,7 +475,7 @@ public final class AdvancementGenerator extends FabricAdvancementProvider {
 						true,
 						true)
 				.criterion(RecipeProvider.hasItem(MARKS_CROSSBOW), InventoryChangedCriterion.Conditions.items(ItemPredicate.Builder.create().items(MARKS_CROSSBOW)
-						.method_58179(class_9361.ENCHANTMENTS, class_9356.method_58173(List.of(
+						.subPredicate(ItemSubPredicateTypes.ENCHANTMENTS, EnchantmentsPredicate.enchantments(List.of(
 								new EnchantmentPredicate(Enchantments.PIERCING, NumberRange.IntRange.exactly(4)),
 								new EnchantmentPredicate(Enchantments.QUICK_CHARGE, NumberRange.IntRange.exactly(3)),
 								new EnchantmentPredicate(Enchantments.UNBREAKING, NumberRange.IntRange.exactly(5))))).build()))

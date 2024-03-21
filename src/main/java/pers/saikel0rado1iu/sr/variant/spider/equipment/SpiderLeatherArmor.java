@@ -130,7 +130,7 @@ public interface SpiderLeatherArmor extends Armor, WithStatusEffects {
 	
 	@Override
 	default int getEnchantability() {
-		return ArmorMaterials.LEATHER.value().getEnchantability();
+		return ArmorMaterials.LEATHER.value().enchantability();
 	}
 	
 	@Override

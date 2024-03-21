@@ -58,6 +58,9 @@ public interface TagGeneration {
 		
 		@Override
 		protected void configure(RegistryWrapper.WrapperLookup arg) {
+			getOrCreateTagBuilder(ItemTags.MEAT)
+					.add(Items.SPIDER_LEG)
+					.add(Items.DEPOISON_SPIDER_LEG);
 			getOrCreateTagBuilder(ItemTags.DYEABLE)
 					.add(Items.ARROWPROOF_VEST);
 			getOrCreateTagBuilder(ItemTags.COALS)
